@@ -1,0 +1,22 @@
+footer.app-footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  color: white;
+}
+
+footer.app-footer .container, footer.app-footer .container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer.app-footer .footer-column {
+  flex: 1;
+}
+
+@media (max-width:768px){
+  footer.app-footer .footer-column {
+    flex-basis: 100%;
+    float: left;
+  }
+}

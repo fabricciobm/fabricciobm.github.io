@@ -1,0 +1,22 @@
+/* header.css */
+
+.app-header {
+  line-height: auto;
+  color: #fff;
+  background-color: hwb(279 7% 36%);
+}
+
+
+.app-header .container{
+  display: flex;
+  max-width: calc(1024px - 4em);
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.app-header .container-fluid{
+  display: flex;
+  max-width: calc(1280px - 4em);
+  margin: 0 auto;
+  padding: 0 2em;
+}
