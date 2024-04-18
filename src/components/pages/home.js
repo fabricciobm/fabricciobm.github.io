@@ -1,9 +1,9 @@
 // Home.js
 import React from 'react';
 import './home.css';
-import serviceImage1 from './home/service1.jpg';
-import serviceImage2 from './home/service2.jpg';
-import serviceImage3 from './home/service3.jpg';
+import serviceImage1 from './home/service1.webp';
+import serviceImage2 from './home/service2.webp';
+import serviceImage3 from './home/service3.webp';
 
 const Home = () => {
   return (
