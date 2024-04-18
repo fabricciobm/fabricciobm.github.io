@@ -9,15 +9,9 @@ const Footer = () => {
   return (
     <footer className="app-footer">
       <div className='container-fluid'>
-        <div className='footer-column'>
-          <FooterColumn1 /> 
-        </div>
-        <div className='footer-column'>
-          <FooterColumn2 /> 
-        </div>
-        <div className='footer-column'>
-          <FooterColumn3 />
-        </div>
+        <FooterColumn1 />
+        <FooterColumn2 /> 
+        <FooterColumn3 />
       </div> 
     </footer>
   );

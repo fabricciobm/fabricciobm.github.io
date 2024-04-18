@@ -24,5 +24,19 @@ code {
   padding: 1em 2em;
 }
 
+.btn {
+  padding: 8px;
+  background: #b338c1;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 50px 0;
+}
+
+.btn:hover {
+  background: #350e50;
+}
+
 @media(max-width:768px){
 }

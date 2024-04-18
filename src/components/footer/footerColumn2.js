@@ -2,7 +2,7 @@ import React from 'react';
 import './footer.css';
 const FooterColumn2 = () => {
   return (
-    <div className="app-footerColumn1">
+    <div className="footerColumn">
       <h2>Column</h2>
       <p>Teste.</p>
     </div>
