@@ -1,22 +1,26 @@
 /* home.css */
 
+p{font-size:1.2em;}
+
 /* Section Parallax style */
 
 .parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: url(background.webp) top center;
+  background: url(background.webp) top fixed;
 }
 
 .parallax-content {
   text-align: center;
   color: white;
   background-color: hsla(273, 84%, 42%, 0.8);
-  padding: 10em 0!important;
+  padding: 8em 0 5em 0;
 }
-
+.parallax-content h2{
+font-size: 3em;
+}
+.parallax-content p{
+  font-size: 1.5em;
+}
 .call-to-action {
   background-color: hwb(273 3% 53% / 0.8);
   border: none;
@@ -48,6 +52,8 @@
 .pricing-header {
   text-align: center;
 }
+
+.princing-header h2{}
 
 .price {
   font-size: 36px;
@@ -106,7 +112,7 @@
 .service h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 .service p {
@@ -114,6 +120,7 @@
   font-size: 16px;
   color: #666;
   margin-bottom: 1em;
+  font-size: 1.2em;
 }
 
 @media(max-width:768px) {

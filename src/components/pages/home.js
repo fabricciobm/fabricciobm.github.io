@@ -30,7 +30,7 @@ const Home = () => {
       <div className='service-details'>
         <h3>Serviço 1</h3>
         <p>Descrição do serviço 1.</p>
-        <a href="#" className="btn">Comprar</a>
+        <a href="#" className="btn" title="Continua">Continua</a>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@ const Home = () => {
       <div className='service-details'>
         <h3>Serviço 2</h3>
         <p>Descrição do serviço 2.</p>
-        <a href="#" className="btn">Comprar</a>
+        <a href="#" className="btn" title="Continua">Continua</a>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@ const Home = () => {
       <div className='service-details'>
         <h3>Serviço 3</h3>
         <p>Descrição do serviço 3.</p>
-        <a href="#" className="btn">Comprar</a>
+        <a href="#" className="btn" title="Continua">Continua</a>
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ const Home = () => {
       <li>Recurso 2</li>
       <li>Recurso 3</li>
     </ul>
-    <a href="#" className="btn">Comprar</a>
+    <a href="#" className="btn" title="Comprare...">Comprare</a>
   </div>
   <div className="pricing-column">
     <div cclassName="pricing-header">
@@ -82,7 +82,7 @@ const Home = () => {
       <li>Recurso 3</li>
       <li>Recurso 4</li>
     </ul>
-    <a href="#" className="btn">Comprar</a>
+    <a href="#" className="btn" title="Comprare...">Comprare</a>
   </div>
     <div className="pricing-column">
       <div className="pricing-header">
@@ -97,7 +97,7 @@ const Home = () => {
         <li>Recurso 4</li>
         <li>Recurso 5</li>
       </ul>
-      <a href="#" className="btn">Comprar</a>
+      <a href="#" className="btn" title="Comprare...">Comprare</a>
     </div>
   </section>
 

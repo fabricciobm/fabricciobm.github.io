@@ -3,7 +3,11 @@
 .app-header {
   line-height: auto;
   color: #fff;
-  background-color: hwb(279 7% 36%);
+  /*background-color: hwb(279 7% 36%);*/
+  background: rgb(2,0,36);
+  background: hsla(273, 84%, 42%, 0.5);
+  position: absolute;
+  width: 100%;
 }
 
 
