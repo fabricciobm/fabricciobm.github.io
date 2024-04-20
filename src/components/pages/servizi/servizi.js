@@ -15,6 +15,36 @@ const Servizi = () => {
     </div>
   </div>
   <section className='services-section container-fluid'>
+  <div className='service'>
+      <div className='service-content'>
+        <div className='service-bg' style={{backgroundImage: `url(${serviceImage1})`}}></div>
+        <div className='service-details'>
+          <h3>Serviço 1</h3>
+          <p>Descrição do serviço 1.</p>
+          <a href="#" className="btn" title="Avanti">Avanti</a>
+        </div>
+      </div>
+    </div>
+    <div className='service'>
+      <div className='service-content'>
+        <div className='service-bg' style={{backgroundImage: `url(${serviceImage2})`}}></div>
+        <div className='service-details'>
+          <h3>Serviço 2</h3>
+          <p>Descrição do serviço 2.</p>
+          <a href="#" className="btn" title="Avanti">Avanti</a>
+        </div>
+      </div>
+    </div>
+    <div className='service'>
+      <div className='service-content'>
+        <div className='service-bg' style={{backgroundImage: `url(${serviceImage3})`}}></div>
+        <div className='service-details'>
+          <h3>Serviço 3</h3>
+          <p>Descrição do serviço 3.</p>
+          <a href="#" className="btn" title="Avanti">Avanti</a>
+        </div>
+      </div>
+    </div>
     <div className='service'>
       <div className='service-content'>
         <div className='service-bg' style={{backgroundImage: `url(${serviceImage1})`}}></div>
@@ -41,6 +71,26 @@ const Servizi = () => {
         <div className='service-details'>
           <h3>Serviço 3</h3>
           <p>Descrição do serviço 3.</p>
+          <a href="#" className="btn" title="Avanti">Avanti</a>
+        </div>
+      </div>
+    </div>
+    <div className='service'>
+      <div className='service-content'>
+        <div className='service-bg' style={{backgroundImage: `url(${serviceImage1})`}}></div>
+        <div className='service-details'>
+          <h3>Serviço 1</h3>
+          <p>Descrição do serviço 1.</p>
+          <a href="#" className="btn" title="Avanti">Avanti</a>
+        </div>
+      </div>
+    </div>
+    <div className='service'>
+      <div className='service-content'>
+        <div className='service-bg' style={{backgroundImage: `url(${serviceImage2})`}}></div>
+        <div className='service-details'>
+          <h3>Serviço 2</h3>
+          <p>Descrição do serviço 2.</p>
           <a href="#" className="btn" title="Avanti">Avanti</a>
         </div>
       </div>

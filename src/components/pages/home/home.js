@@ -16,10 +16,7 @@ const Home = () => {
       <button className='btn' title='Avanti'>Avanti</button>
     </div>
   </div>
-  <div className="cosa-faccio container-fluid">
-    <h2>Cosa faccio?</h2>
-    <p>Con la mia creatività, trasformo idee in realtà digitali. Dal design di logo all'implementazione di e-commerce e automazioni, offro soluzioni complete per far crescere il tuo business online. Sia che tu abbia bisogno di un sito web accattivante o di ottimizzare i tuoi processi aziendali, sono qui per aiutarti a raggiungere i tuoi obiettivi digitali.</p>
-  </div>
+
   <section className='services-section container-fluid'>
     <div className='service'>
       <div className='service-content'>
@@ -37,6 +34,16 @@ const Home = () => {
         <div className='service-details'>
           <h3>Serviço 2</h3>
           <p>Descrição do serviço 2.</p>
+          <a href="#" className="btn" title="Avanti">Avanti</a>
+        </div>
+      </div>
+    </div>
+    <div className='service'>
+      <div className='service-content'>
+        <div className='service-bg' style={{backgroundImage: `url(${serviceImage3})`}}></div>
+        <div className='service-details'>
+          <h3>Serviço 3</h3>
+          <p>Descrição do serviço 3.</p>
           <a href="#" className="btn" title="Avanti">Avanti</a>
         </div>
       </div>

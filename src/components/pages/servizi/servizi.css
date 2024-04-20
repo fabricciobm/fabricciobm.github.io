@@ -24,7 +24,7 @@ p{font-size:1.2em;}
   text-align: center;
   color: white;
   background-color: hsla(273, 84%, 42%, 0.7);
-  padding: 6em 10% 4em 10%;
+  padding: 14em 10% 10em 10%;
 }
 .parallax-content-servizi h2{
 font-size: 3em;
@@ -40,14 +40,6 @@ font-size: 3em;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
-}
-
-.service {
-  width: calc(33.33% - 20px);
-  margin-bottom: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .service-content {
