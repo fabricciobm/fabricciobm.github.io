@@ -12,31 +12,38 @@ code {
     monospace;
 }
 
-.container{
-  max-width: calc(1024px - 8em);
-  margin: 0 auto;
-  padding: 1em 4em;
+h2,h3,h4,h5,h6{
+  margin: 0;
 }
 
 .container-fluid{
   max-width: calc(1280px - 4em);
   margin: 0 auto;
-  padding: 1em 2em;
+  padding: 5em 2em 0 5em;
 }
 
 .btn {
-  padding: 8px;
-  background: #b338c1;
-  color: #fff;
+  background-color: hwb(273 5% 35% / 0.8);
+  border: none;
+  color: white;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  border-radius: 5px;
-  margin: 50px 0;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background: #350e50;
+  background-color: hwb(273 3% 53% / 0.8);
 }
 
 @media(max-width:768px){
+  .app-header {
+    position: fixed;
+    z-index: 9999;
+    background: hsla(273, 84%, 42%, 0.7);
+  }
+  
 }

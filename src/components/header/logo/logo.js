@@ -3,7 +3,7 @@ import './logo.css';
 const Logo = () => {
   return (
     <div class="logo">
-      <a href="#">
+      <a href="#" title='Logo'>
         <svg
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,138 @@
+/* home.css */
+
+p{font-size:1.2em;}
+
+
+/* cosa faccio */
+
+.cosa-faccio h2 {
+  font-size: 2.5em;
+}
+
+
+/* Section Parallax style */
+
+.parallax {
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.parallax-content-home {
+  text-align: center;
+  color: white;
+  background-color: hsla(273, 84%, 42%, 0.7);
+  padding: 14em 10% 10em 10%;
+}
+.parallax-content-home h2{
+font-size: 3em;
+}
+.parallax-content p{
+  font-size: 1.5em;
+}
+
+
+/* Section Service style */
+
+.services-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.service {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-bg {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-details {
+  padding: 30px 20px;
+  background-color: #fff;
+}
+
+.service h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.service p {
+  font-size: 16px;
+  color: #666;
+  font-size: 1.2em;
+}
+
+/* Section Pricing style */
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.pricing-column {
+  width: calc(33.33% - 20px); 
+  margin-bottom: 5em;
+  border-radius: 10px;
+  padding: 2em 0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.pricing-header {
+  text-align: center;
+}
+
+.princing-header h2{}
+
+.price {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.plan {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.features li {
+  margin-bottom: 10px;
+}
+
+@media(max-width:768px) {
+  section.services-section,
+  section.pricing {
+    flex-direction: column;
+  }
+  
+  .service,
+  .pricing-column {
+    min-width: 100%!important;
+    margin-bottom: 1em;
+  }
+}
