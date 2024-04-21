@@ -1,16 +1,11 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Home from './components/pages/home/home';
-import Servizi from './components/pages/servizi/servizi';
-import Design from './components/pages/servizi/design/design';
-import Logo from './components/pages/servizi/design/logo/logo';
-import Sviluppo from './components/pages/servizi/sviluppo/sviluppo';
+import ServiziRoutes from './components/pages/servizi/serviziRoutes';
 import Contact from './components/pages/contact/contact';
 import './App.css';
-
 
 function App() {
   return (
@@ -19,10 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/servizi/*" element={<Servizi />} />
-          <Route path="/servizi/design/*" element={<Design />} />
-          <Route path="/servizi/design/logo" element={<Logo />} />
-          <Route path="/servizi/sviluppo" element={<Sviluppo />} />
+          <Route path="/servizi/*" element={<ServiziRoutes />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
