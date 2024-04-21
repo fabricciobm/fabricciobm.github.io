@@ -2,7 +2,7 @@
 :root{
     /*Config title-page*/
     --title-page-home-background-image: url('./background.webp');
-    --title-page-home-background-color:hsla(273, 84%, 42%, 0.95);
+    --title-page-home-background-color:rgba(66, 5, 164, 0.758);
     --title-page-home-color: white;
     --title-page-home-font-size-h2: 4em;
     --title-page-home-font-size-p: 1.5em;
@@ -22,7 +22,7 @@
 }
 /* Section intro-site */
 .title-page-home {
-  background-image: var(--title-page-home-background-image);
+  background: var(--title-page-home-background-image);
   background-color: var(--title-page-home-background-color);
   background-blend-mode: overlay;
   background-position: top;
@@ -30,8 +30,7 @@
   text-align: center;
   color:  var(--title-page-home-color);
   padding: 10em 0;
-  
-}
+  }
 .title-page-home h2{
   font-size: var(--title-page-home-font-size-h2);
   color: white;
@@ -55,7 +54,7 @@
   margin-bottom: 20px;
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 .archive-card .card .card-content {
   position: relative;
