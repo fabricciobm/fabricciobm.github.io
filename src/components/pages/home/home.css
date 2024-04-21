@@ -1,86 +1,86 @@
-/* home.css */
-
-p{font-size:1.2em;}
-
-
-/* cosa faccio */
-
-.cosa-faccio h2 {
-  font-size: 2.5em;
+@import './../../../App.css';
+:root{
+    /*Config title-page*/
+    --title-page-home-background-image: url('./background.webp');
+    --title-page-home-background-color:hsla(273, 84%, 42%, 0.95);
+    --title-page-home-color: white;
+    --title-page-home-font-size-h2: 6em;
+    --title-page-home-font-size-p: 1.5em;
+    
+    /* Section Archive card */
+    --archive-card: 25%;
+    --archive-card-background: white;
+    --archive-card-h3: 2em;
+    --archive-card-p: 1.2em;
+    --border-radius: 10px;
+    /* Section Price */
+    --price-column: 33%;
+    --price-column-background: white;
+    --price-h3:2em;
+    --price-price:20px;
+    --price-plan:30px;
 }
-
-
-/* Section Parallax style */
-
-.parallax {
-  background-size: cover;
+/* Section intro-site */
+.title-page-home {
+  background-image: var(--title-page-home-background-image);
+  background-color: var(--title-page-home-background-color);
+  background-blend-mode: overlay;
   background-position: top;
-  background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-
-.parallax-content-home {
+  background-size: cover;
   text-align: center;
+  color:  var(--title-page-home-color);
+  padding: 10em 0;
+  
+}
+.title-page-home h2{
+  font-size: var(--title-page-home-font-size-h2);
   color: white;
-  background-color: hsla(273, 84%, 42%, 0.7);
-  padding: 14em 10% 10em 10%;
+  text-shadow: 1px 1px 1px black;
 }
-.parallax-content-home h2{
-font-size: 3em;
+.title-page-home p{
+  font-size: var(--title-page-home-font-size-p);
+  color: white;
+  text-shadow: 1px 1px 1px black;
 }
-.parallax-content p{
-  font-size: 1.5em;
-}
-
-
-/* Section Service style */
-
-.services-section {
+  /* Section Archive card */
+.archive-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
 }
-
-.service {
-  width: calc(25% - 20px);
+.archive-card .card {
+  width: calc(var(--archive-card) - 1em);
+  background: var(--archive-card-background);
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.service-content {
+.archive-card .card .card-content {
   position: relative;
   overflow: hidden;
 }
-
-.service-bg {
+.archive-card .card .card-content .card-bg {
   width: 100%;
   height: 200px;
   background-size: cover;
   background-position: center;
 }
-
-.service-details {
-  padding: 30px 20px;
-  background-color: #fff;
+.archive-card .card .card-content h3{
+  padding: 20px 20px 0 20px;
+  margin: 0;
+  font-size: var(--archive-card-h3);
 }
-
-.service h3 {
-  margin-top: 0;
-  font-size: 1.5em;
+.archive-card .card .card-content p{
+  padding: 0 20px 0 20px;
+  margin: 0;
+  font-size: var(--archive-card-p);
 }
-
-.service p {
-  font-size: 16px;
-  color: #666;
-  font-size: 1.2em;
+.archive-card .card .card-content .btn{
+  margin: 1em;
 }
-
-/* Section Pricing style */
-
+/* Section Price */
 .pricing {
   display: flex;
   flex-wrap: wrap;
@@ -88,51 +88,35 @@ font-size: 3em;
   align-items: stretch;
 }
 .pricing-column {
-  width: calc(33.33% - 20px); 
-  margin-bottom: 5em;
-  border-radius: 10px;
+  width: calc(var(--price-column) - 10px); 
+  background: var(--price-column-background);
+  border-radius: var(--border-radius);
   padding: 2em 0;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-bottom: 2em;
 }
-.pricing-header {
-  text-align: center;
-}
-
-.princing-header h2{}
-
-.price {
-  font-size: 36px;
-  color: #333;
-  margin-bottom: 10px;
+.pricing-column h3 {
+  font-size: var(--price-h3);
 }
 
-.plan {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.features {
+.pricing-column ul {
   list-style: none;
-  padding: 0;
   text-align: center;
+  padding: 0;
 }
 
-.features li {
-  margin-bottom: 10px;
+.pricing-column p.price {
+  font-size: var(--price-price);
+  margin: 0;
+}
+
+.pricing-column p.plan {
+  font-size: var(--price-plan);
+  margin: 0;
 }
 
 @media(max-width:768px) {
-  section.services-section,
-  section.pricing {
-    flex-direction: column;
-  }
-  
-  .service,
-  .pricing-column {
-    min-width: 100%!important;
-    margin-bottom: 1em;
-  }
+  .card,.pricing-column{width: 100%!important;}
 }

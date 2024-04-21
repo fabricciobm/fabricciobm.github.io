@@ -1,11 +1,11 @@
-@import './../../../App.css';
+@import './../../../../App.css';
 :root{
     /*Config title-page*/
-    --title-page-servizi-background-image: url('./background.webp');
-    --title-page-servizi-background-color:hsla(273, 84%, 42%, 0.95);
-    --title-page-servizi-color: white;
-    --title-page-servizi-font-size-h2: 6em;
-    --title-page-servizi-font-size-p: 1.5em;
+    --title-page-design-background-image: url('./background.webp');
+    --title-page-design-background-color:hsla(273, 84%, 42%, 0.95);
+    --title-page-design-color: white;
+    --title-page-design-font-size-h2: 6em;
+    --title-page-design-font-size-p: 1.5em;
     
     /* Section Archive card */
     --archive-card: 25%;
@@ -21,26 +21,24 @@
     --price-plan:30px;
 }
 /* Section intro-site */
-.title-page-servizi {
-  background-image: var(--title-page-servizi-background-image);
-  background-color: var(--title-page-servizi-background-color);
+.title-page-design {
+  background-image: var(--title-page-design-background-image);
+  background-color: var(--title-page-design-background-color);
   background-blend-mode: overlay;
   background-position: top;
   background-size: cover;
   text-align: center;
-  color:  var(--title-page-servizi-color);
+  color:  var(--title-page-design-color);
   padding: 10em 0;
   
 }
-.title-page-servizi h2{
-  font-size: var(--title-page-servizi-font-size-h2);
+.title-page-design h2{
+  font-size: var(--title-page-design-font-size-h2);
   color: white;
-  text-shadow: 1px 1px 1px black;
 }
-.title-page-servizi p{
-  font-size: var(--title-page-servizi-font-size-p);
+.title-page-design p{
+  font-size: var(--title-page-design-font-size-p);
   color: white;
-  text-shadow: 1px 1px 1px black;
 }
   /* Section Archive card */
 .archive-card {

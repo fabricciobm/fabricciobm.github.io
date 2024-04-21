@@ -1,102 +1,64 @@
-// Home.js
+// Servizi.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './servizi.css';
 import serviceImage1 from './service1.webp';
 import serviceImage2 from './service2.webp';
 import serviceImage3 from './service3.webp';
-import backgroundIntro from './service1.webp';
+import serviceImage4 from './service4.webp';
+
+const cardData = [
+  {
+    image: serviceImage3,
+    title: 'Designer',
+    description: "Creazione di loghi distintivi, design per i social media e layout per app, con l'obiettivo di garantire un'immagine aziendale coerente e di alta qualità.",
+    url: '/servizi/design' // Adicione o URL desejado para cada card
+  },
+  {
+    image: serviceImage1,
+    title: 'Sviluppo',
+    description: 'Sviluppo di siti web intuitivi, e-commerce, app e soluzioni robotiche, fornendo tecnologie avanzate per soddisfare le esigenze specifiche del cliente.',
+    url: '/servizi/sviluppo'
+  },
+  {
+    image: serviceImage4,
+    title: 'Marketing',
+    description: 'Implementazione di strategie efficaci sui social media, ottimizzazione SEO, produzione video e organizzazione di campagne promozionali mirate.',
+    url: '/servizi/marketing'
+  },
+  {
+    image: serviceImage2,
+    title: 'Sumissura',
+    description: 'Offre consulenza e soluzioni personalizzate per il business, garantendo un servizio professionale e orientato al cliente, basato su una profonda comprensione delle esigenze aziendali.',
+    url: '/servizi/sumissura'
+  }
+];
+
 const Servizi = () => {
   return (
-<div className='servizi'>
-  <div className='parallax' style={{backgroundImage: `url(${backgroundIntro})`}}>
-    <div className='parallax-content-servizi'>
-      <h2>Servizi</h2>
-      <p>Con la mia creatività, trasformo idee in realtà digitali. Dal design di logo all'implementazione di e-commerce e automazioni, offro soluzioni complete per far crescere il tuo business online. Sia che tu abbia bisogno di un sito web accattivante o di ottimizzare i tuoi processi aziendali, sono qui per aiutarti a raggiungere i tuoi obiettivi digitali.</p>
-    </div>
-  </div>
-  <section className='services-section container-fluid'>
-  <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage1})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 1</h3>
-          <p>Descrição do serviço 1.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
+    <div className='servizi'>
+      <section className='title-page-servizi'>
+        <div className='container-fluid'>
+          <h2>Servizi</h2>
+          <p>Conosci tutti i nostri servizi e come possiamo aiutare...</p>
+          <button className='btn' title="Avanti">Avanti</button>
         </div>
-      </div>
+      </section>
+
+      <section className='archive-card container-fluid'>
+        <h3 className='title'>Cosa facciamo?</h3>
+        {cardData.map((card, index) => (
+          <div className='card' key={index}>
+            <div className='card-content'>
+              <div className='card-bg' style={{backgroundImage: `url(${card.image})`}}></div>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <Link className='btn' to={card.url} title={card.title}>Servizi</Link>
+            </div>
+          </div>
+        ))}
+      </section>
     </div>
-    <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage2})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 2</h3>
-          <p>Descrição do serviço 2.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
-        </div>
-      </div>
-    </div>
-    <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage3})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 3</h3>
-          <p>Descrição do serviço 3.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
-        </div>
-      </div>
-    </div>
-    <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage1})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 1</h3>
-          <p>Descrição do serviço 1.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
-        </div>
-      </div>
-    </div>
-    <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage2})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 2</h3>
-          <p>Descrição do serviço 2.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
-        </div>
-      </div>
-    </div>
-    <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage3})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 3</h3>
-          <p>Descrição do serviço 3.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
-        </div>
-      </div>
-    </div>
-    <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage1})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 1</h3>
-          <p>Descrição do serviço 1.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
-        </div>
-      </div>
-    </div>
-    <div className='service'>
-      <div className='service-content'>
-        <div className='service-bg' style={{backgroundImage: `url(${serviceImage2})`}}></div>
-        <div className='service-details'>
-          <h3>Serviço 2</h3>
-          <p>Descrição do serviço 2.</p>
-          <a href="#" className="btn" title="Avanti">Avanti</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
   );
 }
 

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+    --font1: 'Open Sans', sans-serif;
+    --font2: 'Bebas Neue', sans-serif;
+    --body-background: hsl(0, 0%, 100%);
+    --container-fluid: 1280px;
+    --container-fluid-padding: 2em 2em 0 2em;
+    --btn1-background: hsla(211, 88%, 41%, 0.8);
+    --btn1-background-hover: hwb(211 4% 57% / 0.8);
+    --btn1-border-radius: 10px;
+    --header-navbar: hsla(211, 100%, 53%, 0.9);
+    --header-navbar-position: absolute;
+    --menu-li-background: transparent;
+    --menu-li-background-hover: none;
+    --menu-li-a-color: none;
+    --menu-li-a-color-hover: none;
+    --submenu-background: hwb(211 2% 55% / 0.9);
+    --submenu-background-hover: rgba(3, 17, 32, 0.9);
+    --subsubmenu-background: rgba(3, 17, 32, 0.9);
+    --subsubsubmenu-background: rgba(3, 17, 32, 0.9);
+  
+  }
