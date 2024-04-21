@@ -74,7 +74,7 @@ const Home = () => {
               <div className='card-bg' style={{backgroundImage: `url(${card.image})`}}></div>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
-              <Link className='btn' to={card.url} title="Servizi">Servizi</Link>
+              <Link className='btn' to={card.url} title={card.title}>Avanti</Link>
             </div>
           </div>
         ))}
