@@ -18,10 +18,10 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/servizi" element={<Servizi />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/servizi/*" element={<Servizi />} />
+          <Route path="/servizi/design/*" element={<Design />} />
           <Route path="/servizi/design/logo" element={<Logo />} />
-          <Route path="/servizi/design" element={<Design />} />
           <Route path="/servizi/sviluppo" element={<Sviluppo />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './servizi.css';
 import Services from './serviziData';
@@ -7,12 +7,32 @@ const Servizi = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
+  useEffect(() => {
+    // Função para filtrar serviços com base na hash da URL
+    const filterServicesByHash = () => {
+      const hash = window.location.hash.substr(1); // Remove o caractere '#' da hash
+      setSelectedCategory(hash);
+    };
+
+    // Aplicar filtro ao carregar a página
+    filterServicesByHash();
+
+    // Observar mudanças na hash da URL e aplicar o filtro correspondente
+    window.addEventListener('hashchange', filterServicesByHash);
+
+    // Remover o ouvinte de eventos ao desmontar o componente para evitar vazamento de memória
+    return () => {
+      window.removeEventListener('hashchange', filterServicesByHash);
+    };
+  }, []);
+
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const handleCategorySelect = (event) => {
     setSelectedCategory(event.target.value);
+    window.location.hash = event.target.value; // Atualizar a hash da URL ao selecionar uma categoria
   };
 
   const filterServices = (service) => {
