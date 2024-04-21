@@ -1,6 +1,5 @@
-// sviluppo.js
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importe o Link do React Router
+import { Link } from 'react-router-dom';
 import './sviluppo.css';
 import serviceImage1 from './service1.webp';
 import serviceImage2 from './service2.webp';
@@ -52,7 +51,7 @@ const Sviluppo = () => {
       </section>
 
       <section className='archive-card container-fluid'>
-        <h3 className='title'>Hello World,</h3>
+        <h3 className='title'>Cosa facciamo?</h3>
         {cardData.map((card, index) => (
           <div className='card' key={index}>
             <div className='card-content'>

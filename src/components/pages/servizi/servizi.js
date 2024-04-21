@@ -1,4 +1,3 @@
-// Servizi.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './servizi.css';
@@ -53,7 +52,7 @@ const Servizi = () => {
               <div className='card-bg' style={{backgroundImage: `url(${card.image})`}}></div>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
-              <Link className='btn' to={card.url} title={card.title}>Servizi</Link>
+              <Link className='btn' to={card.url} title={card.title}>Avanti</Link> {/* Alterado o texto do botão para "Scopri di più" */}
             </div>
           </div>
         ))}

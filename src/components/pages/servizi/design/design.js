@@ -1,4 +1,3 @@
-// design.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './design.css';
@@ -45,7 +44,7 @@ const Design = () => {
         </div>
       </section>
       <section className='archive-card container-fluid'>
-        <h3 className='title'>Cosa hai bisogno?</h3>
+        <h3 className='title'>Cosa facciamo?</h3>
         {cardData.map((card, index) => (
           <div className='card' key={index}>
             <div className='card-content'>
