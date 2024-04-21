@@ -22,24 +22,16 @@ const MenuToggle = () => {
   };
 
   const menuToggleLinks = [
-    { to: "/", text: "Home", icon: icons.home() },
-    { to: "#", text: "Servizi", icon: icons.addressBook(),
-      submenu: [
-        { to: "/servizi/design", text: "Design", icon: icons.addressBook() },
-        { to: "/servizi/sviluppo", text: "Sviluppo", icon: icons.addressBook() }
-      ]
-    },
-    { to: "/contact", text: "Contact", icon: icons.addressBook() }
+    { to: "/", title: "Home", text: "Home", icon: icons.home() },
+    { to: "/servizi", title: "Servizi", text: "Servizi", icon: icons.addressBook()},
+    {/* to: "/servizi", title: "Servizi", text: "Servizi", icon: icons.addressBook(), submenu: []},*/},
+    { to: "/contact", title: "Contact", text: "Contact", icon: icons.addressBook() }
   ];
 
   const renderMenuToggle = (menuItem) => (
     <li key={menuItem.to}>
       {menuItem.submenu ? (
         <>
-          <Link to="#" onClick={handleServiziClick} title={menuItem.text}>
-            <span>{menuItem.icon}</span>
-            {menuItem.text}
-          </Link>
           <ul className={isSubmenuOpen ? 'open' : ''}>
             {menuItem.submenu.map(submenu => renderMenuToggle(submenu))}
           </ul>

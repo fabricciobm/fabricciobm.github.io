@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './menu.css';
 import icons from './../../icons';
-
+{/*
 const Menu = () => {
   const menuLinks = [
     { to: "/", title: "Home", text: "Home", icon: icons.home() },
@@ -18,6 +18,13 @@ const Menu = () => {
     ]},
     { to: "/contact", title: "Contact", text: "Contact", icon: icons.addressBook() }
   ];
+*/}
+  const Menu = () => {
+    const menuLinks = [
+      { to: "/", title: "Home", text: "Home", icon: icons.home() },
+      { to: "/servizi", title: "Servizi", text: "Servizi", icon: icons.addressBook(), submenu: []},
+      { to: "/contact", title: "Contact", text: "Contact", icon: icons.addressBook() }
+    ];
 
   const renderMenu = (menu) => (
     <li key={menu.to}>
