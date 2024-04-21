@@ -60,7 +60,7 @@ const Home = () => {
     <div className='home'>
       <section className='title-page-home'>
         <div className='container-fluid'>
-          <h2>Innovazione Creativa</h2>
+          <h2>Creativo</h2>
           <p>Benvenuti nel mio spazio digitale, dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
           <button className='btn' title="Avanti">Avanti</button>
         </div>
