@@ -42,81 +42,65 @@
   color: white;
   text-shadow: 1px 1px 1px black;
 }
-  /* Section Archive card */
 .archive-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: stretch;
+  margin-top: 20px;
 }
-.archive-card .card {
-  width: calc(var(--archive-card) - 1em);
-  background: var(--archive-card-background);
+
+.card {
+  width: calc(33.333% - 20px);
   margin-bottom: 20px;
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.archive-card .card .card-content {
+
+.card .card-content {
   position: relative;
   overflow: hidden;
 }
-.archive-card .card .card-content .card-bg {
+
+.card .card-content .card-bg {
   width: 100%;
   height: 200px;
   background-size: cover;
   background-position: center;
 }
-.archive-card .card .card-content h3{
-  padding: 20px 20px 0 20px;
+
+.card .card-content h3 {
+  padding: 20px;
   margin: 0;
-  font-size: var(--archive-card-h3);
-}
-.archive-card .card .card-content p{
-  padding: 0 20px 0 20px;
-  margin: 0;
-  font-size: var(--archive-card-p);
-}
-.archive-card .card .card-content .btn{
-  margin: 1em;
-}
-/* Section Price */
-.pricing {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-}
-.pricing-column {
-  width: calc(var(--price-column) - 10px); 
-  background: var(--price-column-background);
-  border-radius: var(--border-radius);
-  padding: 2em 0;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-bottom: 2em;
-}
-.pricing-column h3 {
-  font-size: var(--price-h3);
+  font-size: 1.5em;
 }
 
-.pricing-column ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-}
-
-.pricing-column p.price {
-  font-size: var(--price-price);
+.card .card-content p {
+  padding: 0 20px 20px;
   margin: 0;
+  font-size: 1em;
 }
 
-.pricing-column p.plan {
-  font-size: var(--price-plan);
-  margin: 0;
+.card .card-content .btn {
+  margin: 0 20px 20px;
 }
 
-@media(max-width:768px) {
-  .card,.pricing-column{width: 100%!important;}
+@media (max-width: 992px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(100% - 20px);
+  }
+
+  .card:nth-last-child(2) {
+    order: 2; /* Último card, segundo da direita */
+  }
+
+  .card:last-child {
+    order: 1; /* Último card, primeiro da direita */
+  }
 }

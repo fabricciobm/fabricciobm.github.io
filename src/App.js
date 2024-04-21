@@ -6,6 +6,7 @@ import Footer from './components/footer/footer';
 import Home from './components/pages/home/home';
 import Servizi from './components/pages/servizi/servizi';
 import Design from './components/pages/servizi/design/design';
+import Logo from './components/pages/servizi/design/logo/logo';
 import Sviluppo from './components/pages/servizi/sviluppo/sviluppo';
 import Contact from './components/pages/contact/contact';
 import './App.css';
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/servizi" element={<Servizi />} />
+          <Route path="/servizi/design/logo" element={<Logo />} />
           <Route path="/servizi/design" element={<Design />} />
           <Route path="/servizi/sviluppo" element={<Sviluppo />} />
           <Route path="/contact" element={<Contact />} />

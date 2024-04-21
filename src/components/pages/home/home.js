@@ -60,14 +60,14 @@ const Home = () => {
     <div className='home'>
       <section className='title-page-home'>
         <div className='container-fluid'>
-          <h2>Creativo</h2>
-          <p>Benvenuti nel mio spazio digitale, dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
+          <h2>Benvenuti</h2>
+          <p>nel mio spazio digitale, dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
           <button className='btn' title="Avanti">Avanti</button>
         </div>
       </section>
 
       <section className='archive-card container-fluid'>
-        <h3 className='title'>Cosa facciamo?</h3>
+        <h3 className='title'>I nostri servizi</h3>
         {cardData.map((card, index) => (
           <div className='card' key={index}>
             <div className='card-content'>
@@ -81,7 +81,7 @@ const Home = () => {
       </section>
 
       <section className="pricing container-fluid">
-        <h3 className='title'>Quanto costa?</h3>
+        <h3 className='title'>più venduti</h3>
         {pricingData.map((plan, index) => (
           <div className="pricing-column" key={index}>
             <h3>{plan.title}</h3>

@@ -51,6 +51,10 @@ h2,h3,h4,h5,h6{
   padding: 10em 0;
 }
 
+.space{
+  padding: 2em 0;
+  width: 100%;
+}
 
 @media(max-width:768px){
   .app-header {
