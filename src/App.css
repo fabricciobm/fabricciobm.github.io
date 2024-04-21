@@ -35,9 +35,9 @@ h2,h3,h4,h5,h6{
   display: inline-block;
   cursor: pointer;
   border-radius: var(--btn1-border-radius);
-  font-size: 1.3em!important;
+  font-size: 1em!important;
   font-weight: 300!important;
-  font-family: var(--font2);
+  font-family: var(--font1);
   text-shadow: 1px 1px 1px black;
 }
 .btn:hover {
@@ -54,6 +54,51 @@ h2,h3,h4,h5,h6{
 .space{
   padding: 2em 0;
   width: 100%;
+}
+
+.archive-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.archive-card .card {
+  width: calc(var(--archive-card) - 1em);
+  background: var(--archive-card-background);
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.archive-card .card .card-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-card .card .card-content .card-bg {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+
+.archive-card .card .card-content p {
+  font-size: 1em;
+}
+
+
+.servizi input[type="text"] {
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  font-size: 1em;
+}
+
+.servizi select {
+  padding: 9px;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 1em;
 }
 
 @media(max-width:768px){
