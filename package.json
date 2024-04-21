@@ -2,7 +2,7 @@
   "name": "fabra",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fabricciobm.github.io/servizi",
+  "homepage": "https://fabricciobm.github.io",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
