@@ -260,8 +260,7 @@ button.cart-toggle-btn {
   background-color: #0056b3;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
   select, input {
     width: 45% !important;
@@ -282,6 +281,7 @@ button.cart-toggle-btn {
   }
 
   .card {
-    width: 100% !important;
+    width: calc(50% - 1em) !important;
+   margin: .5em;
   }
 }

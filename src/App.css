@@ -45,6 +45,10 @@ h2,h3,h4,h5,h6{
   background-color: #007bff;
 }
 
+.btn-big{
+  font-size: 2em!important;
+  margin-top: 1em;
+}
 
 .btn-black {
   background: black;

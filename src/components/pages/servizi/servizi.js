@@ -156,7 +156,7 @@ const Servizi = () => {
       <section className='title-page-servizi'>
         <div className='container-fluid'>
           <h2>Servizi</h2>
-          <p>Esplora il potere della scelta: trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
+          <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
           <input
             type='text'
             placeholder='Cerca...'
@@ -183,7 +183,7 @@ const Servizi = () => {
               <h3>{card.title}</h3>
               <p>{card.description}</p>
               <button className="btn btn-white" onClick={() => addToCart({...card, id: index})}>Aggiungi al carrello</button>
-              <button className="btn btn-white" onClick={() => openModal(card)}>Leggi +</button>
+              <button className="btn btn-white" onClick={() => openModal(card)}>Info</button>
             </div>
           </div>
         ))}
@@ -203,7 +203,7 @@ const Servizi = () => {
           </div>
         ))}
         <p>Total: €{calculateTotal()}</p>
-        <button className="btn btn-white" onClick={sendWhatsAppMessage}>Checkout</button>
+        <button className="btn btn-white  btn-big" onClick={sendWhatsAppMessage}>Checkout</button>
       </div>
       {showModal && (
         <div className="modal">
@@ -218,17 +218,6 @@ const Servizi = () => {
                 <button className="btn btn-white" onClick={() => {addToCart(selectedService); closeModal(); setShowCart(true)}}>Aggingi al carrelo</button>
               </div>
             )}
-          </div>
-        </div>
-      )}
-      {showCheckoutModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeCheckoutModal}>&times;</span>
-            <h2>Checkout</h2>
-            <form onSubmit={handleSubmit}>
-              <button className="btn btn-white" onClick={sendWhatsAppMessage}>WhatsApp</button>
-            </form>
           </div>
         </div>
       )}
