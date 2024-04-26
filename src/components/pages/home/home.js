@@ -62,7 +62,6 @@ const Home = () => {
         <div className='container-fluid'>
           <h2>Benvenuti</h2>
           <p>nel mio spazio digitale, dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
-          <button className='btn' title="Avanti">Avanti</button>
         </div>
       </section>
 
@@ -74,7 +73,7 @@ const Home = () => {
               <div className='card-bg' style={{backgroundImage: `url(${card.image})`}}></div>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
-              <Link className='btn' to={card.url} title={card.title}>Avanti</Link>
+              <Link className='btn-white' to={card.url} title={card.title}>Avanti</Link>
             </div>
           </div>
         ))}
@@ -92,7 +91,7 @@ const Home = () => {
                 <li key={i}>{feature}</li>
               ))}
             </ul>
-            <button href="#" className="btn" title="Comprare...">Comprare</button>
+            <button href="#" className="btn-white" title="Comprare...">Comprare</button>
           </div>
         ))}
       </section>

@@ -25,30 +25,41 @@ h2,h3,h4,h5,h6{
   padding: .5em 1em .5em 1em;
   text-align: center;
 }
-.btn {
-  background-color: var(--btn1-background);
-  border: none;
+
+button.btn {
+  background: transparent;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid black;
+  color: black;
+}
+
+button.btn-black {
+  background: black;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
   color: white;
-  padding: .5em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: var(--btn1-border-radius);
-  font-size: 1em!important;
-  font-weight: 300!important;
-  font-family: var(--font1);
-  text-shadow: 1px 1px 1px black;
 }
-.btn:hover {
-  background-color: var(--btn1-background-hover);
+
+button.btn-white {
+  background: white;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid black;
+  color: black;
 }
-.title-page {
-  background-blend-mode: overlay;
-  background-position: top;
-  background-size: cover;
-  text-align: center;
-  padding: 10em 0;
+
+button.btn-red {
+  background: red;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  color: white;
 }
 
 .space{
@@ -75,17 +86,21 @@ h2,h3,h4,h5,h6{
 .archive-card .card .card-content {
   position: relative;
   overflow: hidden;
+  padding: 1em;
+
 }
 
 .archive-card .card .card-content .card-bg {
   width: 100%;
   height: 100px;
+  margin-bottom: .5em;
   background-size: cover;
   background-position: center;
 }
 
 .archive-card .card .card-content p {
   font-size: 1em;
+  margin: .5em
 }
 
 

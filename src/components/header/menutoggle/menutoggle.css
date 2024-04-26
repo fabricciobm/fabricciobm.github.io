@@ -14,10 +14,13 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 100!important;
   }
   
-  .toggle-button button:focus {
+.toggle-button button:hover{
     outline: none;
+    background-color: transparent;
+    color: gray;
   }
   
   .toggle-btn {
