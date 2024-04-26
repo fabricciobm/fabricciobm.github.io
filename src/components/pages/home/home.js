@@ -61,39 +61,9 @@ const Home = () => {
       <section className='title-page-home'>
         <div className='container-fluid'>
           <h2>Benvenuti</h2>
-          <p>nel mio spazio digitale, dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
+          <p>Nel mio spazio digitale, dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
+          <Link to="./servizi" className="btn btn-white">Inizia</Link>
         </div>
-      </section>
-
-      <section className='archive-card container-fluid'>
-        <h3 className='title'>I nostri servizi</h3>
-        {cardData.map((card, index) => (
-          <div className='card' key={index}>
-            <div className='card-content'>
-              <div className='card-bg' style={{backgroundImage: `url(${card.image})`}}></div>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-              <Link className='btn-white' to={card.url} title={card.title}>Avanti</Link>
-            </div>
-          </div>
-        ))}
-      </section>
-
-      <section className="pricing container-fluid">
-        <h3 className='title'>più venduti</h3>
-        {pricingData.map((plan, index) => (
-          <div className="pricing-column" key={index}>
-            <h3>{plan.title}</h3>
-            <p className="price">{plan.price}</p>
-            <p className="plan">{plan.plan}</p>
-            <ul>
-              {plan.features.map((feature, i) => (
-                <li key={i}>{feature}</li>
-              ))}
-            </ul>
-            <button href="#" className="btn-white" title="Comprare...">Comprare</button>
-          </div>
-        ))}
       </section>
     </div>
   );

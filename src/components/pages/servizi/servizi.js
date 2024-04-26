@@ -155,8 +155,8 @@ const Servizi = () => {
     <div className='servizi'>
       <section className='title-page-servizi'>
         <div className='container-fluid'>
-          <h2>Benvenuti</h2>
-          <p>nel mio spazio digitale, dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
+          <h2>Servizi</h2>
+          <p>Esplora il potere della scelta: trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
           <input
             type='text'
             placeholder='Cerca...'
@@ -182,8 +182,8 @@ const Servizi = () => {
               <div className='card-bg' style={{backgroundImage: `url(${card.image})`}}></div>
               <h3>{card.title}</h3>
               <p>{card.description}</p>
-              <button className="btn-white" onClick={() => addToCart({...card, id: index})}>Aggiungi al carrello</button>
-              <button className="btn-white" onClick={() => openModal(card)}>Leggi +</button>
+              <button className="btn btn-white" onClick={() => addToCart({...card, id: index})}>Aggiungi al carrello</button>
+              <button className="btn btn-white" onClick={() => openModal(card)}>Leggi +</button>
             </div>
           </div>
         ))}
@@ -203,7 +203,7 @@ const Servizi = () => {
           </div>
         ))}
         <p>Total: €{calculateTotal()}</p>
-        <button className="btn-whatsapp" onClick={sendWhatsAppMessage}>Checkout</button>
+        <button className="btn btn-white" onClick={sendWhatsAppMessage}>Checkout</button>
       </div>
       {showModal && (
         <div className="modal">
@@ -215,7 +215,7 @@ const Servizi = () => {
                 <h2>{selectedService.title}</h2>
                 <p>€{selectedService.price}</p>
                 <p>{selectedService.description}</p>
-                <button className="btn-white" onClick={() => {addToCart(selectedService); closeModal(); setShowCart(true)}}>Aggingi al carrelo</button>
+                <button className="btn btn-white" onClick={() => {addToCart(selectedService); closeModal(); setShowCart(true)}}>Aggingi al carrelo</button>
               </div>
             )}
           </div>
@@ -227,7 +227,7 @@ const Servizi = () => {
             <span className="close" onClick={closeCheckoutModal}>&times;</span>
             <h2>Checkout</h2>
             <form onSubmit={handleSubmit}>
-              <button className="btn-whatsapp" onClick={sendWhatsAppMessage}>WhatsApp</button>
+              <button className="btn btn-white" onClick={sendWhatsAppMessage}>WhatsApp</button>
             </form>
           </div>
         </div>

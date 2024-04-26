@@ -26,19 +26,27 @@ h2,h3,h4,h5,h6{
   text-align: center;
 }
 
-button.btn {
+.btn {
   background: transparent;
   padding: 5px;
   margin-right: 5px;
   border: 1px solid #ccc;
   background: white;
-  padding: 5px;
+  display: inline-block;
+  padding: 12px 24px;
   margin-right: 5px;
   border: 1px solid black;
   color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: var(--font2);
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #007bff;
 }
 
-button.btn-black {
+
+.btn-black {
   background: black;
   padding: 5px;
   margin-right: 5px;
@@ -46,7 +54,7 @@ button.btn-black {
   color: white;
 }
 
-button.btn-white {
+.btn-white {
   background: white;
   padding: 5px;
   margin-right: 5px;
@@ -54,7 +62,11 @@ button.btn-white {
   color: black;
 }
 
-button.btn-red {
+.btn-white:hover {
+  color: white;
+}
+
+.btn-red {
   background: red;
   padding: 5px;
   margin-right: 5px;
