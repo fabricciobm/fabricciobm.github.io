@@ -281,7 +281,7 @@ button.cart-toggle-btn {
   }
 
   .card {
-    width: calc(50% - 1em) !important;
+    width: calc(100% - 1em) !important;
    margin: .5em;
   }
 }
