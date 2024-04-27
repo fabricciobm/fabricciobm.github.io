@@ -2,7 +2,7 @@
 :root{
     /*Config title-page*/
     --title-page-home-background-image: url('../assets/background.webp');
-    --title-page-home-background-color:rgba(66, 5, 164, 0.758);
+    --title-page-home-background-color:rgba(0, 0, 0, 0.758);
     --title-page-home-color: white;
     --title-page-home-font-size-h2: 4em;
     --title-page-home-font-size-p: 1.5em;
