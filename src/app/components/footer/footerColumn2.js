@@ -12,12 +12,12 @@ const FooterColumn2 = () => {
           </a>
         </li>
         <li>
-          <a href="link-do-facebook" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:fabricciobm@outlook.com" target="_blank" rel="noopener noreferrer">
             {iconComponents.mail()} fabricciobm@outlook.com
           </a>
         </li>
         <li>
-          <a href="link-do-messenger" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             {iconComponents.route()}  Bergamo - BG , Italy
           </a>
         </li>
