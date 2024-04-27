@@ -28,3 +28,57 @@
   color: white;
   text-shadow: 1px 1px 1px black;
 }
+
+
+
+/* Adicione estas regras ao seu arquivo contact.css */
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos adicionais para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+  form {
+    padding: 0 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-size: 14px;
+  }
+}

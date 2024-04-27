@@ -141,15 +141,31 @@
   color:white;
 }
 
+.filter{
+  max-width: 350px;
+  margin: 0 auto;
+}
 
-@media screen and (max-width: 768px) {
+.filter select{
+  width: 40% !important;
+  float: left;
+}
+.filter input {
+  width: 60% !important;
+  float: left;
+}
+
+
+
+@media screen and (max-width: 1024px) {
   .modal-content img {
       max-width: 100%;
       margin-right: 0;
       float: none;
   }
+
   .card {
-      width: calc(100% - 1em) !important;
+      width: calc(50% - 1em) !important;
       margin: .5em;
   }
 }

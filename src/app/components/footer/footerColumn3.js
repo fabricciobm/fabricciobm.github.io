@@ -8,33 +8,33 @@ const FooterColumn3 = () => {
       <h2>Sociale</h2>
       <ul className="social-icons">
         <li>
-          <a href="link-do-whatsapp" target="_blank" rel="noopener noreferrer">
+          <a href="https://api.whatsapp.com/send/?phone=393517733589&text=fabricciobm.github.io" target="_blank" rel="noopener noreferrer">
             {iconComponents.whatsapp()}
           </a>
         </li>
         <li>
-          <a href="link-do-facebook" target="_blank" rel="noopener noreferrer">
+          <a href="https://facebook.com/fabricciomb" target="_blank" rel="noopener noreferrer">
             {iconComponents.facebook()}
           </a>
         </li>
         <li>
-          <a href="link-do-messenger" target="_blank" rel="noopener noreferrer">
-            {iconComponents.messenger()}
-          </a>
-        </li>
-        <li>
-          <a href="link-do-instagram" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com/fabricciomb" target="_blank" rel="noopener noreferrer">
             {iconComponents.instagram()}
           </a>
         </li>
         <li>
-          <a href="link-do-telegram" target="_blank" rel="noopener noreferrer">
-            {iconComponents.telegram()}
+          <a href="https://x.com/fabricciomb" target="_blank" rel="noopener noreferrer">
+            {iconComponents.Xtwitter()}
           </a>
         </li>
         <li>
-          <a href="link-do-twitter" target="_blank" rel="noopener noreferrer">
-            {iconComponents.twitter()}
+          <a href="https://linked.in/fabricciomb" target="_blank" rel="noopener noreferrer">
+            {iconComponents.linkedin()}
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@fabricciomb" target="_blank" rel="noopener noreferrer">
+            {iconComponents.Youtube()}
           </a>
         </li>
       </ul>

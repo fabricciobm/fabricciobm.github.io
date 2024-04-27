@@ -97,22 +97,24 @@ const Servizi = () => {
         <div className='container-fluid'>
           <h2>Servizi</h2>
           <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
-          <input
-            type='text'
-            placeholder='Cerca...'
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          <select
-            value={selectedCategory}
-            onChange={handleCategorySelect}
-          >
-            <option value=''>Tutti</option>
-            <option value='design'>Design</option>
-            <option value='sviluppo'>Sviluppo</option>
-            <option value='marketing'>Marketing</option>
-            <option value='custom'>Custom</option>
-          </select>
+          <div className='filter'>
+            <input
+              type='text'
+              placeholder='Cerca...'
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+            <select
+              value={selectedCategory}
+              onChange={handleCategorySelect}
+            >
+              <option value=''>Tutti</option>
+              <option value='design'>Design</option>
+              <option value='sviluppo'>Sviluppo</option>
+              <option value='marketing'>Marketing</option>
+              <option value='custom'>Custom</option>
+            </select>
+          </div>
         </div>
       </section>
       <section className='archive-card container-fluid'>

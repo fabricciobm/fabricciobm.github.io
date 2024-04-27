@@ -21,6 +21,8 @@ import {
   faFacebookMessenger,
   faTwitter,
   faXTwitter,
+  faLinkedin,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
 // Objeto que mapeia os nomes dos ícones aos seus respectivos componentes
@@ -43,7 +45,9 @@ const iconComponents = {
   telegram: () => <FontAwesomeIcon icon={faTelegram} />,
   whatsapp: () => <FontAwesomeIcon icon={faWhatsapp} />,
   twitter: () => <FontAwesomeIcon icon={faTwitter} />,
-  Xtwitter: () => <FontAwesomeIcon icon={faXTwitter} />
+  Xtwitter: () => <FontAwesomeIcon icon={faXTwitter} />,
+  linkedin: () => <FontAwesomeIcon icon={faLinkedin} />,
+  Youtube: () => <FontAwesomeIcon icon={faYoutube} />
 };
 
 // Exporta o objeto para ser usado em outros arquivos
