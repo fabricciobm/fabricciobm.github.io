@@ -1,4 +1,4 @@
-@import 'style.css';
+@import './style.css';
 body {
   margin: 0;
   font-family: var(--font1);
@@ -58,7 +58,7 @@ h2,h3,h4,h5,h6{
   color: white;
 }
 
-.btn-white {
+.btn-white, .btn-white:hover {
   background: white;
   padding: 5px;
   margin-right: 5px;
@@ -66,9 +66,13 @@ h2,h3,h4,h5,h6{
   color: black;
 }
 
-.btn-white:hover {
+
+.btn-trans,.btn-trans:hover{
+  background-color: transparent;
   color: white;
+  border:1px solid white;
 }
+
 
 .btn-red {
   background: red;

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import '../../style.css';
+:root {
+    /*Config title-page*/
+    --title-page-servizi-background-image: url('./../assets/background2.webp');
+    --title-page-servizi-background-color: hsla(273, 84%, 42%, 0.95);
+    --title-page-servizi-color: white;
+    --title-page-servizi-font-size-h2: 4em;
+    --title-page-servizi-font-size-p: 1.5em;
+    
+    /* Section Archive card */
+    --archive-card: 25%;
+    --archive-card-background: white;
+    --archive-card-h3: 2em;
+    --archive-card-p: 1.2em;
+    --border-radius: 10px;
+    /* Section Price */
+    --price-column: 33%;
+    --price-column-background: white;
+    --price-h3: 2em;
+    --price-price: 20px;
+    --price-plan: 30px;
+  }
+  
+  /* Section intro-site */
+  .title-page-servizi {
+    background-image: var(--title-page-servizi-background-image);
+    background-color: var(--title-page-servizi-background-color);
+    background-blend-mode: overlay;
+    background-position: top;
+    background-size: cover;
+    text-align: center;
+    color: var(--title-page-servizi-color);
+    padding: 10em 0;
+  }
+  
+  .title-page-servizi h2 {
+    font-size: var(--title-page-servizi-font-size-h2);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  
+  .title-page-servizi p {
+    font-size: var(--title-page-servizi-font-size-p);
+    color: white;
+  }
+  
+ 
+  .modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 9999999;
+    position: fixed;
+    width: calc(100% - 4em);
+    max-height: 90vh;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    padding: 2em;
+    margin: 0;
+    font-size: 1.2em;
+    min-height: 100%;
+  }
+  
+  .modal-content img {
+    max-width: calc(50% - 5em);
+    margin-right: 5em;
+    float: left;
+  }
+  
+  .close {
+    color: white;
+    float: right;
+    font-size: 2em;
+    font-weight: 100;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: gray;
+    float: right;
+    font-size: 2em;
+    font-weight: 100;
+  }
+  
+  /* Cart section */
+  .cart {
+    display: none;
+    border: none!important;
+    padding: 10px;
+    margin-top: 10px;
+    z-index: 9999;
+    border: none!important;
+}
+  
+  .cart p {
+    margin: 30px 0 0 0px;
+  }
+  
+  
+  button.cart-toggle-btn {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    padding: .5em;
+    border: 0px;
+    font-size: 1.5em;
+    background: black;
+    color: white;
+  }
+  
+  .cart-toggle-btn:hover {
+    background-color: #0056b3;
+  }
+
+
+.cart.open {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: none !important;
+  color: #fff;
+  display: block;
+  font-size: 1.2em;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 2em;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 4em);
+  max-height: 90vh;
+  overflow: auto;
+}
+
+
+
+.cart .close-cart-btn{
+  float:right;
+  font-size: 1em;
+  background-color: transparent;
+  border:none;
+  color:white;
+}
+  
+@media screen and (max-width: 1024px) {
+
+select, input {
+    width: 45% !important;
+    float: left;
+}
+.modal-content img {
+    max-width: 100%;
+    margin-right: 0;
+    float: none;
+}
+
+.title-page-servizi h2 {
+    font-size: 2em;
+}
+
+.title-page-servizi p {
+    font-size: 1em;
+}
+
+.card {
+    width: calc(100% - 1em) !important;
+    margin: .5em;
+}
+}

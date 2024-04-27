@@ -1,0 +1,100 @@
+@import '../../style.css';
+.menu {
+  margin-left: auto;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  background: var(--menu-li-background);
+  display: inline-block;
+  line-height: 40px;
+  padding: 15px 14px;
+  position: relative; /* Adiciona posição relativa para posicionar o submenu */
+}
+
+.menu li:hover{
+  background: var(--menu-li-background-hover);
+}
+
+.menu a{
+  color: var(--menu-li-a-color);
+  text-decoration: none;
+  font-size: 16px;
+  text-shadow: 1px 1px 1px black!important;
+}
+
+.menu li:hover a{
+  color: var(--menu-li-a-color-hover);
+}
+
+.menu svg {
+  font-size: 14px;
+  margin-right: 10px;
+  text-shadow: 1px 1px 1px black!important;
+}
+
+.menu ul ul {
+  display: none;
+  position: absolute;
+  background: var(--submenu-background);
+  width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+.menu ul ul li {
+  display: block;
+  background: none;
+  padding: .5em;
+}
+
+.menu ul li:hover > ul {
+  display: block;
+}
+
+.menu li ul li:hover {
+  background: var(--submenu-background-hover);
+}
+
+.menu ul ul ul {
+  display: none;
+  position: absolute;
+  background: var(--subsubmenu-background);
+  width: 200px;
+  top: 0;
+  left: 100%; /* Posiciona o sub-submenu à direita do submenu pai */
+}
+
+.menu ul ul ul li {
+  display: block;
+  background: none;
+  padding: 10px;
+}
+
+.menu ul ul li:hover > ul {
+  display: block;
+}
+
+.menu ul ul ul ul {
+  display: none;
+  position: absolute;
+  background: var(--subsubsubmenu-background);
+  width: 200px;
+  top: 0;
+  left: 100%; /* Posiciona o sub-sub-submenu à direita do sub-submenu pai */
+}
+
+.menu ul ul ul ul li {
+  display: block;
+  background: none;
+  padding: 10px;
+}
+
+.menu ul ul ul li:hover > ul {
+  display: block;
+}
