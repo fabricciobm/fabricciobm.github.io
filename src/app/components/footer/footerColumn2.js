@@ -1,10 +1,27 @@
 import React from 'react';
 import './../../styles/footer.css';
+import iconComponents from './../../components/icons'; 
+
 const FooterColumn2 = () => {
   return (
     <div className="footerColumn">
-      <h2>Column</h2>
-      <p>Teste.</p>
+      <ul className="footer-contact">
+        <li>
+          <a href="tel:+393517733589" target="_blank" rel="noopener noreferrer">
+            {iconComponents.phone()} +393517733589
+          </a>
+        </li>
+        <li>
+          <a href="link-do-facebook" target="_blank" rel="noopener noreferrer">
+            {iconComponents.mail()} fabricciobm@outlook.com
+          </a>
+        </li>
+        <li>
+          <a href="link-do-messenger" target="_blank" rel="noopener noreferrer">
+            {iconComponents.route()}  Bergamo - BG , Italy
+          </a>
+        </li>
+      </ul>
     </div>
   );
 }

@@ -10,7 +10,7 @@ const Services = [
     {
       image: serviceImage1,
       title: 'Logo Design',
-      description: 'Creazione di loghi distintivi per aziende e marchi.',
+      description: 'Creazione di loghi distintivi per aziende e marchi. Creazione di loghi distintivi per aziende e marchi. Creazione di loghi distintivi per aziende e marchi.',
       url: '/logo-design',
       tags: ['design'],
       price: 50

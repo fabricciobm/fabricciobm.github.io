@@ -7,7 +7,11 @@
   background: var(--header-navbar-background);
   position: absolute;
   width: 100%;
+  position: fixed;
+  z-index: 9999;
 }
+
+
 .app-header .container-fluid{
   display: flex;
   margin: 0 auto;

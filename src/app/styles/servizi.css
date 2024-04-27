@@ -11,7 +11,7 @@
     /* Section Archive card */
     --archive-card: 25%;
     --archive-card-background: white;
-    --archive-card-h3: 2em;
+    --archive-card-h3: 3em;
     --archive-card-p: 1.2em;
     --border-radius: 10px;
     /* Section Price */
@@ -140,29 +140,16 @@
   border:none;
   color:white;
 }
-  
-@media screen and (max-width: 1024px) {
 
-select, input {
-    width: 45% !important;
-    float: left;
-}
-.modal-content img {
-    max-width: 100%;
-    margin-right: 0;
-    float: none;
-}
 
-.title-page-servizi h2 {
-    font-size: 2em;
-}
-
-.title-page-servizi p {
-    font-size: 1em;
-}
-
-.card {
-    width: calc(100% - 1em) !important;
-    margin: .5em;
-}
+@media screen and (max-width: 768px) {
+  .modal-content img {
+      max-width: 100%;
+      margin-right: 0;
+      float: none;
+  }
+  .card {
+      width: calc(100% - 1em) !important;
+      margin: .5em;
+  }
 }

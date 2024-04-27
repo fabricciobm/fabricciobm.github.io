@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faHome, 
@@ -8,6 +7,8 @@ import {
   faTimes,
   faArrowAltCircleUp,
   faPhone,
+  faMailBulk,
+  faRoute,
   faShop,
   faInfo,
   faAdd,
@@ -19,6 +20,7 @@ import {
   faWhatsapp,
   faFacebookMessenger,
   faTwitter,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
 // Objeto que mapeia os nomes dos ícones aos seus respectivos componentes
@@ -30,6 +32,8 @@ const iconComponents = {
   close: () => <FontAwesomeIcon icon={faTimes} />,
   top: () => <FontAwesomeIcon icon={faArrowAltCircleUp} />,
   phone: () => <FontAwesomeIcon icon={faPhone} />,
+  mail: () => <FontAwesomeIcon icon={faMailBulk} />,
+  route: () => <FontAwesomeIcon icon={faRoute} />,
   shop: () => <FontAwesomeIcon icon={faShop} />,
   info: () => <FontAwesomeIcon icon={faInfo} />,
   add: () => <FontAwesomeIcon icon={faAdd} />,
@@ -38,7 +42,8 @@ const iconComponents = {
   instagram: () => <FontAwesomeIcon icon={faInstagram} />,
   telegram: () => <FontAwesomeIcon icon={faTelegram} />,
   whatsapp: () => <FontAwesomeIcon icon={faWhatsapp} />,
-  twitter: () => <FontAwesomeIcon icon={faTwitter} />
+  twitter: () => <FontAwesomeIcon icon={faTwitter} />,
+  Xtwitter: () => <FontAwesomeIcon icon={faXTwitter} />
 };
 
 // Exporta o objeto para ser usado em outros arquivos

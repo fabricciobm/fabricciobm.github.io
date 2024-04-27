@@ -1,10 +1,12 @@
 import React from 'react';
 import './../../styles/footer.css';
+import Logo from './../header/logo';
 const FooterColumn1 = () => {
   return (
-    <div className="footerColumn">
-      <h2>Column</h2>
-      <p>Teste.</p>
+    <div className="footerColumn column1">
+        <Logo />
+        <h2>FABRICCIOMB.GITHUB.IO</h2>
+        <p>2014-2024</p>
     </div>
   );
 }

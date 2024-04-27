@@ -120,7 +120,11 @@ h2,h3,h4,h5,h6{
 
 .archive-card .card .card-content p {
   font-size: 1em;
-  margin: .5em
+  margin: .5em 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Número de linhas desejadas */
+  overflow: hidden;
 }
 
 
@@ -134,12 +138,4 @@ h2,h3,h4,h5,h6{
   padding: 9px;
   border-radius: 0px 10px 10px 0px;
   font-size: 1em;
-}
-
-@media(max-width:768px){
-  .app-header {
-    position: fixed;
-    z-index: 9999;
-  }
-  
 }

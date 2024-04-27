@@ -1,5 +1,5 @@
 footer.app-footer {
-  background-color: #222;
+  background-color: hwb(0 0% 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,7 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
+  padding: 2em;
 }
 
 .footerColumn{
@@ -21,6 +22,57 @@ footer.app-footer .container, footer.app-footer .container-fluid {
 
 .footerColumn:nth-child(2) {
   margin: 0 5em;
+}
+
+.footerColumn .social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.footerColumn .social-icons li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.footerColumn .social-icons li svg {
+  color: white;
+  font-size: 1.5em;
+}
+
+.footerColumn ul.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerColumn ul.footer-contact .logo{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+  min-height: 100%;
+}
+
+.footerColumn ul.footer-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.column1 .logo {
+  float: left;
+  padding: 0 1em 0 0;
+  height: 50px;
+}
+
+.column1 h2,.column1 p{
+  margin: 0;
+  padding: 0 .5em 0 0;
+}
+
+.column1 p{
+  font-size: .8em;
 }
 
 @media (max-width:768px){
