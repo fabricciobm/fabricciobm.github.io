@@ -12,7 +12,7 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   padding: 2em;
 }
 
-.footerColumn{
+.footerColumn {
   width: 25%;
   flex: 1;
   border-radius: 8px;
@@ -47,7 +47,7 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   margin: 0;
 }
 
-.footerColumn ul.footer-contact .logo{
+.footerColumn ul.footer-contact .logo {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -66,21 +66,22 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   height: 50px;
 }
 
-.column1 h2,.column1 p{
+.column1 h2, .column1 p {
   margin: 0;
   padding: 0 .5em 0 0;
 }
 
-.column1 p{
+.column1 p {
   font-size: .8em;
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
   .footerColumn {
     flex-basis: 100%;
     float: left;
   }
-  .footerColumn:nth-child(2){
+
+  .footerColumn:nth-child(2) {
     margin: 0;
   }
 }

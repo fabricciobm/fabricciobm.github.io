@@ -33,7 +33,7 @@ const FooterColumn3 = () => {
           </a>
         </li>
         <li>
-          <a href="https://www.youtube.com/@fabricciomb" target="_blank" rel="noopener noreferrer">
+          <a href="https://linked.in/fabricciomb" target="_blank" rel="noopener noreferrer">
             {iconComponents.Youtube()}
           </a>
         </li>

@@ -8,17 +8,17 @@ const FooterColumn2 = () => {
       <ul className="footer-contact">
         <li>
           <a href="tel:+393517733589" target="_blank" rel="noopener noreferrer">
-            {iconComponents.phone()} +393517733589
+            {iconComponents.phone()} Ligue para +393517733589
           </a>
         </li>
         <li>
           <a href="mailto:fabricciobm@outlook.com" target="_blank" rel="noopener noreferrer">
-            {iconComponents.mail()} fabricciobm@outlook.com
+            {iconComponents.mail()} Enviar email para fabricciobm@outlook.com
           </a>
         </li>
         <li>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            {iconComponents.route()}  Bergamo - BG , Italy
+            {iconComponents.route()} Localização: Bergamo - BG, Italy
           </a>
         </li>
       </ul>
