@@ -1,5 +1,3 @@
-// servizi.js
-
 import React, { useState, useEffect } from 'react';
 import Services from '../servizi/serviziData';
 import useCart from './useCart';
@@ -125,8 +123,8 @@ const Servizi = () => {
               <h3>{card.title}</h3>
               <p>{card.description}</p>
               <h3>€{card.price}</h3>
-              <button className="btn btn-white" onClick={() => {addToCart(selectedService); setShowCart(true)}}>{icons.add()} Aggiungi al carrello</button>
               <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
+              <button className="btn btn-white" onClick={() => {addToCart(card);}}>{icons.add()} Aggiungi al carrello</button>
             </div>
           </div>
         ))}
@@ -159,7 +157,7 @@ const Servizi = () => {
                 <h2>{selectedService.title}</h2>
                 <p>€{selectedService.price}</p>
                 <p>{selectedService.description}</p>
-                <button className="btn btn-trans" onClick={() => {addToCart(selectedService); closeModal(); setShowCart(true)}}> {icons.add()}  Aggingi al carrello</button>
+                <button className="btn btn-trans" onClick={() => {addToCart(selectedService); closeModal(); setShowCart(true)}}>{icons.add()} Aggiungi al carrello</button>
               </div>
             )}
           </div>

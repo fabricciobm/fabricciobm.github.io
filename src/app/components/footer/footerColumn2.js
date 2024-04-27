@@ -5,23 +5,17 @@ import iconComponents from './../../components/icons';
 const FooterColumn2 = () => {
   return (
     <div className="footerColumn">
-      <ul className="footer-contact">
-        <li>
-          <a href="tel:+393517733589" target="_blank" rel="noopener noreferrer">
-            {iconComponents.phone()} Ligue para +393517733589
-          </a>
-        </li>
-        <li>
-          <a href="mailto:fabricciobm@outlook.com" target="_blank" rel="noopener noreferrer">
-            {iconComponents.mail()} Enviar email para fabricciobm@outlook.com
-          </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            {iconComponents.route()} Localização: Bergamo - BG, Italy
-          </a>
-        </li>
-      </ul>
+      <button className="footer-button" onClick={() => window.open('https://api.whatsapp.com/send/?phone=393517733589&text=fabricciobm.github.io')} type="button">
+        {iconComponents.whatsapp()} <span>+393517733589</span>
+      </button>
+
+      <button className="footer-button" onClick={() => window.open('mailto:fabricciobm@outlook.com')} type="button">
+        {iconComponents.mail()} <span>fabricciobm@outlook.com</span>
+      </button>
+
+      <button className="footer-button" onClick={() => window.open('https://www.google.com/maps/place/B%C3%A9rgamo,+It%C3%A1lia/')} type="button">
+        {iconComponents.route()} <span>Bergamo - BG, Italia</span>
+      </button>
     </div>
   );
 }

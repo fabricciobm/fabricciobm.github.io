@@ -3,6 +3,8 @@ footer.app-footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  bottom: 0;
 }
 
 footer.app-footer .container, footer.app-footer .container-fluid {
@@ -12,7 +14,7 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   padding: 2em;
 }
 
-.footerColumn {
+.footerColumn{
   width: 25%;
   flex: 1;
   border-radius: 8px;
@@ -24,64 +26,49 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   margin: 0 5em;
 }
 
-.footerColumn .social-icons {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: inline-block;
-}
-
-.footerColumn .social-icons li {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.footerColumn .social-icons li svg {
-  color: white;
-  font-size: 1.5em;
-}
-
-.footerColumn ul.footer-contact {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footerColumn ul.footer-contact .logo {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  float: left;
-  min-height: 100%;
-}
-
-.footerColumn ul.footer-contact a {
-  color: white;
-  text-decoration: none;
-}
-
 .column1 .logo {
   float: left;
   padding: 0 1em 0 0;
   height: 50px;
 }
 
-.column1 h2, .column1 p {
+.column1 h2,.column1 p{
   margin: 0;
   padding: 0 .5em 0 0;
 }
 
-.column1 p {
+.column1 p{
   font-size: .8em;
 }
 
-@media (max-width:768px) {
+.footer-button {
+  padding: 0;
+  background: transparent;
+  color: white;
+  border: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  font-size: 1em;
+}
+.social-button{
+  background: transparent!important;
+  border: 0;
+}
+.social-button svg{
+  border: none;
+  cursor: pointer;
+  margin-right: 10px; /* Aggiungi spazio tra i bottoni */
+  color: white;
+  font-size: 1.5em;
+}
+
+@media (max-width:768px){
   .footerColumn {
     flex-basis: 100%;
     float: left;
   }
-
-  .footerColumn:nth-child(2) {
+  .footerColumn:nth-child(2){
     margin: 0;
   }
 }

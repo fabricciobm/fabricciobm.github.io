@@ -6,38 +6,23 @@ const FooterColumn3 = () => {
   return (
     <div className="footerColumn">
       <h2>Sociale</h2>
-      <ul className="social-icons">
-        <li>
-          <a href="https://api.whatsapp.com/send/?phone=393517733589&text=fabricciobm.github.io" target="_blank" rel="noopener noreferrer">
-            {iconComponents.whatsapp()}
-          </a>
-        </li>
-        <li>
-          <a href="https://facebook.com/fabricciomb" target="_blank" rel="noopener noreferrer">
-            {iconComponents.facebook()}
-          </a>
-        </li>
-        <li>
-          <a href="https://instagram.com/fabricciomb" target="_blank" rel="noopener noreferrer">
-            {iconComponents.instagram()}
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/fabricciomb" target="_blank" rel="noopener noreferrer">
-            {iconComponents.Xtwitter()}
-          </a>
-        </li>
-        <li>
-          <a href="https://linked.in/fabricciomb" target="_blank" rel="noopener noreferrer">
-            {iconComponents.linkedin()}
-          </a>
-        </li>
-        <li>
-          <a href="https://linked.in/fabricciomb" target="_blank" rel="noopener noreferrer">
-            {iconComponents.Youtube()}
-          </a>
-        </li>
-      </ul>
+      <div className="social-icons">
+        <button className="social-button" onClick={() => window.open("https://facebook.com/fabricciomb")} type="button">
+          {iconComponents.facebook()}
+        </button>
+        <button className="social-button" onClick={() => window.open("https://instagram.com/fabricciomb")} type="button">
+          {iconComponents.instagram()}
+        </button>
+        <button className="social-button" onClick={() => window.open("https://x.com/fabricciomb")} type="button">
+          {iconComponents.Xtwitter()}
+        </button>
+        <button className="social-button" onClick={() => window.open("https://linked.in/fabricciomb")} type="button">
+          {iconComponents.linkedin()}
+        </button>
+        <button className="social-button" onClick={() => window.open("https://youtube.com/fabricciomb")} type="button">
+          {iconComponents.Youtube()}
+        </button>
+      </div>
     </div>
   );
 }

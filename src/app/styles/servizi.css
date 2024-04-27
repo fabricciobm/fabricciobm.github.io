@@ -27,7 +27,7 @@
     background-image: var(--title-page-servizi-background-image);
     background-color: var(--title-page-servizi-background-color);
     background-blend-mode: overlay;
-    background-position: top;
+    background-position: center;
     background-size: cover;
     text-align: center;
     color: var(--title-page-servizi-color);
@@ -52,6 +52,7 @@
     z-index: 9999999;
     position: fixed;
     width: calc(100% - 4em);
+    height: 100%;
     max-height: 90vh;
     overflow: auto;
     top: 0;
@@ -59,7 +60,6 @@
     padding: 2em;
     margin: 0;
     font-size: 1.2em;
-    min-height: 100%;
   }
   
   .modal-content img {

@@ -17,17 +17,20 @@ const useCart = () => {
     localStorage.setItem('cartItems', JSON.stringify(newCartItems));
   };
 
-  const addToCart = (item) => {
-    const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
-    if (existingItem) {
-      const updatedCartItems = cartItems.map(cartItem =>
-        cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-      );
-      updateCartItems(updatedCartItems);
+  const addToCart = (service) => {
+    const existingIndex = cartItems.findIndex(item => item.title === service.title);
+    if (existingIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingIndex] = {
+        ...updatedCartItems[existingIndex],
+        quantity: updatedCartItems[existingIndex].quantity + 1
+      };
+      setCartItems(updatedCartItems);
     } else {
-      updateCartItems([...cartItems, { ...item, quantity: 1 }]);
+      setCartItems([...cartItems, { ...service, quantity: 1 }]);
     }
   };
+
 
   const removeFromCart = (index) => {
     const updatedCart = [...cartItems];
