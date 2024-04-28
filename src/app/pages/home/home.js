@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './../../styles/home.css';
-import imagem from './../../assets/eu.webp';
+import imagem from './../../assets/eux.webp';
 
 const Home = () => {
   return (
