@@ -139,7 +139,7 @@ h2,h3,h4,h5,h6{
 
 .archive-card .card .card-content p {
   font-size: 1em;
-  margin: m 0;
+  margin: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* Número de linhas desejadas */

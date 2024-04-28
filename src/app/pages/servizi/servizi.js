@@ -43,6 +43,7 @@ const Servizi = () => {
     const searchFilter = (
       service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       service.description.toLowerCase().includes(searchTerm.toLowerCase())
+      
     );
 
     const categoryFilter = (
@@ -81,7 +82,7 @@ const Servizi = () => {
 
   const sendWhatsAppMessage = () => {
     const phoneNumber = '393517733589';
-    const message = `Resumo do carrinho:\n${cartItems.map(item => `${item.title} - ${item.quantity}x`).join('\n')}\nTotale: €${calculateTotal()}`;
+    const message = `Ordine:\n${cartItems.map(item => `${item.title} - ${item.quantity}x`).join('\n')}\nTotale: €${calculateTotal()}`;
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL);
   };
@@ -162,7 +163,7 @@ const Servizi = () => {
           </div>
         ))}
         <h2>Totale: €{calculateTotal()}</h2>
-        <button className="btn btn-trans" onClick={sendWhatsAppMessage}>{icons.whatsapp()} Invia con WhatsApp </button>
+        <button className="btn btn-trans" onClick={sendWhatsAppMessage}>{icons.whatsapp()} Checkout con WhatsApp </button>
         <button className="btn btn-trans" onClick={toggleCart}>{icons.add()} servizi / prodotti</button>
       </div>
       {showModal && (
@@ -179,6 +180,7 @@ const Servizi = () => {
         <h2>{selectedService.title}</h2>
         <h2 className='price'>€{selectedService.price}</h2>
         <p dangerouslySetInnerHTML={{ __html: selectedService.description }} />
+        <p dangerouslySetInnerHTML={{ __html: selectedService.description_long }} />
         {selectedService.destaque.map((destaqueItem, index) => (
           <h2 key={index}>{destaqueItem}</h2>
         ))}
@@ -190,7 +192,7 @@ const Servizi = () => {
                 {selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
                 <p key={index}>{destaqueItem}</p>
                 ))}
-                <h1>€{selectedService.planos[planoKey].price}</h1>
+                <h2>€{selectedService.planos[planoKey].price}</h2>
                 <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]);  closeModal();  setShowCart(true); }}>
                   {icons.add()} Aggiungi al carrello
                 </button>
@@ -199,8 +201,8 @@ const Servizi = () => {
           </div>
         )}
         <button className="btn btn-trans add-to-cart" onClick={() => { addToCart(selectedService);  closeModal();  setShowCart(true); }}>
-  {icons.add()} Aggiungi al carrello
-</button>
+          {icons.add()} Aggiungi al carrello
+        </button>
 
       </div>
       </>
