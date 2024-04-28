@@ -11,7 +11,6 @@
 
 /* Section intro-site */
 .title-page-home {
-    background: var(--title-page-home-background-image);
     background-color: var(--title-page-home-background-color);
     background-blend-mode: overlay;
     background-position: top;
@@ -19,31 +18,22 @@
     text-align: center;
     color:  var(--title-page-home-color);
     padding: 10em 0;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .title-page-home h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .title-page-home p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
 
-.title-page-home img {
-  border-radius: 50%;
-  transition: transform 2s ease; 
-}
-
-.title-page-home img:hover {
-  transform: scale(2);
-}
-.title-page-home h2 {
-    font-size: var(--title-page-home-font-size-h2);
-    color: white;
-    text-shadow: 1px 1px 1px black;
-}
-
-.title-page-home p {
-    font-size: var(--title-page-home-font-size-p);
-    color: white;
-    text-shadow: 1px 1px 1px black;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
 
 .go-to-shop {
     position: fixed;

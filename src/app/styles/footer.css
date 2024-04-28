@@ -42,7 +42,7 @@ footer.app-footer .container, footer.app-footer .container-fluid {
 }
 
 .column2 button.footer-button svg {
-  font-size: 30px;
+  font-size: 2em;
   padding: .5em .5em 0 0;
 }
 
@@ -61,9 +61,9 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   border: 0;
 }
 .social-button svg {
-  width: 40px;
-  height: 40px;
+  font-size: 2em;
   color: white;
+  padding:.5em .5em 1em 0;
 }
 
 @media (max-width:768px){
