@@ -1,0 +1,9 @@
+# Cache por 1 semana
+<FilesMatch "\.(jpg|jpeg|png|gif|js|css|ico)$">
+    Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+# Cache por 1 dia
+<FilesMatch "\.(html|htm|xml|txt)$">
+    Header set Cache-Control "max-age=86400, public, must-revalidate"
+</FilesMatch>
