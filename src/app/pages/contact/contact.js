@@ -1,19 +1,16 @@
 import React from 'react';
 import './../../styles/contact.css';
 import iconComponents from './../../components/icons'; 
-import LazyLoad from 'react-lazyload';
 import LazyBackgroundImage from './../../assets/service1.webp';
 const Contact = () => {
   return (
     <div className='contact'>
-      <LazyLoad height={200} offset={100}>
-        <section className='title-page-contact' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
-          <div className='container-fluid'>
-            <h2>Contatto</h2>
-            <p>Chiama adesso per ulteriori informazioni!</p>
-          </div>
-        </section>
-      </LazyLoad>
+      <section className='title-page-contact' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
+        <div className='container-fluid'>
+          <h2>Contatto</h2>
+          <p>Chiama adesso per ulteriori informazioni!</p>
+        </div>
+      </section>
       <section className='contact-page container-fluid'>
         <div className='contact-info'>
           <h2>Chiamami</h2>
@@ -30,7 +27,7 @@ const Contact = () => {
           </button>
         </div>
         <div className='contact-form'>
-          <iframe src="https://forms.gle/8k1vduUzNmVdMZGf7" ></iframe>
+        <iframe src="https://forms.gle/8k1vduUzNmVdMZGf7" ></iframe>
         </div>
       </section>
     </div>

@@ -3,7 +3,6 @@ import Services from '../servizi/serviziData';
 import useCart from './useCart';
 import './../../styles/servizi.css';
 import icons from './../../components/icons.js';
-import LazyLoad from 'react-lazyload';
 import LazyBackgroundImage from './../../assets/background2.webp';
 
 const Servizi = () => {
@@ -101,32 +100,30 @@ const Servizi = () => {
 
   return (
     <div className='servizi'>
-      <LazyLoad height={200} offset={100}>
-        <section className='title-page-servizi' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
-          <div className='container-fluid'>
-            <h2>Servizi</h2>
-            <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
-            <div className='filter'>
-              <input
-                type='text'
-                placeholder='Cerca...'
-                value={searchTerm}
-                onChange={handleSearch}
-              />
-              <select
-                value={selectedCategory}
-                onChange={handleCategorySelect}
-              >
-                <option value=''>Tutti</option>
-                <option value='design'>Design</option>
-                <option value='sviluppo'>Sviluppo</option>
-                <option value='marketing'>Marketing</option>
-                <option value='custom'>Custom</option>
-              </select>
-            </div>
+      <section className='title-page-servizi' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
+        <div className='container-fluid'>
+          <h2>Servizi</h2>
+          <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
+          <div className='filter'>
+            <input
+              type='text'
+              placeholder='Cerca...'
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+            <select
+              value={selectedCategory}
+              onChange={handleCategorySelect}
+            >
+              <option value=''>Tutti</option>
+              <option value='design'>Design</option>
+              <option value='sviluppo'>Sviluppo</option>
+              <option value='marketing'>Marketing</option>
+              <option value='custom'>Custom</option>
+            </select>
           </div>
-        </section>
-      </LazyLoad>
+        </div>
+      </section>
       <section className='archive-card container-fluid'>
         {Services.filter(filterServices).map((card, index) => (
           <div className='card' key={index}>
