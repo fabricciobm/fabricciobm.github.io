@@ -44,7 +44,7 @@
     font-size: var(--title-page-servizi-font-size-p);
     color: white;
   }
-  
+
  
   .modal-content {
     background-color: rgba(0, 0, 0, 0.9);
@@ -59,30 +59,71 @@
     left: 0;
     padding: 2em;
     margin: 0;
-    font-size: 1.2em;
   }
   
-  .modal-content img {
-    max-width: calc(50% - 5em);
-    margin-right: 5em;
-    float: left;
-  }
-  
-  .close {
-    color: white;
-    float: right;
+
+
+  .modal-content span{
+    float:right!important;
     font-size: 2em;
-    font-weight: 100;
+    background-color: transparent;
+    border:none;
+    color:white;
+  }
+
+.modal-content .price{
+  font-size: 4em;
+}
+
+
+.modal-card-img {
+  display: block;
+  float: left;
+  width: 30%;
+  margin-top: 5em;
+}
+.modal-card-info{
+  display: block;
+  float: left;
+  width: 70%;
+}
+
+.modal-card-info h2{
+}
+
+.modal-content img {
+  max-width: calc(100% - 5em);
+  max-height: 100%;
+  margin: 0 5em 0 0;
+  float: left;
+}
+
+  .modal-plan .add-to-cart,.modal-plan .price {
+    display: none;
+}
+
+button.btn.btn-trans.add-to-cart {
+  margin-top: 2em;
+}
+
+.modal-list-plan, .modal-list-plan {
+  width: calc(32% - 3em);
+  padding: 1em;
+  margin: 1em 1em 0 0;
+  border: 1px solid white;
+  float: left;
+}
+
+
+  .close-cart-btn{
+    float:right!important;
+    font-size: 1em;
+    background-color: transparent;
+    border:none;
+    color:white;
   }
   
-  .close:hover,
-  .close:focus {
-    color: gray;
-    float: right;
-    font-size: 2em;
-    font-weight: 100;
-  }
-  
+ 
   /* Cart section */
   .cart {
     display: none;
@@ -131,16 +172,6 @@
   overflow: auto;
 }
 
-
-
-.cart .close-cart-btn{
-  float:right;
-  font-size: 1em;
-  background-color: transparent;
-  border:none;
-  color:white;
-}
-
 .filter{
   max-width: 350px;
   margin: 0 auto;
@@ -158,14 +189,19 @@
 
 
 @media screen and (max-width: 1024px) {
+  .modal-card-info, .modal-card-img {
+    width: 100%;
+    margin: 0;
+  }
   .modal-content img {
-      max-width: 100%;
-      margin-right: 0;
-      float: none;
+    margin: 0 0 5em 0;
   }
-
-  .card {
-      width: calc(50% - 1em) !important;
-      margin: .5em;
-  }
+  .archive-card .card {
+    position: relative;
+    overflow: hidden;
+    padding: 1em;
+    margin: .5em;
+    width: calc(50% - 3em) !important;
+    float: left;
+}
 }

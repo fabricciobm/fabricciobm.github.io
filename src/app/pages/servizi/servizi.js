@@ -89,6 +89,14 @@ const Servizi = () => {
     return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
 
+  const addToCartWithPlan = (service, plano) => {
+    addToCart({
+      ...service,
+      title: `${service.title} - ${plano.nome}`,
+      price: plano.price
+    });
+  };
+
   return (
     <div className='servizi'>
       <section className='title-page-servizi'>
@@ -121,10 +129,25 @@ const Servizi = () => {
             <div className='card-content'>
               <div className='card-bg' style={{backgroundImage: `url(${card.image})`}}></div>
               <h3>{card.title}</h3>
-              <p>{card.description}</p>
-              <h3>€{card.price}</h3>
-              <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
-              <button className="btn btn-white" onClick={() => {addToCart(card);}}>{icons.add()} Aggiungi al carrello</button>
+              <p dangerouslySetInnerHTML={{ __html: card.description }} />
+              {card.planos && (
+                <>
+                <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
+                </>
+              )}
+              {!card.planos && (
+                <>
+                  <h3>€{card.price}</h3>
+                  <button className="btn btn-white" onClick={() => { 
+                    addToCart(card); // Adiciona o item ao carrinho
+                    closeModal(); // Fecha o modal
+                    setShowCart(true); // Mostra o carrinho
+                  }}>
+                    {icons.add()} Aggiungi al carrello
+                  </button>
+                  <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
+                </>
+              )}
             </div>
           </div>
         ))}
@@ -144,24 +167,52 @@ const Servizi = () => {
           </div>
         ))}
         <h2>Totale: €{calculateTotal()}</h2>
-        <button className="btn btn-trans" onClick={sendWhatsAppMessage}>{icons.whatsapp()} Invia </button>
-        <button className="btn btn-trans" onClick={toggleCart}>{icons.add()} servizi e prodotti</button>
+        <button className="btn btn-trans" onClick={sendWhatsAppMessage}>{icons.whatsapp()} Invia con WhatsApp </button>
+        <button className="btn btn-trans" onClick={toggleCart}>{icons.add()} servizi / prodotti</button>
       </div>
       {showModal && (
         <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>&times;</span>
-            {selectedService && (
-              <div>
-                <img src={selectedService.image} alt={selectedService.title} />
-                <h2>{selectedService.title}</h2>
-                <p>€{selectedService.price}</p>
-                <p>{selectedService.description}</p>
-                <button className="btn btn-trans" onClick={() => {addToCart(selectedService); closeModal(); setShowCart(true)}}>{icons.add()} Aggiungi al carrello</button>
+  <div className={`modal-content ${selectedService && selectedService.planos ? 'modal-plan' : ''}`}>
+    <span className="close" onClick={closeModal}>&times;</span>
+    {selectedService && (
+      <>
+      <div className='modal-card-img'>
+        <img src={selectedService.image} alt={selectedService.title} />
+      </div>
+      
+      <div className='modal-card-info'>
+        <h2>{selectedService.title}</h2>
+        <h2 className='price'>€{selectedService.price}</h2>
+        <p dangerouslySetInnerHTML={{ __html: selectedService.description }} />
+        {selectedService.destaque.map((destaqueItem, index) => (
+          <h2 key={index}>{destaqueItem}</h2>
+        ))}
+        {selectedService.planos && (
+          <div >
+            {Object.keys(selectedService.planos).map((planoKey, i) => (
+              <div className='modal-list-plan' key={i}>
+                <h2>{selectedService.planos[planoKey].nome}</h2>
+                {selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
+                <p key={index}>{destaqueItem}</p>
+                ))}
+                <h1>€{selectedService.planos[planoKey].price}</h1>
+                <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]);  closeModal();  setShowCart(true); }}>
+                  {icons.add()} Aggiungi al carrello
+                </button>
               </div>
-            )}
+            ))}
           </div>
-        </div>
+        )}
+        <button className="btn btn-trans add-to-cart" onClick={() => { addToCart(selectedService);  closeModal();  setShowCart(true); }}>
+  {icons.add()} Aggiungi al carrello
+</button>
+
+      </div>
+      </>
+    )}
+  </div>
+</div>
+
       )}
     </div>
   );

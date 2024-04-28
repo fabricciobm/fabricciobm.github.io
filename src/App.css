@@ -90,24 +90,24 @@ h2,h3,h4,h5,h6{
 .archive-card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
 }
 
 .archive-card .card {
-  width: calc(var(--archive-card) - 1em);
+  width: calc(var(--archive-card) - 3em);
   background: var(--archive-card-background);
   margin-bottom: 20px;
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
 }
-
-.archive-card .card .card-content {
+.archive-card .card {
   position: relative;
   overflow: hidden;
-  padding: 1em;
-
+  padding:1em;
+  margin: .5em;
 }
 
 .archive-card .card .card-content .card-bg {
@@ -118,15 +118,19 @@ h2,h3,h4,h5,h6{
   background-position: center;
 }
 
+
 .archive-card .card .card-content p {
   font-size: 1em;
-  margin: .5em 0;
+  margin: m 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* Número de linhas desejadas */
   overflow: hidden;
 }
 
+.archive-card .card .card-content span {
+  display: none;
+}
 
 .servizi input[type="text"] {
   padding: 10px;
@@ -139,3 +143,5 @@ h2,h3,h4,h5,h6{
   border-radius: 0px 10px 10px 0px;
   font-size: 1em;
 }
+
+
