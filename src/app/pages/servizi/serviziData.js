@@ -28,6 +28,7 @@ const Services = [
       description_long: "<h2>Ottimizza la tua presenza online</h2><p>Massimizza la tua presenza online e raggiungi nuovi orizzonti di successo con il nostro servizio di creazione siti web. Siamo qui per offrirti una soluzione completa, progettata per aumentare la tua visibilità sui motori di ricerca e attirare clienti sempre più numerosi.</p><h2>Funzionalità garantite</h2><ul><li><strong>Ottimizzazione SEO inclusa:</strong> Fatti trovare più facilmente su Google e altri motori di ricerca.</li><li><strong>Design responsivo:</strong> Assicurati che il tuo sito sia fruibile su ogni dispositivo.</li><li><strong>Ottimizzazione della velocità:</strong> Nessuno vuole aspettare che un sito si carichi.</li><li><strong>Configurazione hosting:</strong> Dimentica i problemi legati all'hosting del tuo sito.</li></ul>",
       destaque: [],
       url: '/sviluppo-siti-web-funzionali',
+      tags: ['design', 'sviluppo'],
       planos: {
         plano1: { 
           nome: 'Pacchetto Base', 
@@ -53,6 +54,7 @@ const Services = [
       description_long: "<p>Con i nostri siti web dinamici, non solo avrai un bell'aspetto, ma potrai anche offrire un'esperienza utente straordinaria. Dai un'occhiata alle nostre funzionalità chiave:</p><ul><li><strong>Pagine Personalizzate:</strong> Crea contenuti dinamici e personalizzati per ogni tipo di visitatore.</li><li><strong>Interattività Avanzata:</strong> Dai ai tuoi utenti la possibilità di interagire con il tuo sito attraverso formulari, chat e altro ancora.</li><li><strong>Gestione Contenuti Intuitiva:</strong> Aggiorna e gestisci facilmente il tuo sito senza dover essere un esperto di programmazione.</li><li><strong>Ottimizzazione SEO Integrata:</strong> Assicurati che il tuo sito sia facilmente trovabile sui motori di ricerca.</li><li><strong>Analisi e Monitoraggio:</strong> Monitora le prestazioni del tuo sito e ottieni insights preziosi per migliorare continuamente la tua strategia online.</li><li><strong>Assistenza Tecnica:</strong> Il nostro team esperto è qui per aiutarti con qualsiasi problema tecnico e per garantire che il tuo sito funzioni sempre al meglio.</li></ul>",
       destaque: [],
       url: '/sviluppo-siti-web-dinamici',
+      tags: ['design', 'sviluppo'],
       planos: {
         plano1: { 
           nome: 'Pacchetto Base', 

@@ -40,18 +40,19 @@ const Servizi = () => {
   };
 
   const filterServices = (service) => {
+    if (!service) return false; // Add null check here
     const searchFilter = (
       service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       service.description.toLowerCase().includes(searchTerm.toLowerCase())
-      
     );
-
+  
     const categoryFilter = (
-      selectedCategory === '' || service.tags.includes(selectedCategory)
+      selectedCategory === '' || (service.tags && service.tags.includes(selectedCategory))
     );
-
+  
     return searchFilter && categoryFilter;
   };
+  
 
   const toggleCart = () => {
     setShowCart(!showCart);
