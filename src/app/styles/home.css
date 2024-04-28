@@ -11,7 +11,7 @@
 
 /* Section intro-site */
 .title-page-home {
-    background: var(--title-page-home-background-image);
+    background: black;
     background-color: var(--title-page-home-background-color);
     background-blend-mode: overlay;
     background-position: top;
