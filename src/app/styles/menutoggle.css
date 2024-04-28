@@ -25,7 +25,8 @@
   }
   
   .sidebar {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: black;
+    color: white;
     position: fixed;
     top: 0;
     right: 0;
