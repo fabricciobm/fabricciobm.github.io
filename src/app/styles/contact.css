@@ -1,7 +1,6 @@
 @import './../../App.css';
 :root{
     /*Config title-page*/
-    --title-page-contact-background-image: url('./../assets/service1.webp');
     --title-page-contact-background-color:rgba(137, 18, 123, 0.95);
     --title-page-contact-color: white;
     --title-page-contact-font-size-h2: 4em;

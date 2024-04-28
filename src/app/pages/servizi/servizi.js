@@ -3,6 +3,7 @@ import Services from '../servizi/serviziData';
 import useCart from './useCart';
 import './../../styles/servizi.css';
 import icons from './../../components/icons.js';
+import imagem from './../../assets/background2.webp';
 
 const Servizi = () => {
   const { cartItems, addToCart, removeFromCart, decreaseQuantity, increaseQuantity } = useCart();
@@ -99,7 +100,7 @@ const Servizi = () => {
 
   return (
     <div className='servizi'>
-      <section className='title-page-servizi'>
+      <section className='title-page-servizi' style={{backgroundImage: `url(${imagem})`}}>
         <div className='container-fluid'>
           <h2>Servizi</h2>
           <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
