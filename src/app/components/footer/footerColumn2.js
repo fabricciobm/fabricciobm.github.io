@@ -4,7 +4,7 @@ import iconComponents from './../../components/icons';
 
 const FooterColumn2 = () => {
   return (
-    <div className="footerColumn">
+    <div className="footerColumn column2">
       <button className="footer-button" onClick={() => window.open('https://api.whatsapp.com/send/?phone=393517733589&text=fabricciobm.github.io')} type="button">
         {iconComponents.whatsapp()} <span>+393517733589</span>
       </button>

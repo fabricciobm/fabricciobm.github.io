@@ -22,14 +22,12 @@
 }
 
 .title-page-home img {
-  width: 150px;
-  height: 150px;
   border-radius: 50%;
-  transition: transform 2s ease; /* Adiciona uma transição suave */
+  transition: transform 2s ease; 
 }
 
 .title-page-home img:hover {
-  transform: scale(2); /* Aplica um zoom de 200% quando o mouse passa por cima da imagem */
+  transform: scale(2);
 }
 .title-page-home h2 {
     font-size: var(--title-page-home-font-size-h2);

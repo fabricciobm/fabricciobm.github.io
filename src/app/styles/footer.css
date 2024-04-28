@@ -41,6 +41,11 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   font-size: .8em;
 }
 
+.column2 button.footer-button svg {
+  font-size: 30px;
+  padding: .5em .5em 0 0;
+}
+
 .footer-button {
   padding: 0;
   background: transparent;
@@ -55,12 +60,10 @@ footer.app-footer .container, footer.app-footer .container-fluid {
   background: transparent!important;
   border: 0;
 }
-.social-button svg{
-  border: none;
-  cursor: pointer;
-  margin-right: 10px; /* Aggiungi spazio tra i bottoni */
+.social-button svg {
+  width: 40px;
+  height: 40px;
   color: white;
-  font-size: 1.5em;
 }
 
 @media (max-width:768px){
