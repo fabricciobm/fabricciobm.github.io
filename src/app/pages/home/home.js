@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './../../styles/home.css';
 import imagem from './../../assets/eu.webp';
-import icons from './../../components/icons.js';
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
           <p>Dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
           <Link to="/servizi" className="btn btn-trans">Inizia</Link>
         </div>
-       
       </section>
     </div>
   );
