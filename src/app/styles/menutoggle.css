@@ -1,62 +1,62 @@
 @import '../../style.css';
 .toggle-button {
-    position: absolute;
-    right: 0px;
-  }
-  
-  .toggle-button svg{
-    font-size: 22px;
-  }
-  
-  .toggle-button button {
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 100!important;
-  }
+  position: absolute;
+  right: 0px;
+}
 
-  
-  .toggle-btn {
-    display: none;
-    line-height: 76px;
-    padding-right: 2em;;
-  }
-  
-  .sidebar {
-    background-color: black;
-    color: white;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: calc(100%);
-    max-height: 90vh;
-    overflow: auto;
-    min-height: 100%;
-    color: #fff;
-    transition: transform .5s ease-in-out;
-    transform: translateX(100%);
-    text-align: center;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .close-btn  svg{
-    font-size: 22px;
-  }
+.toggle-button svg{
+  font-size: 22px;
+}
+
+.toggle-button button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 100!important;
+}
+
+
+.toggle-btn {
+  display: none;
+  line-height: 76px;
+  padding-right: 2em;;
+}
+
+.sidebar {
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100%);
+  max-height: 90vh;
+  overflow: auto;
+  min-height: 100%;
+  color: #fff;
+  transition: transform .5s ease-in-out;
+  transform: translateX(100%);
+  text-align: center;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.close-btn  svg{
+  font-size: 22px;
+}
   
   @media (max-width: 768px) {
 
