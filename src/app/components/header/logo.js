@@ -2,7 +2,7 @@ import React from 'react';
 import './../../styles/logo.css';
 const Logo = () => {
   return (
-    <a href="#" title='Logo'>
+    <a href="/" title='Logo'>
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"

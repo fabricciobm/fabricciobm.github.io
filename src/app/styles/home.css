@@ -21,6 +21,16 @@
     padding: 10em 0;
 }
 
+.title-page-home img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: transform 2s ease; /* Adiciona uma transição suave */
+}
+
+.title-page-home img:hover {
+  transform: scale(2); /* Aplica um zoom de 200% quando o mouse passa por cima da imagem */
+}
 .title-page-home h2 {
     font-size: var(--title-page-home-font-size-h2);
     color: white;
@@ -37,13 +47,14 @@
     background-color: #0056b3;
 }
 
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 20px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.go-to-shop {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    padding: .4em;
+    border: 0px;
+    font-size: 1.5em;
+    background:black;
+    color: white;
+    z-index: 9;
 }

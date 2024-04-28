@@ -138,14 +138,8 @@ const Servizi = () => {
               {!card.planos && (
                 <>
                   <h3>€{card.price}</h3>
-                  <button className="btn btn-white" onClick={() => { 
-                    addToCart(card); // Adiciona o item ao carrinho
-                    closeModal(); // Fecha o modal
-                    setShowCart(true); // Mostra o carrinho
-                  }}>
-                    {icons.add()} Aggiungi al carrello
-                  </button>
                   <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
+                  <button className="btn btn-white" onClick={() => { addToCart(card); closeModal(); setShowCart(true);}}>{icons.add()} Aggiungi al carrello</button>
                 </>
               )}
             </div>

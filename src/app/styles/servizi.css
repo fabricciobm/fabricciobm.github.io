@@ -148,6 +148,7 @@ button.btn.btn-trans.add-to-cart {
     font-size: 1.5em;
     background: black;
     color: white;
+    z-index: 99;
   }
   
   .cart-toggle-btn:hover {
@@ -201,7 +202,14 @@ button.btn.btn-trans.add-to-cart {
     overflow: hidden;
     padding: 1em;
     margin: .5em;
-    width: calc(50% - 3em) !important;
+    width: calc(100% - 3em) !important;
     float: left;
-}
+  }
+  .modal-list-plan, .modal-list-plan {
+    width: calc(100% - 2em);
+    padding: 1em;
+    margin: 1em 0 0 0;
+    border: 1px solid white;
+    float: left;
+  }
 }
