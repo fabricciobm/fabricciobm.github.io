@@ -5,7 +5,7 @@ import Footer from '../src/app/components/footer/footer';
 import Home from '../src/app/pages/home/home';
 import ServiziRoutes from '../src/app/pages/servizi/serviziRoutes';
 import Contact from '../src/app/pages/contact/contact';
-import './App.css';
+import NotFound from '../src/app/pages/notfound/notfound'; // Importe a página NotFound
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/servizi/*" element={<ServiziRoutes />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
