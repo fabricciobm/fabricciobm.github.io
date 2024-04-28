@@ -8,7 +8,6 @@ const Home = () => {
     <div className='home'>
       <section className='title-page-home'>
         <div className='container-fluid'>
-        <img src={imagem} alt="Eux" loading="lazy" /> {/* Lazy loading da imagem */}
           <h2>Benvenuti</h2>
           <p>Dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>
           <Link to="/servizi" className="btn btn-trans">Inizia</Link>
