@@ -1,11 +1,11 @@
 import React from 'react';
 import './../../styles/contact.css';
 import iconComponents from './../../components/icons'; 
-import imagem from './../../assets/service1.webp';
+import LazyBackgroundImage from './../../assets/service1.webp';
 const Contact = () => {
   return (
     <div className='contact'>
-      <section className='title-page-contact' style={{backgroundImage: `url(${imagem})`}}>
+      <section className='title-page-contact' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
         <div className='container-fluid'>
           <h2>Contatto</h2>
           <p>Chiama adesso per ulteriori informazioni!</p>

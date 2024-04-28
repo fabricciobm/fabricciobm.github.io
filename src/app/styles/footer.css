@@ -63,7 +63,7 @@ footer.app-footer .container, footer.app-footer .container-fluid {
 .social-button svg {
   font-size: 2em;
   color: white;
-  padding:.5em .5em 1em 0;
+  padding:.5em 0 1em 0;
 }
 
 @media (max-width:768px){

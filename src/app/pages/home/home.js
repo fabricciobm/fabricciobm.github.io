@@ -6,7 +6,7 @@ import LazyBackgroundImage from './../../assets/background.webp';
 const Home = () => {
   return (
     <div className='home'>
-      <section className='title-page-home background-image' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
+      <section className='title-page-home' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
         <div className='container-fluid'>
           <h2>Benvenuti</h2>
           <p>Dove ogni progetto si trasforma in un'opera d'arte. Sono Fabriccio Martinelli, il vostro guida nell'esplorare il potenziale creativo e tecnologico.</p>

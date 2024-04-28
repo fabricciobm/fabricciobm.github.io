@@ -25,8 +25,8 @@
 }
 
 .sidebar {
-  background-color: black;
-  color: white;
+  background-color: black!important;
+  color: white!important;
   position: fixed;
   top: 0;
   right: 0;
@@ -54,6 +54,54 @@
   cursor: pointer;
 }
 
+.togglemenu ul {
+  padding: 0;
+  list-style: none;
+}
+
+.togglemenu ul.open {
+  display: block !important;
+}
+
+.togglemenu li {
+    line-height: 40px;
+    padding: 5px 14px;
+  }
+  
+.togglemenu a {
+  color: #fff!important;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.togglemenu svg{
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.togglemenu ul ul {
+  display: none;
+  position: static;
+  background: none;
+  width: 100%;
+  top: auto;
+  left: auto;
+}
+
+.togglemenu ul ul li {
+  display: block;
+  background: none;
+  padding: 10px;
+}
+
+.togglemenu li:hover > ul {
+  display: none;
+}
+
+.togglemenu li:hover > ul ul {
+  display: none;
+}
+
 .close-btn  svg{
   font-size: 22px;
 }
@@ -75,53 +123,5 @@
   
     .menu {
       display: none !important;
-    }
-
-    .togglemenu ul {
-      padding: 0;
-      list-style: none;
-    }
-
-    .togglemenu ul.open {
-      display: block !important;
-    }
-    
-    .togglemenu li {
-        line-height: 40px;
-        padding: 5px 14px;
-      }
-      
-    .togglemenu a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 20px;
-    }
-
-    .togglemenu svg{
-      padding-right: 10px;
-      font-size: 14px;
-    }
-
-    .togglemenu ul ul {
-      display: none;
-      position: static;
-      background: none;
-      width: 100%;
-      top: auto;
-      left: auto;
-    }
-
-    .togglemenu ul ul li {
-      display: block;
-      background: none;
-      padding: 10px;
-    }
-
-    .togglemenu li:hover > ul {
-      display: none;
-    }
-
-    .togglemenu li:hover > ul ul {
-      display: none;
     }
   }
