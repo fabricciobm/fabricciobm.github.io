@@ -5,6 +5,7 @@ import Footer from '../src/app/components/footer/footer';
 import Home from '../src/app/pages/home/home';
 import ServiziRoutes from '../src/app/pages/servizi/serviziRoutes';
 import Contact from '../src/app/pages/contact/contact';
+import NotFound from './notfound';
 function App() {
   return (
     <Router>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/servizi/*" element={<ServiziRoutes />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
