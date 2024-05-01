@@ -12,7 +12,6 @@ const Servizi = () => {
   const [showCart, setShowCart] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
-  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   const [customerInfo, setCustomerInfo] = useState({ name: '', phone: '' });
 
   useEffect(() => {
@@ -65,20 +64,6 @@ const Servizi = () => {
 
   const closeModal = () => {
     setShowModal(false);
-  };
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setCustomerInfo({ ...customerInfo, [name]: value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setCustomerInfo({ name: '', phone: '' });
-  };
-
-  const continueShopping = () => {
-    setShowCheckoutModal(false);
   };
 
   const sendWhatsAppMessage = () => {
