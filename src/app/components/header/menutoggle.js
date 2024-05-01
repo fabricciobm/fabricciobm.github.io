@@ -17,9 +17,6 @@ const MenuToggle = () => {
     setIsSubmenuOpen(false); 
   };
 
-  const handleServiziClick = () => {
-    setIsSubmenuOpen(!isSubmenuOpen);
-  };
 
   const menuToggleLinks = [
     { to: "/", title: "Home", text: "Home", icon: icons.home() },

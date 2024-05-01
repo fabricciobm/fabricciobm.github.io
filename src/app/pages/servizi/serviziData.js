@@ -1,14 +1,11 @@
 import serviceImage1 from './../../assets/service1.webp';
 import serviceImage2 from './../../assets/service2.webp';
 import serviceImage3 from './../../assets/service3.webp';
-import serviceImage4 from './../../assets/service4.webp';
 import serviceImage5 from './../../assets/service5.webp';
-import serviceImage6 from './../../assets/service6.webp';
 import serviceImage7 from './../../assets/service7.webp';
 import serviceImage8 from './../../assets/service8.webp';
 import serviceImage9 from './../../assets/service9.webp';
 import serviceImage10 from './../../assets/service10.webp';
-import iconComponents from '../../components/icons';
 
 const Services = [
     // Servizi di design
@@ -69,12 +66,12 @@ const Services = [
           destaque: ['Pagine ilimitate', 'Spazio 5Gb Totale', 'Caricamento del contenuto incluso', 'Icone dei social media', 'Formulario di contatto', 'Registrazione utenti', 'Consegna in 7 giorni'],
           price: 600 
         },
-        plano1: { 
+        plano2: { 
           nome: 'Pacchetto Silver', 
           destaque: ['Pagine ilimitate', 'Spazio 5Gb Totale', 'Caricamento del contenuto incluso', 'Icone dei social media', 'Formulario di contatto', 'Registrazione utenti', 'Consegna in 7 giorni'],
           price: 900 
         },
-        plano2: { 
+        plano3: { 
           nome: 'Pacchetto Premium', 
           destaque: ['Pagine ilimitate', 'Spazio 10Gb Totale', 'Caricamento del contenuto incluso', 'Icone dei social media',  'Formulario di contatto', 'Registrazione utenti', 'Consegna in 5 giorni', 'VIP Support'],
           price: 1200 
