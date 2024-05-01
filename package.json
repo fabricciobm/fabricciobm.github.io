@@ -2,7 +2,7 @@
   "name": "fabra",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fabricciobm.github.io/",
+  "homepage": "https://fabricci.vercel.app",
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
