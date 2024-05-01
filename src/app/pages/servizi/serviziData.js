@@ -179,7 +179,7 @@ const Services = [
     },
   ];
 
-{/* Related product*/}
+{/* Related product
 Services.find(service => service.title === 'Branding').relatedProducts = [
   Services.find(service => service.title === 'Social Media Design'),
 ];
@@ -188,6 +188,6 @@ Services.find(service => service.title === 'Branding').relatedProducts = [
 Services.find(service => service.title === 'Social Media Design').relatedProducts = [
   Services.find(service => service.title === 'Branding'),
 ];
-
+*/}
 
 export default Services;
