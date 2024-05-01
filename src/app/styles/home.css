@@ -39,6 +39,9 @@
     margin-bottom: 2rem;
   }
 
+button.slick-arrow.slick-next {
+  display: none !important;
+}
 
 .go-to-shop {
     position: fixed;
