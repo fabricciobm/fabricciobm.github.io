@@ -35,8 +35,8 @@ const Home = () => {
         <div className='title-page-home'>
           <div className='slide-content' style={{backgroundImage: `url(${LazyBackgroundImage2})`}}>
             <div className='container-fluid'>
-              <h2>Sviluppo di Siti Web e Sistemi</h2>
-              <p>Dalle idee alla realtà, offriamo soluzioni su misura per siti web e sistemi. Tecnologie all'avanguardia e progetti ottimizzati per un'esperienza utente impeccabile.</p>
+              <h2>Sviluppo</h2>
+              <p>Dalle idee alla realtà, offriamo soluzioni su misura per siti, ecommmerce e sistemi. Tecnologie all'avanguardia e progetti ottimizzati per un'esperienza utente impeccabile.</p>
               <Link to="/servizi" className="btn btn-trans btn-big">Inizia</Link>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Home = () => {
         <div className='title-page-home'>
           <div className='slide-content' style={{backgroundImage: `url(${LazyBackgroundImage3})`}}>
             <div className='container-fluid'>
-              <h2>Marketing Sociale</h2>
+              <h2>Digital Marketing</h2>
               <p>Il nostro team esperto ti aiuta a promuovere il tuo brand sui social media. Contenuti coinvolgenti, campagne mirate e analisi dei dati per il successo online.</p>
               <Link to="/servizi" className="btn btn-trans btn-big">Inizia</Link>
             </div>
@@ -53,7 +53,7 @@ const Home = () => {
         <div className='title-page-home'>
           <div className='slide-content' style={{backgroundImage: `url(${LazyBackgroundImage4})`}}>
             <div className='container-fluid'>
-              <h2>Design graphico</h2>
+              <h2>Designer grafico</h2>
               <p>Dal logo ai materiali promozionali, creiamo un'identità visiva distintiva per il tuo marchio. Fatti notare e lascia un'impressione indelebile con il nostro servizio di design grafico e branding.</p>
               <Link to="/servizi" className="btn btn-trans btn-big">Inizia</Link>
             </div>
