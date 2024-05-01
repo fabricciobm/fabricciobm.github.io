@@ -23,7 +23,7 @@ const Header = () => {
   
       // Verifica se a rolagem é superior a 250px e ajusta a opacidade do background
       if (currentScroll > 250) {
-        headerRef.current.style.background = "hwb(0 0% 100% / .8)";
+        headerRef.current.style.background = "hwb(0 0% 100% / .6)";
       } else {
         headerRef.current.style.background = "var(--header-navbar-background)";
       }

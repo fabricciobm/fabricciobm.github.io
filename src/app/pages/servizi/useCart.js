@@ -10,8 +10,7 @@ const useCart = () => {
     if (savedCart) {
       setCartItems(JSON.parse(savedCart));
     }
-  }, []); // Executa apenas uma vez ao montar o componente
-
+  }, []);
   const updateCartItems = (newCartItems) => {
     setCartItems(newCartItems);
     localStorage.setItem('cartItems', JSON.stringify(newCartItems));

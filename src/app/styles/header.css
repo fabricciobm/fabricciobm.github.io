@@ -1,9 +1,7 @@
 @import './../../style.css';
 /* header.css */
 .app-header {
-  line-height: auto;
   color: #fff;
-  /*background-color: hwb(279 7% 36%);*/
   background: var(--header-navbar-background);
   position: absolute;
   width: 100%;

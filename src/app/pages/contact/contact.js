@@ -18,10 +18,10 @@ const Contact = () => {
 
     try {
       const result = await emailjs.sendForm(
-        'service_44bzcfh', // Substitua pelo ID do serviço do EmailJS
-        'template_okd4jtn', // Substitua pelo ID do template do EmailJS
+        'service_44bzcfh', 
+        'template_okd4jtn',
         e.target,
-        'x8lrLLuHnsxk_vP77' // Substitua pelo seu ID de usuário do EmailJS
+        'x8lrLLuHnsxk_vP77'
       );
 
       console.log(result.text);
@@ -72,7 +72,7 @@ const Contact = () => {
               <label htmlFor="message">Messaggio</label>
               <textarea className="form-control" id="message" rows="3" name="message" onChange={(e) => setMessage(e.target.value)} value={message} required></textarea>
             </div>
-            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+            <button type="submit" className="btn btn-white" disabled={isSubmitting}>
               {isSubmitting ? 'Invio in corso...' : 'Invia'}
             </button>
             {submitStatus === 'success' && <div className="success-message">Mensagem enviada com sucesso!</div>}

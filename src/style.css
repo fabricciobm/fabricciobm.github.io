@@ -10,6 +10,7 @@
     --btn1-border-radius: 10px;
     --header-navbar: hsla(211, 100%, 53%, 0.9);
     --header-navbar-position: absolute;
+    --header-navbar-background: linear-gradient(180deg, rgba(0,0,0,0.5131302521008403) 0%, rgba(0,0,0,0) 100%);
     --menu-li-background: transparent;
     --menu-li-background-hover: none;
     --menu-li-a-color: none;
