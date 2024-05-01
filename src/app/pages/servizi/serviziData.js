@@ -91,12 +91,12 @@ const Services = [
           destaque: ['Pagine ilimitate', 'Spazio 5Gb Totale', 'Caricamento del contenuto incluso', 'Icone dei social media', 'Formulario di contatto', 'Registrazione utenti', 'Consegna in 7 giorni'],
           price: 600 
         },
-        plano1: { 
+        plano2: { 
           nome: 'Pacchetto Silver', 
           destaque: ['Pagine ilimitate', 'Spazio 5Gb Totale', 'Caricamento del contenuto incluso', 'Icone dei social media', 'Formulario di contatto', 'Registrazione utenti', 'Consegna in 7 giorni'],
           price: 900 
         },
-        plano2: { 
+        plano3: { 
           nome: 'Pacchetto Premium', 
           destaque: ['Pagine ilimitate', 'Spazio 10Gb Totale', 'Caricamento del contenuto incluso', 'Icone dei social media',  'Formulario di contatto', 'Registrazione utenti', 'Consegna in 5 giorni', 'VIP Support'],
           price: 1200 
@@ -176,7 +176,6 @@ const Services = [
     },
   ];
 
-{/* Related product
 Services.find(service => service.title === 'Branding').relatedProducts = [
   Services.find(service => service.title === 'Social Media Design'),
 ];
@@ -185,6 +184,5 @@ Services.find(service => service.title === 'Branding').relatedProducts = [
 Services.find(service => service.title === 'Social Media Design').relatedProducts = [
   Services.find(service => service.title === 'Branding'),
 ];
-*/}
 
 export default Services;
