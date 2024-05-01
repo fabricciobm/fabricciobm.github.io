@@ -12,7 +12,6 @@ const Servizi = () => {
   const [showCart, setShowCart] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
-  const [customerInfo, setCustomerInfo] = useState({ name: '', phone: '' });
 
   useEffect(() => {
     const filterServicesByHash = () => {
