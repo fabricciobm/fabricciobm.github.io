@@ -104,7 +104,7 @@ const Servizi = () => {
     <div className='servizi'>
       <section className='title-page-servizi' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
         <div className='container-fluid'>
-          <h2>Servizi</h2>
+          <h2>Negozio</h2>
           <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
           <div className='filter'>
             <input
@@ -172,42 +172,61 @@ const Servizi = () => {
   <div className={`modal-content ${selectedService && selectedService.planos ? 'modal-plan' : ''}`}>
     <span className="close" onClick={closeModal}>&times;</span>
     {selectedService && (
-      <>
-      <div className='modal-card-img'>
-        <img src={selectedService.image} alt={selectedService.title} />
-      </div>
-      
-      <div className='modal-card-info'>
-        <h2>{selectedService.title}</h2>
-        <h2 className='price'>€{selectedService.price}</h2>
-        <p dangerouslySetInnerHTML={{ __html: selectedService.description }} />
-        <p dangerouslySetInnerHTML={{ __html: selectedService.description_long }} />
-        {selectedService.destaque.map((destaqueItem, index) => (
-          <h2 key={index}>{destaqueItem}</h2>
-        ))}
-        {selectedService.planos && (
-          <div >
-            {Object.keys(selectedService.planos).map((planoKey, i) => (
-              <div className='modal-list-plan' key={i}>
-                <h2>{selectedService.planos[planoKey].nome}</h2>
-                {selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
+  <>
+    <div className='modal-card-img'>
+      <img src={selectedService.image} alt={selectedService.title} />
+    </div>
+    <div className='modal-card-info'>
+      <h2>{selectedService.title}</h2>
+      <h2 className='price'>€{selectedService.price}</h2>
+      <p dangerouslySetInnerHTML={{ __html: selectedService.description }} />
+      <p dangerouslySetInnerHTML={{ __html: selectedService.description_long }} />
+      {selectedService.destaque.map((destaqueItem, index) => (
+        <h2 key={index}>{destaqueItem}</h2>
+      ))}
+      {selectedService.planos && (
+        <div>
+          {Object.keys(selectedService.planos).map((planoKey, i) => (
+            <div className='modal-list-plan' key={i}>
+              <h2>{selectedService.planos[planoKey].nome}</h2>
+              {selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
                 <p key={index}>{destaqueItem}</p>
-                ))}
-                <h2>€{selectedService.planos[planoKey].price}</h2>
-                <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]);  closeModal();  setShowCart(true); }}>
-                  {icons.add()} Aggiungi al carrello
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-        <button className="btn btn-trans add-to-cart" onClick={() => { addToCart(selectedService);  closeModal();  setShowCart(true); }}>
-          {icons.add()} Aggiungi al carrello
-        </button>
+              ))}
+              <h2>€{selectedService.planos[planoKey].price}</h2>
+              <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]); closeModal(); setShowCart(true); }}>
+                {icons.add()} Aggiungi al carrello
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+      <button className="btn btn-trans add-to-cart" onClick={() => { addToCart(selectedService);  closeModal();  setShowCart(true); }}>
+        {icons.add()} Aggiungi al carrello
+      </button>
 
+    {/* Exibindo produtos relacionados */}
+    {selectedService.relatedProducts && (
+      <div className='related-products'>
+        <h2>Prodotti correlati:</h2>
+        {selectedService.relatedProducts.map((relatedProduct, index) => (
+          <div key={index} className="related-product">
+            <img src={relatedProduct.image} alt={relatedProduct.title} />
+            <h3>{relatedProduct.title}</h3>
+            {/* Utilizando dangerouslySetInnerHTML para interpretar HTML */}
+            <p dangerouslySetInnerHTML={{ __html: relatedProduct.description }} />
+            <button className="btn btn-trans" onClick={() => openModal(relatedProduct)}>
+              {icons.info()} Info
+            </button>
+          </div>
+        ))}
       </div>
-      </>
     )}
+
+    </div>
+  </>
+)}
+
+
   </div>
 </div>
 

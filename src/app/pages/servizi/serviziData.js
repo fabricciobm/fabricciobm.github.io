@@ -14,12 +14,20 @@ const Services = [
     // Servizi di design
     {
       image: serviceImage5,
-      title: 'Design di loghi',
-      description: "Una logo professionale è essenziale per qualsiasi attività commerciale poiché rappresenta l'identità visiva del marchio. Comunicando professionalità e affidabilità, aiuta a distinguersi dalla concorrenza e a attrarre clienti. Investire in una logo ben progettata è cruciale per creare una forte identità di marca e garantire il successo del proprio business. Se hai bisogno di un logo professionale, sono qui per aiutarti!",
-      destaque: ['\u{1F3A8} 10 opzioni di design', '\u{1F4BC} 3 revisioni', '\u{1F4E6} Consegna in 7 giorni'],
+      title: 'Branding',
+      description: "<p>Il tuo marchio è la tua identità visiva nel mondo digitale. Un logo ben progettato è fondamentale per distinguerti dalla massa e catturare l'attenzione dei potenziali clienti. Investi nella tua immagine aziendale con un logo professionale che trasmetta credibilità e stile. Sono qui per creare un design unico e memorabile che ti aiuterà a raggiungere i tuoi obiettivi commerciali.</p>",
+      description_long: "<h2></h2><p>Offro servizi di progettazione di logo e branding personalizzati per aiutare i professionisti e le imprese a creare una presenza online distintiva. Con una vasta esperienza nel settore del design grafico, posso trasformare le tue idee e la tua visione in un logo accattivante che rifletta l'essenza del tuo marchio. Dall'analisi del mercato alla creazione di concept originali, mi impegno a fornire soluzioni creative e su misura che soddisfino le tue esigenze aziendali. Investi nella tua identità di marca con un logo professionale che ti distinguerà e ti farà brillare nel panorama competitivo.</p>",
+      destaque: [],
       url: '/logo-design',
-      tags: ['design', 'logo'],
-      price: 50
+      tags: ['design', 'logo', 'branding'],
+      planos: {
+        plano1: { 
+          nome: 'Design logo', 
+          destaque: ["5 Disegni diversi", "2 Revisioni", "Palette color", "1 Design finale", "Arte finale: JPG, PNG, PDF, CDR, AI, PS", "Consegna entro 5 giorni"], 
+          tags: ['design', 'logo', 'branding'],
+          price: 50 ,
+        }
+      }
     },
     {
       image: serviceImage1,
@@ -42,7 +50,7 @@ const Services = [
         },
         plano3: { 
           nome: 'Pacchetto Premium', 
-          destaque: ['Pagine illimitate', 'Sessioni ilimitate', 'Revisioni ilimitate', 'Caricamento del contenuto incluso',   'Catalogo di prodotti e servizi', 'Checkout Whatsapp', 'Consegna in 7 giorni', '12 Mesi di VIP Support'],
+          destaque: ['Pagine illimitate', 'Sessioni ilimitate', 'Revisioni ilimitate', 'Caricamento del contenuto incluso',   'Catalogo di prodotti e servizi', 'Checkout Whatsapp', 'Consegna in 7 giorni'],
           price: 500 
         },
       },
@@ -104,15 +112,6 @@ const Services = [
       description: 'Creazione di grafiche e contenuti visivi per i social media.',
       destaque: ['Fino a 10 post', 'Fino a 3 revisioni', 'Consegna in 5 giorni'],
       url: '/social-media-design',
-      tags: ['design'],
-      price: 50
-    },
-    {
-      image: serviceImage6,
-      title: 'Pacchetto Branding',
-      description: 'Sviluppo completo dell\'identità visiva aziendale.',
-      destaque: ['Fino a 3 proposte', 'Fino a 3 revisioni', 'Consegna in 10 giorni'],
-      url: '/pacchetto-branding',
       tags: ['design'],
       price: 50
     },
@@ -179,5 +178,16 @@ const Services = [
       price: 50
     },
   ];
+
+{/* Related product*/}
+Services.find(service => service.title === 'Branding').relatedProducts = [
+  Services.find(service => service.title === 'Social Media Design'),
+];
+
+
+Services.find(service => service.title === 'Social Media Design').relatedProducts = [
+  Services.find(service => service.title === 'Branding'),
+];
+
 
 export default Services;

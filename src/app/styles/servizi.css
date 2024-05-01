@@ -1,73 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import '../../style.css';
 :root {
-    /*Config title-page*/
-    --title-page-servizi-background-color: hsla(273, 84%, 42%, 0.95);
-    --title-page-servizi-color: white;
-    --title-page-servizi-font-size-h2: 4em;
-    --title-page-servizi-font-size-p: 1.5em;
-    
-    /* Section Archive card */
-    --archive-card: 25%;
-    --archive-card-background: white;
-    --archive-card-h3: 3em;
-    --archive-card-p: 1.2em;
-    --border-radius: 10px;
-    /* Section Price */
-    --price-column: 33%;
-    --price-column-background: white;
-    --price-h3: 2em;
-    --price-price: 20px;
-    --price-plan: 30px;
-  }
-  
-  /* Section intro-site */
-  .title-page-servizi {
-    background-color: var(--title-page-servizi-background-color);
-    background-blend-mode: overlay;
-    background-position: center;
-    background-size: cover;
-    text-align: center;
-    color: var(--title-page-servizi-color);
-    padding: 10em 0;
-  }
-  
-  .title-page-servizi h2 {
-    font-size: var(--title-page-servizi-font-size-h2);
-    color: white;
-    text-shadow: 1px 1px 1px black;
-  }
-  
-  .title-page-servizi p {
-    font-size: var(--title-page-servizi-font-size-p);
-    color: white;
-  }
+  /*Config title-page*/
+  --title-page-servizi-background-color: hsla(273, 84%, 42%, 0.95);
+  --title-page-servizi-color: white;
+  --title-page-servizi-font-size-h2: 4em;
+  --title-page-servizi-font-size-p: 1.5em;
 
- 
-  .modal-content {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    z-index: 9999999;
-    position: fixed;
-    width: calc(100% - 4em);
-    height: 100%;
-    max-height: 90vh;
-    overflow: auto;
-    top: 0;
-    left: 0;
-    padding: 2em;
-    margin: 0;
-  }
+  /* Section Archive card */
+  --archive-card: 25%;
+  --archive-card-background: white;
+  --archive-card-h3: 3em;
+  --archive-card-p: 1.2em;
+  --border-radius: 10px;
+  /* Section Price */
+  --price-column: 33%;
+  --price-column-background: white;
+  --price-h3: 2em;
+  --price-price: 20px;
+  --price-plan: 30px;
+}
   
+/* Section intro-site */
+.title-page-servizi {
+  background-color: var(--title-page-servizi-background-color);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: var(--title-page-servizi-color);
+  padding: 10em 0;
+}
 
+.title-page-servizi h2 {
+  font-size: var(--title-page-servizi-font-size-h2);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
 
-  .modal-content span{
-    float:right!important;
-    font-size: 2em;
-    background-color: transparent;
-    border:none;
-    color:white;
-  }
+.title-page-servizi p {
+  font-size: var(--title-page-servizi-font-size-p);
+  color: white;
+}
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  z-index: 9999999;
+  position: fixed;
+  width: calc(100% - 4em);
+  height: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  padding: 2em;
+  margin: 0;
+}
+  
+.modal-content span{
+  float:right!important;
+  font-size: 2em;
+  background-color: transparent;
+  border:none;
+  color:white;
+}
 
 .modal-content .price{
   font-size: 4em;
@@ -84,9 +80,6 @@
   display: block;
   float: left;
   width: 70%;
-}
-
-.modal-card-info h2{
 }
 
 .modal-content img {
@@ -113,45 +106,45 @@ button.btn.btn-trans.add-to-cart {
 }
 
 
-  .close-cart-btn{
-    float:right!important;
-    font-size: 1em;
-    background-color: transparent;
-    border:none;
-    color:white;
-  }
-  
- 
-  /* Cart section */
-  .cart {
-    display: none;
-    border: none!important;
-    padding: 10px;
-    margin-top: 10px;
-    z-index: 9999;
-    border: none!important;
+.close-cart-btn{
+  float:right!important;
+  font-size: 1em;
+  background-color: transparent;
+  border:none;
+  color:white;
+}
+
+
+/* Cart section */
+.cart {
+  display: none;
+  border: none!important;
+  padding: 10px;
+  margin-top: 10px;
+  z-index: 9999;
+  border: none!important;
 }
   
-  .cart p {
-    margin: 30px 0 0 0px;
-  }
-  
-  
-  button.cart-toggle-btn {
-    position: fixed;
-    top: 30%;
-    right: 0;
-    padding: .5em;
-    border: 0px;
-    font-size: 1.5em;
-    background: black;
-    color: white;
-    z-index: 99;
-  }
-  
-  .cart-toggle-btn:hover {
-    background-color: #0056b3;
-  }
+.cart p {
+  margin: 30px 0 0 0px;
+}
+
+
+button.cart-toggle-btn {
+  position: fixed;
+  top: 30%;
+  right: 0;
+  padding: .5em;
+  border: 0px;
+  font-size: 1.5em;
+  background: black;
+  color: white;
+  z-index: 99;
+}
+
+.cart-toggle-btn:hover {
+  background-color: #0056b3;
+}
 
 
 .cart.open {
@@ -185,7 +178,43 @@ button.btn.btn-trans.add-to-cart {
   float: left;
 }
 
+/* Related products */
 
+.related-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.related-products h2 {
+  width: 100%;
+  margin: 2em 0 1em 0;
+}
+
+.related-product {
+  width: calc(33% - 3em);
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.related-product:nth-child(3) {
+  margin-right: 0;
+}
+
+.related-product img {
+  min-width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1em!important;
+}
+
+/* Mobile screens */
 
 @media screen and (max-width: 1024px) {
   .modal-card-info, .modal-card-img {
