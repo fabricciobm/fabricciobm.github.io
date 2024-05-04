@@ -1,17 +1,17 @@
 const express = require('express');
 const path = require('path');
+const history = require('connect-history-api-fallback');
+
 const app = express();
 
-// Serve os arquivos estáticos da pasta 'build'
-app.use(express.static(path.join(__dirname, 'build')));
+const staticFiles = express.static(path.join(__dirname, 'build'));
 
-// Define uma rota para servir o arquivo HTML para qualquer rota
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+app.use(staticFiles);
+app.use(history());
+app.use(staticFiles);
 
-// Inicia o servidor na porta 3000
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
