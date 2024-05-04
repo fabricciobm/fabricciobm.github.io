@@ -27,16 +27,19 @@ const Servizi = ({ history, location }) => {
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
-
   const handleCategorySelect = (event) => {
     const category = event.target.value;
     setSelectedCategory(category);
-    const searchTermParam = searchTerm ? `&search=${encodeURIComponent(searchTerm)}` : '';
-    if (history) {
-      history.push(`#${category}${searchTermParam}`);
-    }
+    const searchTermParam = searchTerm ? `search=${encodeURIComponent(searchTerm)}` : '';
+    const categoryParam = category ? `#${category}` : '';
+    const searchParam = searchTermParam ? `?${searchTermParam}` : '';
+    const currentPath = '/servizi'; // Definindo o segmento atual do hash como "/servizi"
+    window.location.hash = `${currentPath}${categoryParam}${searchParam}`;
   };
-
+  
+  
+  
+  
   const openModal = (service) => {
     setSelectedService(service);
     setShowModal(true);
