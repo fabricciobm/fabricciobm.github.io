@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Services from '../servizi/serviziData';
 import useCart from './useCart';
 import './../../styles/servizi.css';
 import icons from './../../components/icons.js';
 import LazyBackgroundImage from './../../assets/background2.webp';
 
-const Servizi = ({ history, location }) => {
-  const { cartItems, addToCart, removeFromCart, decreaseQuantity, increaseQuantity } = useCart();
+const Servizi = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [cartItems, setCartItems] = useState([]);
+  const { addToCart, removeFromCart, decreaseQuantity, increaseQuantity } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [showCart, setShowCart] = useState(false);
@@ -15,49 +18,64 @@ const Servizi = ({ history, location }) => {
   const [selectedService, setSelectedService] = useState(null);
 
   useEffect(() => {
-    if (location) {
-      const hash = location.hash.substr(1);
-      setSelectedCategory(hash);
-      const searchParams = new URLSearchParams(location.search);
-      const search = searchParams.get('search') || '';
-      setSearchTerm(search);
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+    if (storedCartItems) {
+      setCartItems(storedCartItems);
     }
-  }, [location]);
+  }, []);
+
+  useEffect(() => {
+    applySearchParams();
+
+    // Verifica se o modal deve ser aberto com base nos parâmetros da URL
+    const searchParams = new URLSearchParams(location.search);
+    const modalTitle = searchParams.get('modal');
+    if (modalTitle) {
+      const modalService = Services.find(service => service.title === modalTitle);
+      if (modalService) {
+        setSelectedService(modalService);
+        setShowModal(true);
+      }
+    }
+  }, [location]); // Reaplica os parâmetros da URL quando a localização muda
+
+  const applySearchParams = () => {
+    const searchParams = new URLSearchParams(location.search);
+    const category = searchParams.get('category') || '';
+    const search = searchParams.get('search') || '';
+    const modal = searchParams.get('modal') || '';
+
+    setSelectedCategory(category);
+    setSearchTerm(search);
+    setSelectedService(Services.find(service => service.title === modal));
+  };
 
   const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
+    navigate(`/servizi?category=${selectedCategory}&search=${newSearchTerm}&modal=${selectedService ? selectedService.title : ''}`);
   };
+
   const handleCategorySelect = (event) => {
     const category = event.target.value;
     setSelectedCategory(category);
-    const searchTermParam = searchTerm ? `search=${encodeURIComponent(searchTerm)}` : '';
-    const categoryParam = category ? `#${category}` : '';
-    const searchParam = searchTermParam ? `?${searchTermParam}` : '';
-    const currentPath = '/servizi'; // Definindo o segmento atual do hash como "/servizi"
-    window.location.hash = `${currentPath}${categoryParam}${searchParam}`;
+    navigate(`/servizi?category=${category}&search=${searchTerm}&modal=${selectedService ? selectedService.title : ''}`);
   };
-  
-  
-  
-  
+
   const openModal = (service) => {
     setSelectedService(service);
     setShowModal(true);
-    const searchTermParam = searchTerm ? `search=${encodeURIComponent(searchTerm)}` : '';
-    if (history) {
-      history.push(`/#/servizi#${service.title}${searchTermParam ? `?${searchTermParam}` : ''}`);
-    }
+    navigate(`/servizi?category=${selectedCategory}&search=${searchTerm}&modal=${service.title}`);
   };
 
   const closeModal = () => {
     setShowModal(false);
-    if (history) {
-      history.push('/'); // Voltando para a página inicial ao fechar o modal
-    }
+    setSelectedService(null);
+    navigate(`/servizi?category=${selectedCategory}&search=${searchTerm}`);
   };
 
   const filterServices = (service) => {
-    if (!service) return false; // Add null check here
+    if (!service) return false;
     const searchFilter = (
       service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       service.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -70,9 +88,12 @@ const Servizi = ({ history, location }) => {
     return searchFilter && categoryFilter;
   };
 
-  
   const toggleCart = () => {
     setShowCart(!showCart);
+  };
+
+  const saveCartToLocalStorage = (items) => {
+    localStorage.setItem('cartItems', JSON.stringify(items));
   };
 
   const sendWhatsAppMessage = () => {
@@ -87,11 +108,14 @@ const Servizi = ({ history, location }) => {
   };
 
   const addToCartWithPlan = (service, plano) => {
-    addToCart({
+    const newItem = {
       ...service,
       title: `${service.title} - ${plano.nome}`,
       price: plano.price
-    });
+    };
+    const updatedCart = [...cartItems, newItem];
+    setCartItems(updatedCart);
+    saveCartToLocalStorage(updatedCart);
   };
 
   return (
@@ -129,7 +153,7 @@ const Servizi = ({ history, location }) => {
               <p dangerouslySetInnerHTML={{ __html: card.description }} />
               {card.planos && (
                 <>
-                <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
+                  <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
                 </>
               )}
               {!card.planos && (
@@ -163,67 +187,60 @@ const Servizi = ({ history, location }) => {
       </div>
       {showModal && (
         <div className="modal">
-  <div className={`modal-content ${selectedService && selectedService.planos ? 'modal-plan' : ''}`}>
-    <span className="close" onClick={closeModal}>&times;</span>
-    {selectedService && (
-  <>
-    <div className='modal-card-img'>
-      <img src={selectedService.image} alt={selectedService.title} />
-    </div>
-    <div className='modal-card-info'>
-      <h2>{selectedService.title}</h2>
-      <h2 className='price'>€{selectedService.price}</h2>
-      <p dangerouslySetInnerHTML={{ __html: selectedService.description }} />
-      <p dangerouslySetInnerHTML={{ __html: selectedService.description_long }} />
-      {selectedService.destaque.map((destaqueItem, index) => (
-        <h2 key={index}>{destaqueItem}</h2>
-      ))}
-      {selectedService.planos && (
-        <div>
-          {Object.keys(selectedService.planos).map((planoKey, i) => (
-            <div className='modal-list-plan' key={i}>
-              <h2>{selectedService.planos[planoKey].nome}</h2>
-              {selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
-                <p key={index}>{destaqueItem}</p>
-              ))}
-              <h2>€{selectedService.planos[planoKey].price}</h2>
-              <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]); closeModal(); setShowCart(true); }}>
-                {icons.add()} Aggiungi al carrello
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
-      <button className="btn btn-trans add-to-cart" onClick={() => { addToCart(selectedService);  closeModal();  setShowCart(true); }}>
-        {icons.add()} Aggiungi al carrello
-      </button>
-
-    {/* Exibindo produtos relacionados */}
-    {selectedService.relatedProducts && (
-      <div className='related-products'>
-        <h2>Prodotti correlati:</h2>
-        {selectedService.relatedProducts.map((relatedProduct, index) => (
-          <div key={index} className="related-product">
-            <img src={relatedProduct.image} alt={relatedProduct.title} />
-            <h3>{relatedProduct.title}</h3>
-            {/* Utilizando dangerouslySetInnerHTML para interpretar HTML */}
-            <p dangerouslySetInnerHTML={{ __html: relatedProduct.description }} />
-            <button className="btn btn-trans" onClick={() => openModal(relatedProduct)}>
-              {icons.info()} Info
-            </button>
+          <div className={`modal-content ${selectedService && selectedService.planos ? 'modal-plan' : ''}`}>
+            <span className="close" onClick={closeModal}>&times;</span>
+            {selectedService && (
+              <>
+                <div className='modal-card-img'>
+                  <img src={selectedService.image} alt={selectedService.title} />
+                </div>
+                <div className='modal-card-info'>
+                  <h2>{selectedService.title}</h2>
+                  <h2 className='price'>€{selectedService.price}</h2>
+                  <p dangerouslySetInnerHTML={{ __html: selectedService.description }} />
+                  <p dangerouslySetInnerHTML={{ __html: selectedService.description_long }} />
+                  {selectedService.destaque.map((destaqueItem, index) => (
+                    <h2 key={index}>{destaqueItem}</h2>
+                  ))}
+                  {selectedService.planos && (
+                    <div>
+                      {Object.keys(selectedService.planos).map((planoKey, i) => (
+                        <div className='modal-list-plan' key={i}>
+                          <h2>{selectedService.planos[planoKey].nome}</h2>
+                          {selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
+                            <p key={index}>{destaqueItem}</p>
+                          ))}
+                          <h2>€{selectedService.planos[planoKey].price}</h2>
+                          <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]); closeModal(); setShowCart(true); }}>
+                            {icons.add()} Aggiungi al carrello
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <button className="btn btn-trans add-to-cart" onClick={() => { addToCart(selectedService);  closeModal();  setShowCart(true); }}>
+                    {icons.add()} Aggiungi al carrello
+                  </button>
+                  {selectedService.relatedProducts && (
+                    <div className='related-products'>
+                      <h2>Prodotti correlati:</h2>
+                      {selectedService.relatedProducts.map((relatedProduct, index) => (
+                        <div key={index} className="related-product">
+                          <img src={relatedProduct.image} alt={relatedProduct.title} />
+                          <h3>{relatedProduct.title}</h3>
+                          <p dangerouslySetInnerHTML={{ __html: relatedProduct.description }} />
+                          <button className="btn btn-trans" onClick={() => openModal(relatedProduct)}>
+                            {icons.info()} Info
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
           </div>
-        ))}
-      </div>
-    )}
-
-    </div>
-  </>
-)}
-
-
-  </div>
-</div>
-
+        </div>
       )}
     </div>
   );
