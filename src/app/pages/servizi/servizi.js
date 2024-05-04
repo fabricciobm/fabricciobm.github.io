@@ -18,9 +18,11 @@ const Servizi = ({ history, location }) => {
     if (location) {
       const hash = location.hash.substr(1);
       setSelectedCategory(hash);
+      const searchParams = new URLSearchParams(location.search);
+      const search = searchParams.get('search') || '';
+      setSearchTerm(search);
     }
   }, [location]);
-
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -29,11 +31,27 @@ const Servizi = ({ history, location }) => {
   const handleCategorySelect = (event) => {
     const category = event.target.value;
     setSelectedCategory(category);
+    const searchTermParam = searchTerm ? `&search=${encodeURIComponent(searchTerm)}` : '';
     if (history) {
-      history.push(`#${category}`);
+      history.push(`#${category}${searchTermParam}`);
     }
   };
 
+  const openModal = (service) => {
+    setSelectedService(service);
+    setShowModal(true);
+    const searchTermParam = searchTerm ? `search=${encodeURIComponent(searchTerm)}` : '';
+    if (history) {
+      history.push(`/#/servizi#${service.title}${searchTermParam ? `?${searchTermParam}` : ''}`);
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    if (history) {
+      history.push('/'); // Voltando para a página inicial ao fechar o modal
+    }
+  };
 
   const filterServices = (service) => {
     if (!service) return false; // Add null check here
@@ -50,18 +68,8 @@ const Servizi = ({ history, location }) => {
   };
 
   
-
   const toggleCart = () => {
     setShowCart(!showCart);
-  };
-
-  const openModal = (service) => {
-    setSelectedService(service);
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
   };
 
   const sendWhatsAppMessage = () => {

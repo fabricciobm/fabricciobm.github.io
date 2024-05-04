@@ -5,6 +5,7 @@ import Footer from './../src/app/components/footer/footer';
 import Home from './../src/app/pages/home/home';
 import Servizi from './app/pages/servizi/servizi';
 import Contact from './app/pages/contact/contact';
+import Shop from './app/pages/shop/product';
 import NotFound from './notfound';
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
           <Route
             path="/contact"
             element={<Contact />}
+          />
+          <Route
+            path="/shop"
+            element={<Shop cart={cart} />}
           />
           <Route
             path="*"
