@@ -1,8 +1,8 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client'; // Importando createRoot de 'react-dom/client'
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom'; // Modificando para BrowserRouter
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = document.getElementById('root');
 
