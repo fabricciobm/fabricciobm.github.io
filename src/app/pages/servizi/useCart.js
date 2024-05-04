@@ -31,6 +31,8 @@ const useCart = () => {
   };
 
 
+
+  
   const removeFromCart = (index) => {
     const updatedCart = [...cartItems];
     updatedCart.splice(index, 1);

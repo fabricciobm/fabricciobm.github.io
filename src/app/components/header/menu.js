@@ -22,8 +22,8 @@ const Menu = () => {
   const Menu = () => {
     const menuLinks = [
       { to: "/", title: "Home", text: "Home", icon: icons.home() },
-      { to: "/servizi#", title: "Negozio", text: "Negozio", icon: icons.addressBook() },
-      { to: "/contact#", title: "Contact", text: "Contact", icon: icons.addressBook() }
+      { to: "/servizi", title: "Negozio", text: "Negozio", icon: icons.addressBook() },
+      { to: "/contact", title: "Contact", text: "Contact", icon: icons.addressBook() }
     ];
 
   const renderMenu = (menu) => (
