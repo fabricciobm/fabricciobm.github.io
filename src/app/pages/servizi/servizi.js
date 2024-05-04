@@ -17,26 +17,23 @@ const Servizi = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
 
-  useEffect(() => {
-    const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
-    if (storedCartItems) {
-      setCartItems(storedCartItems);
+useEffect(() => {
+  applySearchParams();
+
+  // Verifica se o modal deve ser aberto com base nos parâmetros da URL
+  const searchParams = new URLSearchParams(location.search);
+  const modalTitle = searchParams.get('modal');
+  if (modalTitle) {
+    const modalService = Services.find(service => service.title === modalTitle);
+    if (modalService) {
+      setSelectedService(modalService);
+      setShowModal(true);
     }
-  }, []);
+  }
+}, [location]);
 
   useEffect(() => {
     applySearchParams();
-
-    // Verifica se o modal deve ser aberto com base nos parâmetros da URL
-    const searchParams = new URLSearchParams(location.search);
-    const modalTitle = searchParams.get('modal');
-    if (modalTitle) {
-      const modalService = Services.find(service => service.title === modalTitle);
-      if (modalService) {
-        setSelectedService(modalService);
-        setShowModal(true);
-      }
-    }
   }, [location]); // Reaplica os parâmetros da URL quando a localização muda
 
   const applySearchParams = () => {
