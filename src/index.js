@@ -1,10 +1,12 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom/client'; // Importando createRoot de 'react-dom/client'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
-createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root');
+
+createRoot(root).render(
   <React.StrictMode>
     <Router>
       <App />

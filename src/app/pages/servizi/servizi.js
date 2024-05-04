@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import Services from '../servizi/serviziData';
 import useCart from './useCart';
 import './../../styles/servizi.css';
 import icons from './../../components/icons.js';
 import LazyBackgroundImage from './../../assets/background2.webp';
 
-const Servizi = () => {
+const Servizi = ({ history, location }) => {
   const { cartItems, addToCart, removeFromCart, decreaseQuantity, increaseQuantity } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -14,28 +15,25 @@ const Servizi = () => {
   const [selectedService, setSelectedService] = useState(null);
 
   useEffect(() => {
-    const filterServicesByHash = () => {
-      const hash = window.location.hash.substr(1);
+    if (location) {
+      const hash = location.hash.substr(1);
       setSelectedCategory(hash);
-    };
+    }
+  }, [location]);
 
-    filterServicesByHash();
-
-    window.addEventListener('hashchange', filterServicesByHash);
-
-    return () => {
-      window.removeEventListener('hashchange', filterServicesByHash);
-    };
-  }, []);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const handleCategorySelect = (event) => {
-    setSelectedCategory(event.target.value);
-    window.location.hash = event.target.value;
+    const category = event.target.value;
+    setSelectedCategory(category);
+    if (history) {
+      history.push(`#${category}`);
+    }
   };
+
 
   const filterServices = (service) => {
     if (!service) return false; // Add null check here
@@ -50,6 +48,7 @@ const Servizi = () => {
   
     return searchFilter && categoryFilter;
   };
+
   
 
   const toggleCart = () => {
