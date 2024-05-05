@@ -14,14 +14,11 @@ const Header = () => {
       let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
   
       if (currentScroll > lastScrollTop) {
-        // Rolagem para baixo
-        headerRef.current.style.top = "-100px"; // Esconde o navbar
+        headerRef.current.style.top = "-100px"; 
       } else {
-        // Rolagem para cima
-        headerRef.current.style.top = "0"; // Mostra o navbar
+        headerRef.current.style.top = "0"; 
       }
   
-      // Verifica se a rolagem é superior a 250px e ajusta a opacidade do background
       if (currentScroll > 250) {
         headerRef.current.style.background = "hwb(0 0% 100% / .6)";
       } else {

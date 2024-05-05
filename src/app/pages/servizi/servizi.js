@@ -207,7 +207,7 @@ const Servizi = () => {
           </div>
         ))}
       </section>
-      <button className='cart-toggle-btn' onClick={toggleCart}>
+      <button className='cart-toggle-btn' onClick={toggleCart} aria-label='Toggle Cart'>
         {icons.shoppingCart()}
       </button>
       <div className={`cart ${showCart ? 'open' : ''}`}>

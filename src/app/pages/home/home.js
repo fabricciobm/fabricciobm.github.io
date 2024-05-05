@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -10,6 +10,53 @@ import LazyBackgroundImage4 from './../../assets/service4.webp';
 import './../../styles/home.css';
 
 const Home = () => {
+  useEffect(() => {
+    const lazyLoadImages = () => {
+      const images = document.querySelectorAll('img[data-src]');
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.onload = () => {
+              img.removeAttribute('data-src');
+            };
+            observer.unobserve(img);
+          }
+        });
+      }, options);
+
+      images.forEach(image => {
+        imageObserver.observe(image);
+      });
+    };
+
+    lazyLoadImages();
+
+    const setCachePolicy = () => {
+      const staticResources = [
+        '/static/js/bundle.js',
+        '/static/css/styles.css',
+      ];
+
+      staticResources.forEach(resource => {
+        if ('caches' in window) {
+          caches.open('static-cache-v1').then(cache => {
+            cache.add(resource);
+          });
+        }
+      });
+    };
+
+    setCachePolicy();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
