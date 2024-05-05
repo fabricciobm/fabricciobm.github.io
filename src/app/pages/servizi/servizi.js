@@ -17,24 +17,27 @@ const Servizi = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
 
-useEffect(() => {
-  applySearchParams();
+  useEffect(() => {
+    applySearchParams();
 
-  // Verifica se o modal deve ser aberto com base nos parâmetros da URL
-  const searchParams = new URLSearchParams(location.search);
-  const modalTitle = searchParams.get('modal');
-  if (modalTitle) {
-    const modalService = Services.find(service => service.title === modalTitle);
-    if (modalService) {
-      setSelectedService(modalService);
-      setShowModal(true);
+    const searchParams = new URLSearchParams(location.search);
+    const modalTitle = searchParams.get('modal');
+    if (modalTitle) {
+      const modalService = Services.find(service => service.title === modalTitle);
+      if (modalService) {
+        setSelectedService(modalService);
+        setShowModal(true);
+      }
     }
-  }
-}, [location]);
+  }, [location]);
 
   useEffect(() => {
     applySearchParams();
-  }, [location]); // Reaplica os parâmetros da URL quando a localização muda
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+    if (storedCartItems) {
+      setCartItems(storedCartItems);
+    }
+  }, [location]);
 
   const applySearchParams = () => {
     const searchParams = new URLSearchParams(location.search);
@@ -77,20 +80,16 @@ useEffect(() => {
       service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       service.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  
+
     const categoryFilter = (
       selectedCategory === '' || (service.tags && service.tags.includes(selectedCategory))
     );
-  
+
     return searchFilter && categoryFilter;
   };
 
   const toggleCart = () => {
     setShowCart(!showCart);
-  };
-
-  const saveCartToLocalStorage = (items) => {
-    localStorage.setItem('cartItems', JSON.stringify(items));
   };
 
   const sendWhatsAppMessage = () => {
@@ -104,15 +103,59 @@ useEffect(() => {
     return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
 
-  const addToCartWithPlan = (service, plano) => {
-    const newItem = {
-      ...service,
-      title: `${service.title} - ${plano.nome}`,
-      price: plano.price
-    };
-    const updatedCart = [...cartItems, newItem];
-    setCartItems(updatedCart);
-    saveCartToLocalStorage(updatedCart);
+  const updateCartItems = (updatedCart) => {
+    const cleanedCart = updatedCart.map(item => {
+      const cleanedItem = { ...item };
+      delete cleanedItem.relatedProducts;
+      return cleanedItem;
+    });
+  
+    setCartItems(cleanedCart);
+    localStorage.setItem('cartItems', JSON.stringify(cleanedCart)); 
+  };
+  const addToCartWithPlan = (service, plano = null) => {
+    let newItem;
+  
+    if (plano) {
+      newItem = {
+        ...service,
+        title: `${service.title} - ${plano.nome}`,
+        price: plano.price,
+        quantity: 1
+      };
+    } else {
+      newItem = {
+        ...service,
+        quantity: 1
+      };
+    }
+  
+    if (service.relatedProducts) {
+      delete newItem.relatedProducts;
+    }
+  
+    updateCartItems([...cartItems, newItem]);
+  };
+
+
+
+  const updateCartQuantity = (index, newQuantity) => {
+    if (newQuantity <= 0) {
+      removeCartItem(index);
+      return;
+    }
+    const updatedCart = cartItems.map((item, i) => {
+      if (i === index) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+    updateCartItems(updatedCart);
+  };
+
+  const removeCartItem = (index) => {
+    const updatedCart = cartItems.filter((_, i) => i !== index);
+    updateCartItems(updatedCart);
   };
 
   return (
@@ -157,7 +200,7 @@ useEffect(() => {
                 <>
                   <h3>€{card.price}</h3>
                   <button className="btn btn-white" onClick={() => openModal(card)}>{icons.info()} Info</button>
-                  <button className="btn btn-white" onClick={() => { addToCart(card); closeModal(); setShowCart(true);}}>{icons.add()} Aggiungi al carrello</button>
+                  <button className="btn btn-white" onClick={() => { addToCartWithPlan(card); setShowCart(true); }}>{icons.add()} Aggiungi al carrello</button>
                 </>
               )}
             </div>
@@ -173,9 +216,9 @@ useEffect(() => {
         {cartItems.map((item, index) => (
           <div key={index}>
             <p>{item.title} - €{item.price} - Quantity: {item.quantity}</p>
-            <button className='btn-black' onClick={() => decreaseQuantity(index)}>-</button>
-            <button className='btn-black' onClick={() => increaseQuantity(index)}>+</button>
-            <button className='btn-red' onClick={() => removeFromCart(index)}>x</button>
+            <button className='btn-black' onClick={() => updateCartQuantity(index, item.quantity - 1)}>-</button>
+            <button className='btn-black' onClick={() => updateCartQuantity(index, item.quantity + 1)}>+</button>
+            <button className='btn-red' onClick={() => removeCartItem(index)}>x</button>
           </div>
         ))}
         <h2>Totale: €{calculateTotal()}</h2>
@@ -208,14 +251,14 @@ useEffect(() => {
                             <p key={index}>{destaqueItem}</p>
                           ))}
                           <h2>€{selectedService.planos[planoKey].price}</h2>
-                          <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]); closeModal(); setShowCart(true); }}>
+                          <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]); setShowCart(true); }}>
                             {icons.add()} Aggiungi al carrello
                           </button>
                         </div>
                       ))}
                     </div>
                   )}
-                  <button className="btn btn-trans add-to-cart" onClick={() => { addToCart(selectedService);  closeModal();  setShowCart(true); }}>
+                  <button className="btn btn-trans add-to-cart" onClick={() => { addToCartWithPlan(selectedService); setShowCart(true); }}>
                     {icons.add()} Aggiungi al carrello
                   </button>
                   {selectedService.relatedProducts && (

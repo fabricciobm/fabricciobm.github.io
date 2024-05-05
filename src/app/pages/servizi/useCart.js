@@ -1,5 +1,3 @@
-// useCart.js
-
 import { useState, useEffect } from 'react';
 
 const useCart = () => {
@@ -11,6 +9,7 @@ const useCart = () => {
       setCartItems(JSON.parse(savedCart));
     }
   }, []);
+
   const updateCartItems = (newCartItems) => {
     setCartItems(newCartItems);
     localStorage.setItem('cartItems', JSON.stringify(newCartItems));
@@ -24,15 +23,12 @@ const useCart = () => {
         ...updatedCartItems[existingIndex],
         quantity: updatedCartItems[existingIndex].quantity + 1
       };
-      setCartItems(updatedCartItems);
+      updateCartItems(updatedCartItems);
     } else {
-      setCartItems([...cartItems, { ...service, quantity: 1 }]);
+      updateCartItems([...cartItems, { ...service, quantity: 1 }]);
     }
   };
 
-
-
-  
   const removeFromCart = (index) => {
     const updatedCart = [...cartItems];
     updatedCart.splice(index, 1);
