@@ -55,6 +55,23 @@ const Home = () => {
     };
 
     setCachePolicy();
+
+    // Adicionar font-display: swap; ao CSS para webfonts
+    const addFontDisplaySwap = () => {
+      const style = document.createElement('style');
+      style.appendChild(
+        document.createTextNode(`
+          @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+          @font-face {
+            font-family: 'Open Sans', sans-serif;
+            font-display: swap;
+          }
+        `)
+      );
+      document.head.appendChild(style);
+    };
+
+    addFontDisplaySwap();
   }, []);
 
   const settings = {
