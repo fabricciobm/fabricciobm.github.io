@@ -359,6 +359,7 @@ const Servizi = () => {
           )}
         </form>
       </div>
+      <span className='space'></span>
       {showModal && (
         <div className="modal">
           <div className={`modal-content ${selectedService && selectedService.planos ? 'modal-plan' : ''}`}>
