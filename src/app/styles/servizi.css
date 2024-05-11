@@ -215,6 +215,43 @@ button.cart-toggle-btn {
   margin-bottom: 1em!important;
 }
 
+span.checkout-input input{
+  width: calc(50% - 1em);
+  margin:1em 0 0 0;
+  padding: 1em;
+  border: 1px solid white;
+  border: 1px solid;
+  background: transparent;
+  color: white;
+}
+
+span.checkout-input input:nth-child(1){
+  width: calc(50%);
+  margin:1em 1em 0 0;
+}
+
+.textarea-checkout{
+  margin:1em 0 0 0;
+  padding: 1em;
+  border: 1px solid white;
+  border: 1px solid;
+  background: transparent;
+  color: white;
+}
+
+.paymentMethod{
+  margin:1em 0 0 0;
+  padding: 1em;
+  border: 1px solid white;
+  border: 1px solid;
+  background: transparent;
+  color: white;
+}
+
+.paymentMethod option {
+  background: black;
+}
+
 /* Mobile screens */
 
 @media screen and (max-width: 1024px) {
