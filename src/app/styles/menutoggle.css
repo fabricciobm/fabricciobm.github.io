@@ -74,6 +74,11 @@
   font-size: 20px;
 }
 
+.togglemenu a span {
+  margin-right: 10px; /* Adiciona um espaço entre o ícone e o texto */
+}
+
+
 .togglemenu svg{
   padding-right: 10px;
   font-size: 14px;
@@ -91,7 +96,7 @@
 .togglemenu ul ul li {
   display: block;
   background: none;
-  padding: 10px;
+  padding: .3em 0;
 }
 
 .togglemenu li:hover > ul {

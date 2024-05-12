@@ -6,44 +6,43 @@ import icons from './../icons';
 
 const MenuToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleClose = () => {
-    setIsOpen(false);
-    setIsSubmenuOpen(false); 
+  const handleSubmenuToggle = (index) => {
+    setActiveSubmenu(activeSubmenu === index ? null : index);
   };
-
 
   const menuToggleLinks = [
     { to: "/", title: "Home", text: "Home", icon: icons.home() },
-    { to: "/servizi", title: "Servizi", text: "Soluzioni", icon: icons.addressBook(), submenu: [
-      { to: "/servizi?category=design&search=&modal=", title: "Design", text: "Design", icon: icons.addressBook(), submenu: [
-        { to: "/servizi?category=&search=&modal=Branding", title: "Branding", text: "Branding", icon: icons.addressBook() },
-        { to: "/servizi?category=&search=&modal=Social%20Media", title: "Social media", text: "Social media", icon: icons.addressBook()}
-      ]},
-      { to: "/servizi?category=sviluppo&search=&modal=", title: "Sviluppo", text: "Sviluppo", icon: icons.addressBook(), submenu: [
-        { to: "/servizi?category=&search=&modal=Siti%20Web%20Statici", title: "Siti Web Statici", text: "Siti Web Statici", icon: icons.addressBook() },
-        { to: "/servizi?category=&search=&modal=Siti%20Web%20Dinamici", title: "Siti Web Dinamici", text: "Siti Web Dinamici", icon: icons.addressBook() },
-        { to: "/servizi?category=&search=&modal=Comércio%20eletrônico%20(e-commerce)", title: "E-commerce", text: "E-commerce", icon: icons.addressBook()}
-      ]},
+    { to: "/servizi", title: "Servizi", text: "Soluzioni", submenu: [
+      { to: "/servizi?category=design&search=&modal=", title: "Design", text: "Design", icon: icons.next() },
+      { to: "/servizi?category=sviluppo&search=&modal=", title: "Sviluppo", text: "Sviluppo", icon: icons.next() },
     ]},
     { to: "/contact", title: "Contact", text: "Contact", icon: icons.addressBook() }
   ];
 
-  const renderMenuToggle = (menuItem) => (
+  const renderMenuToggle = (menuItem, index) => (
     <li key={menuItem.to}>
       {menuItem.submenu ? (
         <>
-          <ul className={isSubmenuOpen ? 'open' : ''}>
-            {menuItem.submenu.map(submenu => renderMenuToggle(submenu))}
+          <a onClick={() => handleSubmenuToggle(index)}>{icons.down()} {menuItem.text}</a>
+          <ul className={activeSubmenu === index ? 'open' : ''}>
+            {menuItem.submenu.map(submenuItem => (
+              <li key={submenuItem.to}>
+                <Link to={submenuItem.to} onClick={() => setIsOpen(false)} title={submenuItem.text}>
+                  <span>{submenuItem.icon}</span>
+                  {submenuItem.text}
+                </Link>
+              </li>
+            ))}
           </ul>
         </>
       ) : (
-        <Link to={menuItem.to} onClick={handleClose} title={menuItem.text}>
+        <Link to={menuItem.to} onClick={() => setIsOpen(false)} title={menuItem.text}>
           <span>{menuItem.icon}</span>
           {menuItem.text}
         </Link>
@@ -57,13 +56,13 @@ const MenuToggle = () => {
         {icons.bars()}
       </button>
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <button onClick={handleClose} className="close-btn" title="Clicca per attivare/disattivare">
+        <button className="close-btn" onClick={() => setIsOpen(false)} title="Clicca per attivare/disattivare">
           {icons.close()}
         </button>
         <Logo />
         <nav className="togglemenu">
           <ul>
-            {menuToggleLinks.map(menuItem => renderMenuToggle(menuItem))}
+            {menuToggleLinks.map((menuItem, index) => renderMenuToggle(menuItem, index))}
           </ul>
         </nav>
       </div>

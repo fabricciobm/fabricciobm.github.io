@@ -12,6 +12,10 @@ import {
   faShop,
   faInfo,
   faAdd,
+  faUpDown,
+  faDownLong,
+  faDiagramNext,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { 
   faFacebook,
@@ -25,7 +29,6 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
-// Objeto que mapeia os nomes dos ícones aos seus respectivos componentes
 const iconComponents = {
   home: () => <FontAwesomeIcon icon={faHome} />,
   addressBook: () => <FontAwesomeIcon icon={faAddressBook} />,
@@ -37,6 +40,7 @@ const iconComponents = {
   mail: () => <FontAwesomeIcon icon={faMailBulk} />,
   route: () => <FontAwesomeIcon icon={faRoute} />,
   shop: () => <FontAwesomeIcon icon={faShop} />,
+  servizi: () => <FontAwesomeIcon icon={faShop} />,
   info: () => <FontAwesomeIcon icon={faInfo} />,
   add: () => <FontAwesomeIcon icon={faAdd} />,
   facebook: () => <FontAwesomeIcon icon={faFacebook} />,
@@ -47,8 +51,10 @@ const iconComponents = {
   twitter: () => <FontAwesomeIcon icon={faTwitter} />,
   Xtwitter: () => <FontAwesomeIcon icon={faXTwitter} />,
   linkedin: () => <FontAwesomeIcon icon={faLinkedin} />,
-  Youtube: () => <FontAwesomeIcon icon={faYoutube} />
+  Youtube: () => <FontAwesomeIcon icon={faYoutube} />,
+  down: () => <FontAwesomeIcon icon={faDownLong} />,
+  next: () => <FontAwesomeIcon icon={faArrowRight} />,
+
 };
 
-// Exporta o objeto para ser usado em outros arquivos
 export default iconComponents;

@@ -12,7 +12,7 @@ const Servizi = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [showCart, setShowCart] = useState(false);
-  const [showModal, setShowModal] = useState(false); // Estado para controlar se o modal está aberto
+  const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [selectedShape, setSelectedShape] = useState('quadrato');
   const [roundedBorders, setRoundedBorders] = useState(false);
@@ -30,7 +30,8 @@ const Servizi = () => {
   const [messageContent, setMessageContent] = useState(localStorage.getItem('message') || '');
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
-
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  
   useEffect(() => {
     applySearchParams();
 
@@ -64,17 +65,17 @@ const Servizi = () => {
     setSelectedService(Services.find(service => service.title === modal));
   };
 
-  const handleSearch = (event) => {
-    const newSearchTerm = event.target.value;
-    setSearchTerm(newSearchTerm);
-    navigate(`/servizi?category=${selectedCategory}&search=${newSearchTerm}&modal=${selectedService ? selectedService.title : ''}`);
-  };
-
   const handleInputChange = (event, setStateFunction) => {
     const value = event.target.value;
     setStateFunction(value);
     localStorage.setItem(event.target.name, value);
     setErrors({ ...errors, [event.target.name]: '' });
+  };
+
+  const handleSearch = (event) => {
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
+    navigate(`/servizi?category=${selectedCategory}&search=${newSearchTerm}&modal=${selectedService ? selectedService.title : ''}`);
   };
 
   const handleCategorySelect = (event) => {
@@ -83,11 +84,16 @@ const Servizi = () => {
     navigate(`/servizi?category=${category}&search=${searchTerm}&modal=${selectedService ? selectedService.title : ''}`);
   };
 
-  const openModal = (service) => {
-    setSelectedService(service);
-    setShowModal(true);
-    navigate(`/servizi?category=${selectedCategory}&search=${searchTerm}&modal=${service.title}`);
-  };
+const openModal = (service) => {
+  setSelectedService(service);
+  setShowModal(true);
+  navigate(`/servizi?category=${selectedCategory}&search=${searchTerm}&modal=${service.title}`);
+
+  if (service.planos && service.planos.plano1) {
+    setSelectedPlan(service.planos.plano1);
+  }
+};
+  
 
   const closeModal = () => {
     setShowModal(false);
@@ -163,33 +169,36 @@ const Servizi = () => {
     localStorage.setItem('cartItems', JSON.stringify(cleanedCart)); 
   };
 
-  const addToCartWithPlan = (service, plan = null) => {
-    let newItem;
-    if (plan) {
-      newItem = {
-        ...service,
-        title: `${service.title} - ${plan.nome}`,
-        price: plan.price,
-        quantity: 1,
-        shape: selectedShape,
-        roundedBorders: roundedBorders,
-      };
-    } else {
-      newItem = {
-        ...service,
-        quantity: 1,
-        shape: selectedShape,
-        roundedBorders: roundedBorders,
-      };
-    }
-    if (service.relatedProducts) {
-      delete newItem.relatedProducts;
-    }
-    if (newItem.roundedBorders) {
-      newItem.price += 5;
-    }
-    updateCartItems([...cartItems, newItem]);
-  };
+const addToCartWithPlan = (service, plan = null) => {
+  let newItem;
+  if (plan) {
+    // Se um plano for especificado, use os detalhes do plano para o item do carrinho
+    newItem = {
+      ...service,
+      title: `${service.title} - ${plan.nome}`,
+      price: plan.price,
+      quantity: 1,
+      shape: selectedShape,
+      roundedBorders: roundedBorders,
+    };
+  } else {
+    // Se nenhum plano for especificado, apenas adicione o serviço ao carrinho
+    newItem = {
+      ...service,
+      quantity: 1,
+      shape: selectedShape,
+      roundedBorders: roundedBorders,
+    };
+  }
+  if (service.relatedProducts) {
+    delete newItem.relatedProducts;
+  }
+  if (newItem.roundedBorders) {
+    newItem.price += 5;
+  }
+  updateCartItems([...cartItems, newItem]);
+};
+
 
   const updateCartQuantity = (index, newQuantity) => {
     if (newQuantity <= 0) {
@@ -243,13 +252,11 @@ const Servizi = () => {
       clearCart();
     }
   };
-  
-
   return (
     <div className='servizi'>
       <section className='title-page-servizi' style={{backgroundImage: `url(${LazyBackgroundImage})`}}>
         <div className='container-fluid'>
-          <h2>Negozio</h2>
+          <h2>{selectedCategory}</h2>
           <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
           <div className='filter'>
           <input
@@ -357,7 +364,7 @@ const Servizi = () => {
             <textarea className="textarea-checkout" name="message" placeholder="Messaggio" value={message} onChange={(e) => handleInputChange(e, setMessage)}></textarea>
             <select className="paymentMethod"  name="paymentMethod" value={paymentMethod} onChange={(e) => handleInputChange(e, setPaymentMethod)} required>
               <option value="bonifico">Bonifico Bancario</option>
-              <option value="carta">Carta di Credito Vista/Master/Amex</option>
+              <option value="carta">Carta di Credito (Visa/Master/Amex)</option>
               <option value="paypal">PayPal</option>
             </select>
             <span className='space2'></span>
@@ -389,22 +396,20 @@ const Servizi = () => {
                   {selectedService.destaque.map((destaqueItem, index) => (
                     <h2 key={index}>{destaqueItem}</h2>
                   ))}
-                  {selectedService.planos && (
-                    <div>
-                      {Object.keys(selectedService.planos).map((planoKey, i) => (
-                        <div className='modal-list-plan' key={i}>
-                          <h2>{selectedService.planos[planoKey].nome}</h2>
-                          {selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
-                            <p key={index}>{destaqueItem}</p>
-                          ))}
-                          <h2>€{selectedService.planos[planoKey].price}</h2>
-                          <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]); setShowCart(true); }}>
-                            {icons.add()} Aggiungi al carrello
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+{selectedService.planos && Object.keys(selectedService.planos).map((planoKey, i) => (
+  <div className='modal-list-plan' key={i}>
+    <h2>{selectedService.planos[planoKey].nome}</h2>
+    {selectedService.planos[planoKey].destaque && selectedService.planos[planoKey].destaque.map((destaqueItem, index) => (
+      <p key={index}>{destaqueItem}</p>
+    ))}
+    <h2>€{selectedService.planos[planoKey].price}</h2>
+    <button className="btn btn-trans" onClick={() => { addToCartWithPlan(selectedService, selectedService.planos[planoKey]); setShowCart(true); }}>
+      {icons.add()} Aggiungi al carrello
+    </button>
+  </div>
+))}
+
+
                   <button className="btn btn-trans add-to-cart" onClick={() => { addToCartWithPlan(selectedService); setShowCart(true); }}>
                     {icons.add()} Aggiungi al carrello
                   </button>

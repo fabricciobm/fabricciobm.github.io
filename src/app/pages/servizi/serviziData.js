@@ -69,29 +69,66 @@ const Services = [
       plano1: {
         nome: '100 Biglietti da visita',
         destaque: [],
-        tags: ['design', 'logo', 'branding', 'naming', 'marketing'],
         price: 35
       },
       plano2: {
         nome: '200 Biglietti da visita',
         destaque: [],
-        tags: ['design', 'logo', 'branding', 'naming', 'marketing'],
         price: 40
       },
       plano3: {
         nome: '500 Biglietti da visita',
         destaque: [],
-        tags: ['design', 'logo', 'branding', 'naming', 'marketing'],
         price: 55
       },
       plano4: {
         nome: '1000 Biglietti da visita',
         destaque: [],
-        tags: ['design', 'logo', 'branding', 'naming', 'marketing'],
         price: 70
       },
     },
   },
+  {
+    "image": serviceImages['service5.webp'],
+    "title": "Adesivo Personalizzato",
+    "description": "<p>Eccellere nel mondo digitale con adesivi personalizzati che rappresentano l'essenza unica del tuo marchio. Con design esclusivi e di alta qualità, puoi attirare l'attenzione dei tuoi clienti ovunque siano.</p>",
+    "description_long": "<h2></h2><p>Il nostro servizio di creazione di adesivi personalizzati è progettato per aiutare il tuo marchio a distinguersi. Con anni di esperienza nel design grafico, trasformiamo la tua visione in adesivi vibranti e memorabili. Dal concetto iniziale alla produzione finale, garantiamo una qualità eccezionale per ogni adesivo. Investi nella visibilità del tuo marchio con i nostri adesivi personalizzati e lascia il tuo marchio presente ovunque.</p><ul><li><strong>Design Esclusivo</strong></li><li><strong>Materiale di Alta Qualità</strong></li><li><strong>Versatile e Resistente</strong></li><li><strong>Consegna Veloce</strong></li></ul>",
+    "destaque": [],
+    "url": "/adesivi-personalizzati",
+    "tags": ["design", "adesivo", "branding", "marketing", "personalizzato"],
+    "planos": {
+      "plano1": {
+        "nome": "Plano 1",
+        "subplanos": {
+          "subplano1": {
+            "nome": "Subplano 1.1",
+            "destaque": ["5cm x 5cm"],
+            "price": 35
+          },
+          "subplano2": {
+            "nome": "Subplano 1.2",
+            "destaque": ["10cm x 10cm"],
+            "price": 50
+          }
+        }
+      },
+      "plano2": {
+        "nome": "Plano 2",
+        "subplanos": {
+          "subplano1": {
+            "nome": "Subplano 2.1",
+            "destaque": ["7cm x 7cm"],
+            "price": 40
+          },
+          "subplano2": {
+            "nome": "Subplano 2.2",
+            "destaque": ["15cm x 15cm"],
+            "price": 60
+          },
+        },
+      },
+    },    
+  },  
   {
     image: serviceImages['service8.webp'],
     title: 'Social Media',
