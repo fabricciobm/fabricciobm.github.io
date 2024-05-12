@@ -16,6 +16,11 @@ const Menu = () => {
         { to: "/servizi?category=&search=&modal=Siti%20Web%20Dinamici", title: "Siti Web Dinamici", text: "Siti Web Dinamici", icon: icons.addressBook() },
         { to: "/servizi?category=&search=&modal=Comércio%20eletrônico%20(e-commerce)", title: "E-commerce", text: "E-commerce", icon: icons.addressBook()}
       ]},
+      { to: "/servizi?category=marketing&search=&modal=", title: "Marketing", text: "Marketing", icon: icons.addressBook(), submenu: [
+        { to: "/servizi?category=marketing&search=&modal=Biglitti%20da%20visita", title: "Biglietti da visita", text: "Biglietti da visita", icon: icons.addressBook() },
+        { to: "/servizi?category=marketing&search=&modal=Adesivi%20Personalizzati", title: "Adesivi Personalizzati", text: "Adesivi Personalizzati", icon: icons.addressBook() },
+        { to: "/servizi?category=&search=&modal=Social%20Media", title: "Social media", text: "Social media", icon: icons.addressBook()}
+      ]},
     ]},
     { to: "/contact", title: "Contact", text: "Contact", icon: icons.addressBook() }
   ];

@@ -6,7 +6,7 @@ function importAll(r) {
 const serviceImages = importAll(require.context('./../../assets/', false, /\.(png|jpe?g|svg|webp)$/));
 const Services = [
   {
-    image: serviceImages['service6.webp'],
+    image: serviceImages['branding.webp'],
     title: 'Branding',
     description: "<p>Il mondo digitale è un ambiente affollato, e il tuo marchio ha bisogno di distinguersi. Un nome e uno slogan ben studiati sono fondamentali per farti emergere dalla massa e catturare l'attenzione dei potenziali clienti.</p>",
     description_long: "<h2></h2><p>Il mio servizio di progettazione di logo e branding è progettato per guidarti attraverso il processo di creazione di un marchio distintivo nel panorama digitale. Con anni di esperienza nel settore del design grafico, posso trasformare le tue idee e la tua visione in un logo accattivante che parli al cuore del tuo marchio. Dall'analisi del mercato alla creazione di concept originali, mi impegno a fornire soluzioni creative e su misura che soddisfino le esigenze uniche della tua azienda. Investire nella tua identità di marca non è solo una spesa, ma un investimento nel successo futuro del tuo business. Lascia che il tuo marchio spicchi in un panorama competitivo, distinguendoti e brillando con un logo professionale e coinvolgente.</p>",
@@ -58,7 +58,7 @@ const Services = [
     },
   },
   {
-    image: serviceImages['service5.webp'],
+    image: serviceImages['service11.webp'],
     title: 'Biglitti da visita',
     description: "<p>Il mondo digitale è un ambiente affollato, e il tuo marchio ha bisogno di distinguersi. Un nome e uno slogan ben studiati sono fondamentali per farti emergere dalla massa e catturare l'attenzione dei potenziali clienti.</p>",
     description_long: "<h2></h2><p>Il mio servizio di progettazione di logo e branding è progettato per guidarti attraverso il processo di creazione di un marchio distintivo nel panorama digitale. Con anni di esperienza nel settore del design grafico, posso trasformare le tue idee e la tua visione in un logo accattivante che parli al cuore del tuo marchio. Dall'analisi del mercato alla creazione di concept originali, mi impegno a fornire soluzioni creative e su misura che soddisfino le esigenze uniche della tua azienda. Investire nella tua identità di marca non è solo una spesa, ma un investimento nel successo futuro del tuo business. Lascia che il tuo marchio spicchi in un panorama competitivo, distinguendoti e brillando con un logo professionale e coinvolgente.</p><ul><li><strong>Facciamo tutto noi Design incluso</strong></li><li><strong>Cartoncino patinato lucido da 350 grammi</strong></li><li><strong>Colori fronte e retro</strong><li><strong>Consegna gratis in 5 giorni</strong></li></ul>",
@@ -89,8 +89,8 @@ const Services = [
     },
   },
   {
-    "image": serviceImages['service5.webp'],
-    "title": "Adesivo Personalizzato",
+    "image": serviceImages['service16.webp'],
+    "title": "Adesivi Personalizzati",
     "description": "<p>Eccellere nel mondo digitale con adesivi personalizzati che rappresentano l'essenza unica del tuo marchio. Con design esclusivi e di alta qualità, puoi attirare l'attenzione dei tuoi clienti ovunque siano.</p>",
     "description_long": "<h2></h2><p>Il nostro servizio di creazione di adesivi personalizzati è progettato per aiutare il tuo marchio a distinguersi. Con anni di esperienza nel design grafico, trasformiamo la tua visione in adesivi vibranti e memorabili. Dal concetto iniziale alla produzione finale, garantiamo una qualità eccezionale per ogni adesivo. Investi nella visibilità del tuo marchio con i nostri adesivi personalizzati e lascia il tuo marchio presente ovunque.</p><ul><li><strong>Design Esclusivo</strong></li><li><strong>Materiale di Alta Qualità</strong></li><li><strong>Versatile e Resistente</strong></li><li><strong>Consegna Veloce</strong></li></ul>",
     "destaque": [],
@@ -130,7 +130,7 @@ const Services = [
     },    
   },  
   {
-    image: serviceImages['service8.webp'],
+    image: serviceImages['service12.webp'],
     title: 'Social Media',
     description: "<p>Promuovi il tuo marchio con campagne pubblicitarie mirate su Facebook e Instagram. Aumenta la visibilità, genera lead e incrementa le vendite con i miei servizi di marketing sui social media.</p>",
     description_long: "<p>I social media sono un canale potente per promuovere il tuo marchio e raggiungere il tuo pubblico target. La mia offerta comprende la creazione e gestione di campagne pubblicitarie mirate su Facebook e Instagram. Queste campagne sono progettate su misura per soddisfare i tuoi obiettivi di marketing, che possono includere aumentare la consapevolezza del marchio, generare lead qualificati o aumentare le vendite.</p><p>Le campagne mirate su Facebook e Instagram coinvolgono una serie di passaggi chiave, tra cui la definizione di un piano d'azione dettagliato, la ricerca del pubblico di destinazione più rilevante per il tuo business e la creazione di contenuti pubblicitari coinvolgenti e persuasivi. Una volta configurata la campagna, monitoro costantemente le sue prestazioni e ottimizzo le strategie di targeting e di annunci per massimizzare il ritorno sull'investimento. Al termine della campagna, fornisco un'auditoria dettagliata per valutare i risultati e identificare le aree di miglioramento per le future strategie di marketing sui social media.</p>",
@@ -181,7 +181,7 @@ const Services = [
     },
   },
   {
-    image: serviceImages['service1.webp'],
+    image: serviceImages['service14.webp'],
     title: 'Siti Web Statici',
     description: "<p>Investi nel tuo successo online con fiducia. Con il nostro servizio di creazione siti web, hai a disposizione gli strumenti necessari per far crescere la tua presenza digitale e raggiungere nuovi traguardi. Contattaci oggi stesso per iniziare il tuo viaggio verso il successo online.</p>",
     description_long: "<h2>Ottimizza la tua presenza online</h2><p>Massimizza la tua presenza online e raggiungi nuovi orizzonti di successo con il nostro servizio di creazione siti web. Siamo qui per offrirti una soluzione completa, progettata per aumentare la tua visibilità sui motori di ricerca e attirare clienti sempre più numerosi.</p><h2>Funzionalità garantite</h2><ul><li><strong>Ottimizzazione SEO inclusa:</strong> Fatti trovare più facilmente su Google e altri motori di ricerca.</li>      <li><strong>Design responsivo:</strong> Assicurati che il tuo sito sia fruibile su ogni dispositivo.</li>      <li><strong>Ottimizzazione della velocità:</strong> Nessuno vuole aspettare che un sito si carichi.</li>      <li><strong>Sito funzionale:</strong> Ci pensiamo noi in tutto, creiamo il contenuto per te. Non è un sito di facile gestione.</li><li><strong>Dettagli tecnici:</strong> Sviluppo del frontend con React.</li><li><strong>Dominio e Hosting incluso:</strong>Dominio incluso (.it o .com), Fino a 100.000 visite mensili, con 1GB di spazio e SSL gratuito.</li></ul>",
@@ -277,7 +277,7 @@ const Services = [
     },
   },
   {
-    image: serviceImages['service7.webp'],
+    image: serviceImages['service15.webp'],
     title: 'Comércio eletrônico (e-commerce)',
     description: "<p>Porta la tua attività online ad un nuovo livello con i nostri sistemi di e-commerce all'avanguardia. Puoi creare un'esperienza di shopping coinvolgente e interattiva per i tuoi clienti. Dalla personalizzazione dei prodotti alla gestione semplificata degli ordini, i nostri sistemi di e-commerce offrono una soluzione completa per soddisfare le esigenze del tuo business.</p>",
     description_long: "<ul><li><strong>Sito funzionale:</strong> Ci pensiamo noi in tutto, creiamo il contenuto per te.</li><li><strong>Gestione Contenuti Intuitiva:</strong> Aggiorna e gestisci facilmente il tuo sito senza dover essere un esperto di programmazione.</li><li><strong>Interattività:</strong> Dai ai tuoi utenti la possibilità di interagire con il tuo sito attraverso formulari, chat e altro ancora.</li><li><strong>Design responsivo:</strong> Assicurati che il tuo sito sia fruibile su ogni dispositivo.</li>      <li><strong>Ottimizzazione della velocità:</strong> Nessuno vuole aspettare che un sito si carichi.</li><li><strong>Ottimizzazione SEO Integrata:</strong> Assicurati che il tuo sito sia facilmente trovabile sui motori di ricerca.</li><li><strong>Analisi e Monitoraggio:</strong> Monitora le prestazioni del tuo sito e ottieni insights preziosi per migliorare continuamente la tua strategia online.</li><li><strong>Dettagli tecnici:</strong> Sviluppo del frontend e CMS WP, Backend Wordpress e Woocommerce.</li><li><strong>Dominio e Hosting incluso:</strong> Dominio incluso (.it o .com), fino a 200.000 visite mensili, con spazio totale di 20GB, SSL gratuito, CDN gratuita, backup su richiesta e protezione DDoS aumentata.</li></ul>",
@@ -342,7 +342,7 @@ const Services = [
   },
 
   {
-    image: serviceImages['service3.webp'],
+    image: serviceImages['service8.webp'],
     title: 'App Play Store e  App Store (WebView)',
     description: "Trasformiamo il tuo sito web in un'applicazione mobile completa e personalizzata.",
     description_long: "Grazie alla potenza della tecnologia WebView, possiamo incapsulare il tuo sito web all'interno di un'applicazione Android o iOS nativa, offrendo così un'esperienza utente fluida e reattiva. Che tu abbia un blog, un negozio online o un sito di servizi, possiamo convertirlo in un'applicazione professionale pronta per il download su Google Play Store e App Store. Approfitta delle funzionalità avanzate ai tuoi utenti un accesso rapido e conveniente al tuo contenuto, garantendo al contempo la visibilità e la presenza sulla piattaforma mobile.",
@@ -371,7 +371,7 @@ const Services = [
     },
   },
   {
-    image: serviceImages['service4.webp'],
+    image: serviceImages['service7.webp'],
     title: 'Software Personalizzato',
     description: "Ottimizza l'efficienza con l'automazione e l'analisi dei dati. Applicazioni desktop personalizzate per le tue esigenze aziendali.",
     description_long: "<ul><li><strong>Automazione di processi ripetitivi:</strong> Automatizza compiti ripetitivi per aumentare l'efficienza e ridurre gli errori umani.</li><li><strong>Web scraping:</strong> Estrai dati da siti web per analisi o altri scopi utili.</li><li><strong>Analisi dei dati:</strong> Analizza grandi quantità di dati per estrarre informazioni significative e prendere decisioni informate.</li><li><strong>Machine learning e intelligenza artificiale:</strong> Sviluppa algoritmi e modelli che imparano dai dati per fare previsioni o prendere decisioni.</li><li><strong>Sviluppo di siti web:</strong> Crea siti web interattivi e dinamici per aziende o progetti personali.</li><li><strong>Creazione di applicazioni desktop:</strong> Sviluppa applicazioni che girano su computer desktop, offrendo funzionalità avanzate e un'esperienza utente completa.</li></ul>",

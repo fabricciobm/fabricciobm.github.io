@@ -93,7 +93,7 @@ const Home = () => {
             <div className='container-fluid'>
               <h2>Digital Marketing</h2>
               <p>Il nostro team esperto ti aiuta a promuovere il tuo brand sui social media. Contenuti coinvolgenti, campagne mirate e analisi dei dati per il successo online.</p>
-              <Link to="/servizi" className="btn btn-trans btn-big">Inizia</Link>
+              <Link to="/servizi?category=marketing&search=" className="btn btn-trans btn-big">Inizia</Link>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const Home = () => {
             <div className='container-fluid'>
               <h2>Designer grafico</h2>
               <p>Dal logo ai materiali promozionali, creiamo un'identità visiva distintiva per il tuo marchio. Fatti notare e lascia un'impressione indelebile con il nostro servizio di design grafico e branding.</p>
-              <Link to="/servizi" className="btn btn-trans btn-big">Inizia</Link>
+              <Link to="/servizi?category=marketing&search=" className="btn btn-trans btn-big">Inizia</Link>
             </div>
           </div>
         </div>
