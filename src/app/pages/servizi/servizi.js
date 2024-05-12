@@ -281,21 +281,6 @@ const Servizi = () => {
             </div>
           </div>
         ))}
-        {cartItems.length === 0 ? (
-          <div className="empty-cart-message">
-            <p>Il carrello è vuoto</p>
-            <button className="btn btn-trans" onClick={() => navigate('/servizi')}>{icons.add()} Servizi</button>
-          </div>
-        ) : (
-          <>
-            <div className={`cart ${showCart ? 'open' : ''}`}>
-            </div>
-            <div className="checkout-form">
-              <form onSubmit={handleSubmit}>
-              </form>
-            </div>
-          </>
-        )}
 
       </section>
       <button className='cart-toggle-btn' onClick={toggleCart} aria-label='Toggle Cart'>
@@ -304,60 +289,74 @@ const Servizi = () => {
       <div className={`cart ${showCart ? 'open' : ''}`}>
         <button className='close-cart-btn' onClick={toggleCart}>X</button>
         <h1>Carrello</h1>
-        {cartItems.map((item, index) => (
-          <div key={index}>
-            <p>{item.title} - €{item.price} - Quantity: {item.quantity}</p>
-            <button className='btn-black' onClick={() => updateCartQuantity(index, item.quantity - 1)}>-</button>
-            <button className='btn-black' onClick={() => updateCartQuantity(index, item.quantity + 1)}>+</button>
-            <button className='btn-red' onClick={() => removeCartItem(index)}>x</button>
+        {cartItems.length === 0 ? (
+          <div className="empty-cart-message">
+            <p>Il carrello è vuoto</p>
+            <span className='space2'></span>
+            <button className='btn btn-trans' onClick={toggleCart}>Chiudi Carrello</button>
           </div>
-        ))}
+        ) : (
+          <>
         <span className='space2'></span>
-        <h2>Totale: €{calculateTotal()}</h2>
+        {cartItems.map((item, index) => (
+            <div key={index}>
+              <p>{item.title} - €{item.price} - Quantity: {item.quantity}</p>
+              <button className='btn-black' onClick={() => updateCartQuantity(index, item.quantity - 1)}>-</button>
+              <button className='btn-black' onClick={() => updateCartQuantity(index, item.quantity + 1)}>+</button>
+              <button className='btn-red' onClick={() => removeCartItem(index)}>x</button>
+            </div>
+        ))}
+        <h2 className='total-cart'>Totale: €{calculateTotal()}</h2>
         <span className='space'></span>
-        <h1>Checkout:</h1>
-        <form className='checkout' onSubmit={handleSubmit}>
-          <span className='checkout-input'>
-            <input type="text" name="firstName" placeholder="Nome" value={firstName} onChange={(e) => handleInputChange(e, setFirstName)} required />
-            {errors.firstName && <div className="error">{errors.firstName}</div>}
-            <input type="text" name="lastName" placeholder="Cognome" value={lastName} onChange={(e) => handleInputChange(e, setLastName)} required />
-            {errors.lastName && <div className="error">{errors.lastName}</div>}
-          </span>
-          <span className='checkout-input'>
-            <input type="email" name="email" placeholder="email@email.com" value={email} onChange={(e) => handleInputChange(e, setEmail)} required />
-            {errors.email && <div className="error">{errors.email}</div>}
-            <input type="tel" name="phone" placeholder="Telefono" value={phone} onChange={(e) => handleInputChange(e, setPhone)} required />
-            {errors.phone && <div className="error">{errors.phone}</div>}
-          </span>
-          <span className='checkout-input'>
-            <input type="text" name="address" placeholder="Indirizzo" value={address} onChange={(e) => handleInputChange(e, setAddress)} required />
-            {errors.address && <div className="error">{errors.address}</div>}
-            <input type="text" name="postalCode" placeholder="CAP" value={postalCode} onChange={(e) => handleInputChange(e, setPostalCode)} required />
-            {errors.postalCode && <div className="error">{errors.postalCode}</div>}
+        <section className='checkout'>
+          <h1>Checkout:</h1>
+          <form className='checkout' onSubmit={handleSubmit}>
+            <span className='checkout-input'>
+              <input type="text" name="firstName" placeholder="Nome" value={firstName} onChange={(e) => handleInputChange(e, setFirstName)} required />
+              {errors.firstName && <div className="error">{errors.firstName}</div>}
+              <input type="text" name="lastName" placeholder="Cognome" value={lastName} onChange={(e) => handleInputChange(e, setLastName)} required />
+              {errors.lastName && <div className="error">{errors.lastName}</div>}
             </span>
-          <span className='checkout-input'>
-            <input type="text" name="province" placeholder="Provincia" value={province} onChange={(e) => handleInputChange(e, setProvince)} />
-            {errors.province && <div className="error">{errors.province}</div>}
-            <input type="text" name="country" placeholder="Paese" value={country} onChange={(e) => handleInputChange(e, setCountry)} />
-            {errors.country && <div className="error">{errors.province}</div>}
+            <span className='checkout-input'>
+              <input type="email" name="email" placeholder="email@email.com" value={email} onChange={(e) => handleInputChange(e, setEmail)} required />
+              {errors.email && <div className="error">{errors.email}</div>}
+              <input type="tel" name="phone" placeholder="Telefono" value={phone} onChange={(e) => handleInputChange(e, setPhone)} required />
+              {errors.phone && <div className="error">{errors.phone}</div>}
             </span>
-          <span className='checkout-input'>
-            <input type="text" name="streetNumber" placeholder="Numero Civico" value={streetNumber} onChange={(e) => handleInputChange(e, setStreetNumber)} required />
-            {errors.streetNumber && <div className="error">{errors.streetNumber}</div>}
-            <input type="text" name="doorNumber" placeholder="Numero di Porta" value={doorNumber} onChange={(e) => handleInputChange(e, setDoorNumber)} />
-            {errors.doorNumber && <div className="error">{errors.doorNumber}</div>}
-          </span>
-          <textarea className="textarea-checkout" name="message" placeholder="Messaggio" value={message} onChange={(e) => handleInputChange(e, setMessage)}></textarea>
-          <select className="paymentMethod"  name="paymentMethod" value={paymentMethod} onChange={(e) => handleInputChange(e, setPaymentMethod)} required>
-            <option value="bonifico">Bonifico Bancario</option>
-            <option value="carta">Carta di Credito Vista/Master/Amex</option>
-            <option value="paypal">PayPal</option>
-          </select>
-          <span className='space2'></span>
-          {cartItems.length > 0 && (
-            <button type="submit" className="btn btn-trans">{icons.whatsapp()} Checkout </button>
-          )}
-        </form>
+            <span className='checkout-input'>
+              <input type="text" name="address" placeholder="Indirizzo" value={address} onChange={(e) => handleInputChange(e, setAddress)} required />
+              {errors.address && <div className="error">{errors.address}</div>}
+              <input type="text" name="postalCode" placeholder="CAP" value={postalCode} onChange={(e) => handleInputChange(e, setPostalCode)} required />
+              {errors.postalCode && <div className="error">{errors.postalCode}</div>}
+              </span>
+            <span className='checkout-input'>
+              <input type="text" name="province" placeholder="Provincia" value={province} onChange={(e) => handleInputChange(e, setProvince)} />
+              {errors.province && <div className="error">{errors.province}</div>}
+              <input type="text" name="country" placeholder="Paese" value={country} onChange={(e) => handleInputChange(e, setCountry)} />
+              {errors.country && <div className="error">{errors.province}</div>}
+              </span>
+            <span className='checkout-input'>
+              <input type="text" name="streetNumber" placeholder="Numero Civico" value={streetNumber} onChange={(e) => handleInputChange(e, setStreetNumber)} required />
+              {errors.streetNumber && <div className="error">{errors.streetNumber}</div>}
+              <input type="text" name="doorNumber" placeholder="Numero di Porta" value={doorNumber} onChange={(e) => handleInputChange(e, setDoorNumber)} />
+              {errors.doorNumber && <div className="error">{errors.doorNumber}</div>}
+            </span>
+            <textarea className="textarea-checkout" name="message" placeholder="Messaggio" value={message} onChange={(e) => handleInputChange(e, setMessage)}></textarea>
+            <select className="paymentMethod"  name="paymentMethod" value={paymentMethod} onChange={(e) => handleInputChange(e, setPaymentMethod)} required>
+              <option value="bonifico">Bonifico Bancario</option>
+              <option value="carta">Carta di Credito Vista/Master/Amex</option>
+              <option value="paypal">PayPal</option>
+            </select>
+            <span className='space2'></span>
+            {cartItems.length > 0 && (
+              <button type="submit" className="btn btn-trans">{icons.whatsapp()} Checkout </button>
+            )}
+          </form>
+        </section>
+          </>
+        )}
+
+
       </div>
       <span className='space'></span>
       {showModal && (
