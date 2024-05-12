@@ -33,6 +33,20 @@ const Servizi = () => {
 
   useEffect(() => {
     applySearchParams();
+
+    const searchParams = new URLSearchParams(location.search);
+    const modalTitle = searchParams.get('modal');
+    if (modalTitle) {
+      const modalService = Services.find(service => service.title === modalTitle);
+      if (modalService) {
+        setSelectedService(modalService);
+        setShowModal(true);
+      }
+    }
+  }, [location]);
+
+  useEffect(() => {
+    applySearchParams();
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
     if (storedCartItems) {
       setCartItems(storedCartItems);
@@ -44,11 +58,10 @@ const Servizi = () => {
     const category = searchParams.get('category') || '';
     const search = searchParams.get('search') || '';
     const modal = searchParams.get('modal') || '';
+
     setSelectedCategory(category);
     setSearchTerm(search);
     setSelectedService(Services.find(service => service.title === modal));
-    // Verifica se o modal deve ser aberto com base nos parâmetros da URL
-    setShowModal(modal !== '');
   };
 
   const handleSearch = (event) => {
@@ -57,19 +70,18 @@ const Servizi = () => {
     navigate(`/servizi?category=${selectedCategory}&search=${newSearchTerm}&modal=${selectedService ? selectedService.title : ''}`);
   };
 
-  const handleCategorySelect = (event) => {
-    const category = event.target.value;
-    setSelectedCategory(category);
-    navigate(`/servizi?category=${category}&search=${searchTerm}&modal=${selectedService ? selectedService.title : ''}`);
-  };
-
   const handleInputChange = (event, setStateFunction) => {
     const value = event.target.value;
     setStateFunction(value);
     localStorage.setItem(event.target.name, value);
     setErrors({ ...errors, [event.target.name]: '' });
   };
-  
+
+  const handleCategorySelect = (event) => {
+    const category = event.target.value;
+    setSelectedCategory(category);
+    navigate(`/servizi?category=${category}&search=${searchTerm}&modal=${selectedService ? selectedService.title : ''}`);
+  };
 
   const openModal = (service) => {
     setSelectedService(service);
@@ -89,16 +101,17 @@ const Servizi = () => {
       service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       service.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
     const categoryFilter = (
       selectedCategory === '' || (service.tags && service.tags.includes(selectedCategory))
     );
+
     return searchFilter && categoryFilter;
   };
 
   const toggleCart = () => {
     setShowCart(!showCart);
   };
-
 
   const sendWhatsAppMessage = () => {
     const phoneNumber = '393517733589';
@@ -239,18 +252,18 @@ const Servizi = () => {
           <h2>Negozio</h2>
           <p>Esplora e trova ciò che cerchi con un clic sul nostro sito, dove ogni desiderio diventa realtà!</p>
           <div className='filter'>
-            <input
-              type='text'
-              name='searchTerm'
-              placeholder='Cerca...'
-              value={searchTerm}
-              onChange={handleInputChange}
-            />
-            <select
-              name='selectedCategory'
-              value={selectedCategory}
-              onChange={handleInputChange}
-            >
+          <input
+            type='text'
+            name='searchTerm'
+            placeholder='Cerca...'
+            value={searchTerm}
+            onChange={(event) => handleInputChange(event, setSearchTerm)} // Modificação aqui
+          />
+          <select
+            name='selectedCategory'
+            value={selectedCategory}
+            onChange={(event) => handleInputChange(event, setSelectedCategory)} // Modificação aqui
+          >
               <option value=''>Tutti</option>
               <option value='design'>Design</option>
               <option value='sviluppo'>Sviluppo</option>

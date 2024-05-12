@@ -84,7 +84,7 @@ const Home = () => {
             <div className='container-fluid'>
               <h2>Sviluppo</h2>
               <p>Dalle idee alla realtà, offriamo soluzioni su misura per siti, ecommmerce e sistemi. Tecnologie all'avanguardia e progetti ottimizzati per un'esperienza utente impeccabile.</p>
-              <Link to="/servizi" className="btn btn-trans btn-big">Inizia</Link>
+              <Link to="/servizi?category=sviluppo&search=&modal=" className="btn btn-trans btn-big">Inizia</Link>
             </div>
           </div>
         </div>
