@@ -25,7 +25,7 @@
 }
 
 .sidebar {
-  background-color: black!important;
+  background: hsla(0, 0%, 0%, 0.9);
   color: white!important;
   position: fixed;
   top: 0;
@@ -64,9 +64,10 @@
 }
 
 .togglemenu li {
-    line-height: 40px;
-    padding: 5px 14px;
-  }
+  line-height: 40px;
+  cursor: pointer;
+  margin-top: 1em;
+}
   
 .togglemenu a {
   color: #fff!important;
@@ -84,6 +85,10 @@
   font-size: 14px;
 }
 
+.toggle-menu a[title="Contact"]{
+  margin-top:1em;
+}
+
 .togglemenu ul ul {
   display: none;
   position: static;
@@ -96,7 +101,8 @@
 .togglemenu ul ul li {
   display: block;
   background: none;
-  padding: .3em 0;
+  padding: 0;
+  margin-top: 0;
 }
 
 .togglemenu li:hover > ul {

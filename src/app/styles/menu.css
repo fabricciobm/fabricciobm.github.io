@@ -40,11 +40,11 @@
 
 li>a[title="Contact"] {
   background: rgb(242, 54, 255) !important;
-  padding: .5em 1em;
+  padding: .5em 1.5em .5em;
   border-radius: 5px;
   color: black;
   font-weight: bold;
-  text-shadow: none!important;
+  text-shadow: none !important;
 }
 
 .menu ul ul {

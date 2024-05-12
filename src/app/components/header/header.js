@@ -20,7 +20,7 @@ const Header = () => {
       }
   
       if (currentScroll > 250) {
-        headerRef.current.style.background = "hwb(0 0% 100% / .6)";
+        headerRef.current.style.background = "hwb(0 0% 100% / .8)";
       } else {
         headerRef.current.style.background = "var(--header-navbar-background)";
       }
